@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net9.0-ios</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <IsBindingProject>true</IsBindingProject>
+
+    <!--
+      Enable trim analyzers for class libraries.
+      To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
+    -->
+    <IsTrimmable>true</IsTrimmable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
+    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+  </ItemGroup>
+
+  <!-- Reference to Xcode project -->
+  <ItemGroup>
+    <XcodeProject Include="../NotificareSdk.iOS.Binding.Bridge/NotificareBinding/NotificareBinding.xcodeproj">
+      <SchemeName>NotificareBinding</SchemeName>
+      <!-- Metadata applicable to @(NativeReference) will be used if set, otherwise the following defaults will be used:
+      <Kind>Framework</Kind>
+      <SmartLink>true</SmartLink>
+      -->
+    </XcodeProject>
+  </ItemGroup>
+
+  <ItemGroup>
+		<NativeReference Include="libs/NotificareKit.xcframework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+      <SmartLink>False</SmartLink>
+      <Frameworks>Foundation UIKit</Frameworks>
+      <Visible>True</Visible>
+    </NativeReference>
+
+    <NativeReference Include="libs/NotificareUtilitiesKit.xcframework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+      <SmartLink>False</SmartLink>
+      <Frameworks>Foundation UIKit</Frameworks>
+      <Visible>True</Visible>
+    </NativeReference>
+	</ItemGroup>
+</Project>
