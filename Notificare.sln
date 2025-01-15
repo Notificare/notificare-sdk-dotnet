@@ -17,6 +17,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.iOS.Binding",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Core", "NotificareSdk.Core\NotificareSdk.Core.csproj", "{4759D689-DF7C-426B-B5AF-812D1C9D3E42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push", "NotificareSdk.Push\NotificareSdk.Push.csproj", "{9F3263F5-82F7-48AD-A85C-DD33FBC3B4F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.Core", "NotificareSdk.Push.Core\NotificareSdk.Push.Core.csproj", "{49BE47CC-4BBE-4FD1-89D8-7CC5E30D9590}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.Android.Binding", "NotificareSdk.Push.Android.Binding\NotificareSdk.Push.Android.Binding.csproj", "{A0D7BAE2-C024-4C1F-B27D-D1C50B54C2BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.Android", "NotificareSdk.Push.Android\NotificareSdk.Push.Android.csproj", "{0AD02B81-C599-4672-8C79-D57684DA29EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +59,22 @@ Global
 		{4759D689-DF7C-426B-B5AF-812D1C9D3E42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4759D689-DF7C-426B-B5AF-812D1C9D3E42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4759D689-DF7C-426B-B5AF-812D1C9D3E42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F3263F5-82F7-48AD-A85C-DD33FBC3B4F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F3263F5-82F7-48AD-A85C-DD33FBC3B4F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F3263F5-82F7-48AD-A85C-DD33FBC3B4F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F3263F5-82F7-48AD-A85C-DD33FBC3B4F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49BE47CC-4BBE-4FD1-89D8-7CC5E30D9590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49BE47CC-4BBE-4FD1-89D8-7CC5E30D9590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49BE47CC-4BBE-4FD1-89D8-7CC5E30D9590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49BE47CC-4BBE-4FD1-89D8-7CC5E30D9590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0D7BAE2-C024-4C1F-B27D-D1C50B54C2BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0D7BAE2-C024-4C1F-B27D-D1C50B54C2BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0D7BAE2-C024-4C1F-B27D-D1C50B54C2BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0D7BAE2-C024-4C1F-B27D-D1C50B54C2BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AD02B81-C599-4672-8C79-D57684DA29EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AD02B81-C599-4672-8C79-D57684DA29EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AD02B81-C599-4672-8C79-D57684DA29EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AD02B81-C599-4672-8C79-D57684DA29EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

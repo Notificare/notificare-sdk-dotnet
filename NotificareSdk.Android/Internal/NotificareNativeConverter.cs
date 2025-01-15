@@ -112,7 +112,7 @@ public static class NotificareNativeConverter
         );
     }
 
-    private static NotificareNotificationAction FromNativeNotificationAction(
+    public static NotificareNotificationAction FromNativeNotificationAction(
         Binding.Models.NotificareNotification.Action action)
     {
         var icon = action.GetIcon();

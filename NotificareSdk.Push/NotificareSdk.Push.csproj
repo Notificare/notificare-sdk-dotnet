@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>net9.0-android;net9.0-ios;</TargetFrameworks>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../NotificareSdk.Push.Core/NotificareSdk.Push.Core.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <ProjectReference Include="../NotificareSdk.Push.Android/NotificareSdk.Push.Android.csproj"/>
+    </ItemGroup>
+
+<!--    <ItemGroup Condition="$(TargetFramework.Contains('ios'))">-->
+<!--        <ProjectReference Include="../NotificareSdk.iOS/NotificareSdk.iOS.csproj"/>-->
+<!--    </ItemGroup>-->
+</Project>
