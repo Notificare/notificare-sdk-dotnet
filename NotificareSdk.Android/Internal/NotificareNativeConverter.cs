@@ -3,7 +3,7 @@ using NotificareSdk.Core.Models;
 
 namespace NotificareSdk.Android.Internal;
 
-internal static class NativeConverter
+public static class NotificareNativeConverter
 {
     #region Decoding from native
 
@@ -75,7 +75,7 @@ internal static class NativeConverter
     /// </summary>
     /// <param name="notification"></param>
     /// <returns></returns>
-    internal static NotificareNotification FromNativeNotification(
+    public static NotificareNotification FromNativeNotification(
         Binding.Models.NotificareNotification notification)
     {
         return new NotificareNotification(

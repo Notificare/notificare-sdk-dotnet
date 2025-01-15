@@ -29,7 +29,7 @@ public class NotificarePlatformAndroid : INotificarePlatform
         get
         {
             var application = NativeNotificare.Application;
-            return application == null ? null : NativeConverter.FromNativeApplication(application);
+            return application == null ? null : NotificareNativeConverter.FromNativeApplication(application);
         }
     }
 
@@ -57,7 +57,7 @@ public class NotificarePlatformAndroid : INotificarePlatform
         var result = await callback.Task ?? throw new ArgumentException("Native operation cannot return null.");
         var application = (Binding.Models.NotificareApplication)result;
 
-        return NativeConverter.FromNativeApplication(application);
+        return NotificareNativeConverter.FromNativeApplication(application);
     }
 
     public async Task<NotificareNotification> FetchNotificationAsync(string id)
@@ -68,7 +68,7 @@ public class NotificarePlatformAndroid : INotificarePlatform
         var result = await callback.Task ?? throw new ArgumentException("Native operation cannot return null.");
         var notification = (Binding.Models.NotificareNotification)result;
 
-        return NativeConverter.FromNativeNotification(notification);
+        return NotificareNativeConverter.FromNativeNotification(notification);
     }
 
     public async Task<NotificareDynamicLink> FetchDynamicLinkAsync(string url)
@@ -82,7 +82,7 @@ public class NotificarePlatformAndroid : INotificarePlatform
         var result = await callback.Task ?? throw new ArgumentException("Native operation cannot return null.");
         var link = (Binding.Models.NotificareDynamicLink)result;
 
-        return NativeConverter.FromNativeDynamicLink(link);
+        return NotificareNativeConverter.FromNativeDynamicLink(link);
     }
 
     public async Task<bool> CanEvaluateDeferredLinkAsync()
@@ -116,7 +116,7 @@ public class NotificarePlatformAndroid : INotificarePlatform
             var module = Binding.Ktx.AugmentKt.Device(NativeNotificare.Instance);
 
             var device = module.CurrentDevice;
-            return device == null ? null : NativeConverter.FromNativeDevice(device);
+            return device == null ? null : NotificareNativeConverter.FromNativeDevice(device);
         }
     }
 
@@ -225,7 +225,7 @@ public class NotificarePlatformAndroid : INotificarePlatform
         var result = await callback.Task;
         var dnd = (Binding.Models.NotificareDoNotDisturb?)result;
 
-        return dnd == null ? null : NativeConverter.FromNativeDoNotDisturb(dnd);
+        return dnd == null ? null : NotificareNativeConverter.FromNativeDoNotDisturb(dnd);
     }
 
     public async Task UpdateDoNotDisturbAsync(NotificareDoNotDisturb dnd)
@@ -233,7 +233,7 @@ public class NotificarePlatformAndroid : INotificarePlatform
         var module = Binding.Ktx.AugmentKt.Device(NativeNotificare.Instance);
 
         var callback = new NotificareAwaitableCallback();
-        module.UpdateDoNotDisturb(NativeConverter.ToNativeDoNotDisturb(dnd), callback);
+        module.UpdateDoNotDisturb(NotificareNativeConverter.ToNativeDoNotDisturb(dnd), callback);
 
         await callback.Task;
     }
@@ -289,7 +289,7 @@ public class NotificarePlatformAndroid : INotificarePlatform
         var module = Binding.Ktx.AugmentKt.Events(NativeNotificare.Instance);
 
         var callback = new NotificareAwaitableCallback();
-        module.LogCustom(eventName, data == null ? null : NativeConverter.ToNativeExtraDictionary(data), callback);
+        module.LogCustom(eventName, data == null ? null : NotificareNativeConverter.ToNativeExtraDictionary(data), callback);
 
         await callback.Task;
     }
@@ -307,7 +307,7 @@ public class NotificarePlatformAndroid : INotificarePlatform
             Platform?.Ready?.Invoke(
                 this,
                 new NotificareReadyEventArgs(
-                    NativeConverter.FromNativeApplication(application)
+                    NotificareNativeConverter.FromNativeApplication(application)
                 )
             );
         }
@@ -325,7 +325,7 @@ public class NotificarePlatformAndroid : INotificarePlatform
             Platform?.DeviceRegistered?.Invoke(
                 this,
                 new NotificareDeviceRegisteredEventArgs(
-                    NativeConverter.FromNativeDevice(device)
+                    NotificareNativeConverter.FromNativeDevice(device)
                 )
             );
         }
