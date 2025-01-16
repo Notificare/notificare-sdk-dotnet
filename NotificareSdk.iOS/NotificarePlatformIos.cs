@@ -30,7 +30,7 @@ public class NotificarePlatformIos : INotificarePlatform
         get
         {
             var application = _native.Application;
-            return application == null ? null : NativeConverter.FromNativeApplication(application);
+            return application == null ? null : NotificareNativeConverter.FromNativeApplication(application);
         }
     }
 
@@ -64,7 +64,7 @@ public class NotificarePlatformIos : INotificarePlatform
 
         _native.FetchApplication
         (
-            application => completion.TrySetResult(NativeConverter.FromNativeApplication(application)),
+            application => completion.TrySetResult(NotificareNativeConverter.FromNativeApplication(application)),
             error => completion.TrySetException(new Exception(error.ToString()))
         );
 
@@ -77,7 +77,7 @@ public class NotificarePlatformIos : INotificarePlatform
 
         _native.FetchNotification(
             id,
-            notification => completion.TrySetResult(NativeConverter.FromNativeNotification(notification)),
+            notification => completion.TrySetResult(NotificareNativeConverter.FromNativeNotification(notification)),
             error => completion.TrySetException(new Exception(error.ToString()))
         );
 
@@ -90,7 +90,7 @@ public class NotificarePlatformIos : INotificarePlatform
 
         _native.FetchDynamicLink(
             url,
-            link => completion.TrySetResult(NativeConverter.FromNativeDynamicLink(link)),
+            link => completion.TrySetResult(NotificareNativeConverter.FromNativeDynamicLink(link)),
             error => completion.TrySetException(new Exception(error.ToString()))
         );
 
@@ -125,7 +125,7 @@ public class NotificarePlatformIos : INotificarePlatform
         get
         {
             var device = _native.CurrentDevice;
-            return device == null ? null : NativeConverter.FromNativeDevice(device);
+            return device == null ? null : NotificareNativeConverter.FromNativeDevice(device);
         }
     }
 
@@ -239,7 +239,7 @@ public class NotificarePlatformIos : INotificarePlatform
         TaskCompletionSource<NotificareDoNotDisturb?> completion = new();
 
         _native.FetchDoNotDisturb(
-            dnd => completion.TrySetResult(dnd == null ? null : NativeConverter.FromNativeDoNotDisturb(dnd)),
+            dnd => completion.TrySetResult(dnd == null ? null : NotificareNativeConverter.FromNativeDoNotDisturb(dnd)),
             error => completion.TrySetException(new Exception(error.ToString()))
         );
 
@@ -251,7 +251,7 @@ public class NotificarePlatformIos : INotificarePlatform
         TaskCompletionSource completion = new();
 
         _native.UpdateDoNotDisturb(
-            NativeConverter.ToNativeDoNotDisturb(dnd),
+            NotificareNativeConverter.ToNativeDoNotDisturb(dnd),
             () => completion.TrySetResult(),
             error => completion.TrySetException(new Exception(error.ToString()))
         );
@@ -315,7 +315,7 @@ public class NotificarePlatformIos : INotificarePlatform
 
         _native.LogCustom(
             eventName,
-            data == null ? null : NativeConverter.ToNativeExtraDictionary(data),
+            data == null ? null : NotificareNativeConverter.ToNativeExtraDictionary(data),
             () => completion.TrySetResult(),
             error => completion.TrySetException(new Exception(error.ToString()))
         );
@@ -338,7 +338,7 @@ public class NotificarePlatformIos : INotificarePlatform
         public override void Notificare(Binding.NotificareNativeBinding notificare,
             Binding.NotificareApplication application)
         {
-            var args = new NotificareReadyEventArgs(NativeConverter.FromNativeApplication(application));
+            var args = new NotificareReadyEventArgs(NotificareNativeConverter.FromNativeApplication(application));
             _plugin.Ready?.Invoke(_plugin, args);
         }
 
@@ -350,7 +350,7 @@ public class NotificarePlatformIos : INotificarePlatform
 
         public override void Notificare(Binding.NotificareNativeBinding notificare, Binding.NotificareDevice device)
         {
-            var args = new NotificareDeviceRegisteredEventArgs(NativeConverter.FromNativeDevice(device));
+            var args = new NotificareDeviceRegisteredEventArgs(NotificareNativeConverter.FromNativeDevice(device));
             _plugin.DeviceRegistered?.Invoke(_plugin, args);
         }
     }

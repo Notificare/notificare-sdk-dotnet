@@ -34,7 +34,7 @@ internal static class NativeConverter
             type: notification.Type,
             extra: notification.Extra.ToDictionary(
                 kvp => kvp.Key,
-                string? (kvp) => kvp.Value
+                object? (kvp) => kvp.Value
             )
         );
     }

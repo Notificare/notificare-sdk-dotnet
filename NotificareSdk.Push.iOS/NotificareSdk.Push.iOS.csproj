@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0-ios</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <!--
+      Enable trim analyzers for class libraries.
+      To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
+    -->
+    <IsTrimmable>true</IsTrimmable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NotificareSdk.iOS\NotificareSdk.iOS.csproj" />
+    
+    <ProjectReference Include="..\NotificareSdk.Push.Core\NotificareSdk.Push.Core.csproj" />
+    <ProjectReference Include="..\NotificareSdk.Push.iOS.Binding\NotificareSdk.Push.iOS.Binding.csproj" />
+  </ItemGroup>
+</Project>

@@ -6,9 +6,9 @@ public class NotificareSystemNotification
 
     public string Type { get; }
 
-    public IDictionary<string, string?> Extra { get; }
+    public IDictionary<string, object?> Extra { get; }
 
-    public NotificareSystemNotification(string id, string type, IDictionary<string, string?> extra)
+    public NotificareSystemNotification(string id, string type, IDictionary<string, object?> extra)
     {
         Id = id;
         Type = type;

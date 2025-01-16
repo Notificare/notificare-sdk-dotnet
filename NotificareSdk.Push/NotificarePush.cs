@@ -39,7 +39,7 @@ public static class NotificarePush
         add => Platform.SystemNotificationReceived += value;
         remove => Platform.SystemNotificationReceived -= value;
     }
-    
+
     // TODO: onUnknownNotificationReceived
 
     public static event EventHandler<NotificareNotificationOpenedEventArgs> NotificationOpened
@@ -47,7 +47,7 @@ public static class NotificarePush
         add => Platform.NotificationOpened += value;
         remove => Platform.NotificationOpened -= value;
     }
-    
+
     // TODO: onUnknownNotificationOpened
 
     public static event EventHandler<NotificareNotificationActionOpenedEventArgs> NotificationActionOpened
@@ -57,7 +57,7 @@ public static class NotificarePush
     }
 
     // TODO: onUnknownNotificationActionOpened
-    
+
     public static event EventHandler<NotificareNotificationSettingsChangedEventArgs> NotificationSettingsChanged
     {
         add => Platform.NotificationSettingsChanged += value;
@@ -69,7 +69,7 @@ public static class NotificarePush
         add => Platform.SubscriptionChanged += value;
         remove => Platform.SubscriptionChanged -= value;
     }
-    
+
     // TODO: onShouldOpenNotificationSettings
 
     // TODO: onFailedToRegisterForRemoteNotifications
@@ -87,12 +87,20 @@ public static class NotificarePush
 
     public static Task DisableRemoteNotificationsAsync() => Platform.DisableRemoteNotificationsAsync();
 
+    public static void SetAuthorizationOptions(IList<string> authorizationOptions) =>
+        Platform.SetAuthorizationOptions(authorizationOptions);
+
+    public static void SetCategoryOptions(IList<string> categoryOptions) =>
+        Platform.SetCategoryOptions(categoryOptions);
+
+    public static void SetPresentationOptions(IList<string> presentationOptions) =>
+        Platform.SetPresentationOptions(presentationOptions);
+
 
     private static INotificarePushPlatform CreateNotificare()
     {
 #if __IOS__
-        // return new iOS.NotificarePushPlatformIos();
-        throw new PlatformNotSupportedException();
+        return new iOS.NotificarePushPlatformIos();
 #elif __ANDROID__
         return new Android.NotificarePushPlatformAndroid();
 #endif

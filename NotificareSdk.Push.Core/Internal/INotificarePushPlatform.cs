@@ -41,7 +41,9 @@ public interface INotificarePushPlatform
 
     Task DisableRemoteNotificationsAsync();
 
-    // TODO: setAuthorizationOptions
-    // TODO: setCategoryOptions
-    // TODO: setPresentationOptions
+    void SetAuthorizationOptions(IList<string> authorizationOptions);
+
+    void SetCategoryOptions(IList<string> categoryOptions);
+    
+    void SetPresentationOptions(IList<string> presentationOptions);
 }

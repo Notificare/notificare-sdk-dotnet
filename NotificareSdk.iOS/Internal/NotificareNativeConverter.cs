@@ -2,7 +2,7 @@ using NotificareSdk.Core.Models;
 
 namespace NotificareSdk.iOS.Internal;
 
-internal static class NativeConverter
+public static class NotificareNativeConverter
 {
     #region Decoding from native
 
@@ -77,7 +77,7 @@ internal static class NativeConverter
     /// </summary>
     /// <param name="notification"></param>
     /// <returns></returns>
-    internal static NotificareNotification FromNativeNotification(
+    public static NotificareNotification FromNativeNotification(
         Binding.NotificareNotification notification)
     {
         return new NotificareNotification(
@@ -110,7 +110,7 @@ internal static class NativeConverter
         );
     }
 
-    private static NotificareNotificationAction FromNativeNotificationAction(
+    public static NotificareNotificationAction FromNativeNotificationAction(
         Binding.NotificareNotificationAction action)
     {
         return new NotificareNotificationAction(
@@ -199,7 +199,7 @@ internal static class NativeConverter
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    internal static IDictionary<string, object> FromNativeExtraDictionary(NSDictionary data)
+    public static IDictionary<string, object> FromNativeExtraDictionary(NSDictionary data)
     {
         return data.ToDictionary(
             kvp => kvp.Key.ToString(),

@@ -13,7 +13,7 @@
         <ProjectReference Include="../NotificareSdk.Push.Android/NotificareSdk.Push.Android.csproj"/>
     </ItemGroup>
 
-<!--    <ItemGroup Condition="$(TargetFramework.Contains('ios'))">-->
-<!--        <ProjectReference Include="../NotificareSdk.iOS/NotificareSdk.iOS.csproj"/>-->
-<!--    </ItemGroup>-->
+    <ItemGroup Condition="$(TargetFramework.Contains('ios'))">
+        <ProjectReference Include="../NotificareSdk.Push.iOS/NotificareSdk.Push.iOS.csproj"/>
+    </ItemGroup>
 </Project>

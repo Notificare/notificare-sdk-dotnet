@@ -68,6 +68,21 @@ public class NotificarePushPlatformAndroid : INotificarePushPlatform
         await callback.Task;
     }
 
+    public void SetAuthorizationOptions(IList<string> authorizationOptions)
+    {
+        // no-op
+    }
+
+    public void SetCategoryOptions(IList<string> categoryOptions)
+    {
+        // no-op
+    }
+
+    public void SetPresentationOptions(IList<string> presentationOptions)
+    {
+        // no-op
+    }
+
     private void ObserveAllowedUI()
     {
         if (_allowedUIObserver != null)
