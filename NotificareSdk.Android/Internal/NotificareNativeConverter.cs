@@ -82,7 +82,7 @@ public static class NotificareNativeConverter
             partial: notification.Partial,
             id: notification.Id,
             type: notification.Type,
-            time: new DateTime(notification.Time.Time), // TODO: fix decoding
+            time: DateTimeOffset.FromUnixTimeMilliseconds(notification.Time.Time).DateTime,
             title: notification.Title,
             subtitle: notification.Subtitle,
             message: notification.Message,
@@ -256,7 +256,7 @@ public static class NotificareNativeConverter
             extra: ToNativeExtraDictionary(notification.Extra)
         );
     }
-    
+
     private static Binding.Models.NotificareNotification.Content ToNativeNotificationContent(
         NotificareNotificationContent content)
     {
@@ -265,8 +265,9 @@ public static class NotificareNativeConverter
             data: ToNativeExtraPrimitive(content.Data)
         );
     }
-    
-    public static Binding.Models.NotificareNotification.Action ToNativeNotificationAction(NotificareNotificationAction action)
+
+    public static Binding.Models.NotificareNotification.Action ToNativeNotificationAction(
+        NotificareNotificationAction action)
     {
         return new Binding.Models.NotificareNotification.Action(
             type: action.Type,
@@ -297,7 +298,7 @@ public static class NotificareNativeConverter
             uri: attachment.Uri
         );
     }
-    
+
     /// <summary>
     /// Create a <see cref="Binding.Models.NotificareDoNotDisturb"/> binding object from the <see cref="NotificareDoNotDisturb"/> data model.
     /// </summary>
