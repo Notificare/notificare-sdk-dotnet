@@ -293,11 +293,13 @@ public class NotificarePlatformIos : INotificarePlatform
         TaskCompletionSource completion = new();
 
         _native.UpdateUserData(
-            NSDictionary<NSString, NSString>.FromObjectsAndKeys(
-                userData.Values.Select(value => new NSString(value)).ToArray(),
-                userData.Keys.Select(key => new NSString(key)).ToArray(),
-                userData.Count
-            ),
+            userData.Count == 0
+                ? new Dictionary<NSString, NSString>()
+                : NSDictionary<NSString, NSString>.FromObjectsAndKeys(
+                    userData.Values.Select(value => new NSString(value)).ToArray(),
+                    userData.Keys.Select(key => new NSString(key)).ToArray(),
+                    userData.Count
+                ),
             () => completion.TrySetResult(),
             error => completion.TrySetException(new Exception(error.ToString()))
         );
