@@ -1,0 +1,13 @@
+﻿<metadata>
+  <attr path="/api/package[@name='re.notifica.push.ui']" name="managedName">NotificareSdk.Push.UI.Android.Binding</attr>
+  
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.push.ui.content')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.push.ui.internal')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.push.ui.ktx')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.push.ui.models')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.push.ui.notifications')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.push.ui.utils')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.push.ui.databinding')]" />
+
+  <remove-node path="/api/package[@name='re.notifica.push.ui']/class[@name='NotificareOptionsKt']" />
+</metadata>

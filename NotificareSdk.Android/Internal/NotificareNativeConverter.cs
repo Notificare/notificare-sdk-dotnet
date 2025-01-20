@@ -82,7 +82,7 @@ public static class NotificareNativeConverter
             partial: notification.Partial,
             id: notification.Id,
             type: notification.Type,
-            time: new DateTime(notification.Time.Time),
+            time: new DateTime(notification.Time.Time), // TODO: fix decoding
             title: notification.Title,
             subtitle: notification.Subtitle,
             message: notification.Message,
@@ -240,6 +240,64 @@ public static class NotificareNativeConverter
 
     #region Enconding to native
 
+    public static Binding.Models.NotificareNotification ToNativeNotification(NotificareNotification notification)
+    {
+        return new Binding.Models.NotificareNotification(
+            partial: notification.Partial,
+            id: notification.Id,
+            type: notification.Type,
+            time: new Java.Util.Date(new DateTimeOffset(notification.Time).ToUnixTimeMilliseconds()),
+            title: notification.Title,
+            subtitle: notification.Subtitle,
+            message: notification.Message,
+            content: notification.Content.Select(ToNativeNotificationContent).ToArray(),
+            actions: notification.Actions.Select(ToNativeNotificationAction).ToArray(),
+            attachments: notification.Attachments.Select(ToNativeNotificationAttachment).ToArray(),
+            extra: ToNativeExtraDictionary(notification.Extra)
+        );
+    }
+    
+    private static Binding.Models.NotificareNotification.Content ToNativeNotificationContent(
+        NotificareNotificationContent content)
+    {
+        return new Binding.Models.NotificareNotification.Content(
+            type: content.Type,
+            data: ToNativeExtraPrimitive(content.Data)
+        );
+    }
+    
+    public static Binding.Models.NotificareNotification.Action ToNativeNotificationAction(NotificareNotificationAction action)
+    {
+        return new Binding.Models.NotificareNotification.Action(
+            type: action.Type,
+            label: action.Label,
+            target: action.Target,
+            keyboard: action.Keyboard,
+            camera: action.Camera,
+            destructive: action.Destructive == null ? null : Java.Lang.Boolean.ValueOf((bool)action.Destructive),
+            icon: action.Icon == null ? null : ToNativeNotificationActionIcon(action.Icon)
+        );
+    }
+
+    private static Binding.Models.NotificareNotification.Action.Icon ToNativeNotificationActionIcon(
+        NotificareNotificationActionIcon icon)
+    {
+        return new Binding.Models.NotificareNotification.Action.Icon(
+            android: icon.Android,
+            ios: icon.IOS,
+            web: icon.Web
+        );
+    }
+
+    private static Binding.Models.NotificareNotification.Attachment ToNativeNotificationAttachment(
+        NotificareNotificationAttachment attachment)
+    {
+        return new Binding.Models.NotificareNotification.Attachment(
+            mimeType: attachment.MimeType,
+            uri: attachment.Uri
+        );
+    }
+    
     /// <summary>
     /// Create a <see cref="Binding.Models.NotificareDoNotDisturb"/> binding object from the <see cref="NotificareDoNotDisturb"/> data model.
     /// </summary>

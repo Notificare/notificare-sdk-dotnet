@@ -47,6 +47,23 @@ public class NotificareNotification : NSObject {
             targetContentIdentifier: notification.targetContentIdentifier
         )
     }
+
+    public func toNative() -> NotificareKit.NotificareNotification {
+        return NotificareKit.NotificareNotification(
+            partial: partial,
+            id: notificationId,
+            type: type,
+            time: time,
+            title: title,
+            subtitle: subtitle,
+            message: message,
+            content: content.map { $0.toNative() },
+            actions: actions.map { $0.toNative() },
+            attachments: attachments.map { $0.toNative() },
+            extra: extra,
+            targetContentIdentifier: targetContentIdentifier
+        )
+    }
 }
 
 @objc
@@ -63,6 +80,13 @@ public class NotificareNotificationContent : NSObject {
         self.init(
             type: content.type,
             data: content.data
+        )
+    }
+
+    public func toNative() -> NotificareKit.NotificareNotification.Content {
+        return NotificareKit.NotificareNotification.Content(
+            type: type,
+            data: data
         )
     }
 }
@@ -98,6 +122,18 @@ public class NotificareNotificationAction : NSObject {
             icon: action.icon.map { NotificareNotificationActionIcon(from: $0) }
         )
     }
+
+    public func toNative() -> NotificareKit.NotificareNotification.Action {
+        return NotificareKit.NotificareNotification.Action(
+            type: type,
+            label: label,
+            target: target,
+            keyboard: keyboard,
+            camera: camera,
+            destructive: destructive,
+            icon: icon.map { $0.toNative() }
+        )
+    }
 }
 
 @objc
@@ -119,6 +155,14 @@ public class NotificareNotificationActionIcon : NSObject {
             web: icon.web
         )
     }
+
+    public func toNative() -> NotificareKit.NotificareNotification.Action.Icon {
+        return NotificareKit.NotificareNotification.Action.Icon(
+            android: android,
+            ios: ios,
+            web: web
+        )
+    }
 }
 
 @objc
@@ -135,6 +179,13 @@ public class NotificareNotificationAttachment : NSObject {
         self.init(
             mimeType: attachment.mimeType,
             uri: attachment.uri
+        )
+    }
+
+    public func toNative() -> NotificareKit.NotificareNotification.Attachment {
+        return NotificareKit.NotificareNotification.Attachment(
+            mimeType: mimeType,
+            uri: uri
         )
     }
 }

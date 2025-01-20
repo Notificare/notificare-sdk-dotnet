@@ -29,6 +29,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.iOS.Bind
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.iOS", "NotificareSdk.Push.iOS\NotificareSdk.Push.iOS.csproj", "{C986213C-A79D-46AA-A877-BD5B0E944D83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.UI", "NotificareSdk.Push.UI\NotificareSdk.Push.UI.csproj", "{917F57FA-B07F-407B-8EA5-73C22DF62003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.UI.Core", "NotificareSdk.Push.UI.Core\NotificareSdk.Push.UI.Core.csproj", "{C9082521-BFD3-4DB4-B427-F9E269A54644}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.UI.Android", "NotificareSdk.Push.UI.Android\NotificareSdk.Push.UI.Android.csproj", "{E03AD9F9-45B7-4A3A-BE32-FCC2FAE7F279}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.UI.iOS", "NotificareSdk.Push.UI.iOS\NotificareSdk.Push.UI.iOS.csproj", "{BB2D30D4-7E90-4AAC-8DAA-80FEC1CFD1EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.UI.iOS.Binding", "NotificareSdk.Push.UI.iOS.Binding\NotificareSdk.Push.UI.iOS.Binding.csproj", "{B63D0594-490E-4F6F-81D9-0017C3F5705F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.UI.Android.Binding", "NotificareSdk.Push.UI.Android.Binding\NotificareSdk.Push.UI.Android.Binding.csproj", "{51A10FE7-E8E4-45D1-AAF2-E42A8EBB0517}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +99,30 @@ Global
 		{C986213C-A79D-46AA-A877-BD5B0E944D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C986213C-A79D-46AA-A877-BD5B0E944D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C986213C-A79D-46AA-A877-BD5B0E944D83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{917F57FA-B07F-407B-8EA5-73C22DF62003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{917F57FA-B07F-407B-8EA5-73C22DF62003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{917F57FA-B07F-407B-8EA5-73C22DF62003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{917F57FA-B07F-407B-8EA5-73C22DF62003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9082521-BFD3-4DB4-B427-F9E269A54644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9082521-BFD3-4DB4-B427-F9E269A54644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9082521-BFD3-4DB4-B427-F9E269A54644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9082521-BFD3-4DB4-B427-F9E269A54644}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E03AD9F9-45B7-4A3A-BE32-FCC2FAE7F279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E03AD9F9-45B7-4A3A-BE32-FCC2FAE7F279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E03AD9F9-45B7-4A3A-BE32-FCC2FAE7F279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E03AD9F9-45B7-4A3A-BE32-FCC2FAE7F279}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB2D30D4-7E90-4AAC-8DAA-80FEC1CFD1EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB2D30D4-7E90-4AAC-8DAA-80FEC1CFD1EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB2D30D4-7E90-4AAC-8DAA-80FEC1CFD1EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB2D30D4-7E90-4AAC-8DAA-80FEC1CFD1EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B63D0594-490E-4F6F-81D9-0017C3F5705F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B63D0594-490E-4F6F-81D9-0017C3F5705F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B63D0594-490E-4F6F-81D9-0017C3F5705F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B63D0594-490E-4F6F-81D9-0017C3F5705F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51A10FE7-E8E4-45D1-AAF2-E42A8EBB0517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51A10FE7-E8E4-45D1-AAF2-E42A8EBB0517}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51A10FE7-E8E4-45D1-AAF2-E42A8EBB0517}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51A10FE7-E8E4-45D1-AAF2-E42A8EBB0517}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

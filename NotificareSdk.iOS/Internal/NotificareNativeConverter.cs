@@ -92,7 +92,7 @@ public static class NotificareNativeConverter
             actions: notification.Actions.Select(FromNativeNotificationAction).ToList(),
             attachments: notification.Attachments.Select(FromNativeNotificationAttachment).ToList(),
             extra: FromNativeExtraDictionary(notification.Extra),
-            targetContentIdentifier: null
+            targetContentIdentifier: notification.TargetContentIdentifier
         );
     }
 
@@ -227,6 +227,65 @@ public static class NotificareNativeConverter
 
     #region Enconding to native
 
+    public static Binding.NotificareNotification ToNativeNotification(NotificareNotification notification)
+    {
+        return new Binding.NotificareNotification(
+            partial: notification.Partial,
+            notificationId: notification.Id,
+            type: notification.Type,
+            time: NSDate.FromTimeIntervalSince1970(new DateTimeOffset(notification.Time).ToUnixTimeSeconds()),
+            title: notification.Title,
+            subtitle: notification.Subtitle,
+            message: notification.Message,
+            content: notification.Content.Select(ToNativeNotificationContent).ToArray(),
+            actions: notification.Actions.Select(ToNativeNotificationAction).ToArray(),
+            attachments: notification.Attachments.Select(ToNativeNotificationAttachment).ToArray(),
+            extra: ToNativeExtraDictionary(notification.Extra),
+            targetContentIdentifier: notification.TargetContentIdentifier
+        );
+    }
+
+    private static Binding.NotificareNotificationContent ToNativeNotificationContent(
+        NotificareNotificationContent content)
+    {
+        return new Binding.NotificareNotificationContent(
+            type: content.Type,
+            data: ToNativeExtraPrimitive(content.Data)
+        );
+    }
+
+    public static Binding.NotificareNotificationAction ToNativeNotificationAction(NotificareNotificationAction action)
+    {
+        return new Binding.NotificareNotificationAction(
+            type: action.Type,
+            label: action.Label,
+            target: action.Target,
+            keyboard: action.Keyboard,
+            camera: action.Camera,
+            destructive: action.Destructive ?? false,
+            icon: action.Icon == null ? null : ToNativeNotificationActionIcon(action.Icon)
+        );
+    }
+
+    private static Binding.NotificareNotificationActionIcon ToNativeNotificationActionIcon(
+        NotificareNotificationActionIcon icon)
+    {
+        return new Binding.NotificareNotificationActionIcon(
+            android: icon.Android,
+            ios: icon.IOS,
+            web: icon.Web
+        );
+    }
+
+    private static Binding.NotificareNotificationAttachment ToNativeNotificationAttachment(
+        NotificareNotificationAttachment attachment)
+    {
+        return new Binding.NotificareNotificationAttachment(
+            mimeType: attachment.MimeType,
+            uri: attachment.Uri
+        );
+    }
+
     /// <summary>
     /// Create a <see cref="Binding.NotificareDoNotDisturb"/> binding object from the <see cref="NotificareDoNotDisturb"/> data model.
     /// </summary>
@@ -247,6 +306,8 @@ public static class NotificareNativeConverter
     /// <returns></returns>
     internal static NSDictionary<NSString, NSObject> ToNativeExtraDictionary(IDictionary<string, object> data)
     {
+        if (data.Count == 0) return new NSDictionary<NSString, NSObject>();
+        
         return NSDictionary<NSString, NSObject>.FromObjectsAndKeys(
             data.Values.Select(ToNativeExtraPrimitive).ToArray(),
             data.Keys.Select(key => new NSString(key)).ToArray(),

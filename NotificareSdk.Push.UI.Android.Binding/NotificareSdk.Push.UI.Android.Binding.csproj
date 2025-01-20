@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net9.0-android</TargetFramework>
+        <SupportedOSPlatformVersion>23</SupportedOSPlatformVersion>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <!--
+          Enable trim analyzers for Android class libraries.
+          To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
+        -->
+        <IsTrimmable>true</IsTrimmable>
+        <!--
+          NOTE: you can simply add .aar or .jar files in this directory to be included in the project.
+          To learn more, see: https://learn.microsoft.com/dotnet/maui/migration/android-binding-projects
+        -->
+    </PropertyGroup>
+
+    <ItemGroup>
+        <AndroidMavenLibrary
+                Include="re.notifica:notificare-push-ui"
+                Version="4.0.0"
+                VerifyDependencies="false"
+                Bind="true"
+                Repository="https://maven.notifica.re/releases"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\NotificareSdk.Android.Binding\NotificareSdk.Android.Binding.csproj"/>
+    </ItemGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Xamarin.AndroidX.ConstraintLayout" Version="2.1.4.14" />
+        <PackageReference Include="Xamarin.AndroidX.DataBinding.ViewBinding" Version="8.2.2.1" />
+    </ItemGroup>
+</Project>
