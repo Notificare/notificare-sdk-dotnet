@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net9.0-android</TargetFramework>
+        <SupportedOSPlatformVersion>23</SupportedOSPlatformVersion>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <!--
+          Enable trim analyzers for Android class libraries.
+          To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
+        -->
+        <IsTrimmable>true</IsTrimmable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\NotificareSdk.Android\NotificareSdk.Android.csproj" />
+        
+        <ProjectReference Include="..\NotificareSdk.Inbox.Core\NotificareSdk.Inbox.Core.csproj" />
+        <ProjectReference Include="..\NotificareSdk.Inbox.Android.Binding\NotificareSdk.Inbox.Android.Binding.csproj" />
+    </ItemGroup>
+</Project>
