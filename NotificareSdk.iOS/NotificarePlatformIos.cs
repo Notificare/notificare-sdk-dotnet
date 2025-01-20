@@ -294,7 +294,7 @@ public class NotificarePlatformIos : INotificarePlatform
 
         _native.UpdateUserData(
             userData.Count == 0
-                ? new Dictionary<NSString, NSString>()
+                ? new NSDictionary<NSString, NSString>()
                 : NSDictionary<NSString, NSString>.FromObjectsAndKeys(
                     userData.Values.Select(value => new NSString(value)).ToArray(),
                     userData.Keys.Select(key => new NSString(key)).ToArray(),
