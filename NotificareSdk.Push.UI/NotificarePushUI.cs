@@ -30,31 +30,39 @@ public static class NotificarePushUI
     // TODO: notification lifecycle events
 
 
-#if __IOS__
+#if ANDROID
+    public static void PresentNotification(
+        NotificareNotification notification, 
+        global::Android.App.Activity activity
+    ) => Platform.PresentNotification(notification, activity);
 
-    public static void PresentNotification(NotificareNotification notification, UIViewController controller) =>
-        Platform.PresentNotification(notification, controller);
+    public static void PresentAction(
+        NotificareNotification notification, 
+        NotificareNotificationAction action,
+        global::Android.App.Activity activity
+    ) => Platform.PresentAction(notification, action, activity);
 
-    public static void PresentAction(NotificareNotification notification, NotificareNotificationAction action,
-        UIViewController controller) => Platform.PresentAction(notification, action, controller);
+#elif IOS
+    public static void PresentNotification(
+        NotificareNotification notification,
+        UIViewController controller
+    ) => Platform.PresentNotification(notification, controller);
 
-#elif __ANDROID__
-
-    public static void PresentNotification(NotificareNotification notification, global::Android.App.Activity activity) =>
-        Platform.PresentNotification(notification, activity);
-
-    public static void PresentAction(NotificareNotification notification, NotificareNotificationAction action,
-        global::Android.App.Activity activity) => Platform.PresentAction(notification, action, activity);
+    public static void PresentAction(
+        NotificareNotification notification,
+        NotificareNotificationAction action,
+        UIViewController controller
+    ) => Platform.PresentAction(notification, action, controller);
 
 #endif
 
 
     private static INotificarePushUIPlatform CreateNotificare()
     {
-#if __IOS__
-        return new iOS.NotificarePushUIPlatformIos();
-#elif __ANDROID__
+#if ANDROID
         return new Android.NotificarePushUIPlatformAndroid();
+#elif IOS
+        return new iOS.NotificarePushUIPlatformIos();
 #endif
     }
 

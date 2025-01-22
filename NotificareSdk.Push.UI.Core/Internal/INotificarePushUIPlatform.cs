@@ -6,18 +6,13 @@ public interface INotificarePushUIPlatform
 {
     void Initialize();
 
-#if __IOS__
-
-    void PresentNotification(NotificareNotification notification, UIViewController controller);
-
-    void PresentAction(NotificareNotification notification, NotificareNotificationAction action,
-        UIViewController controller);
-
-#elif __ANDROID__
-
+#if ANDROID
     void PresentNotification(NotificareNotification notification, Activity activity);
 
     void PresentAction(NotificareNotification notification, NotificareNotificationAction action, Activity activity);
+#elif IOS
+    void PresentNotification(NotificareNotification notification, UIViewController controller);
 
+    void PresentAction(NotificareNotification notification, NotificareNotificationAction action, UIViewController controller);
 #endif
 }

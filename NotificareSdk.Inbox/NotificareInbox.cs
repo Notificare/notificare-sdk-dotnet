@@ -61,10 +61,10 @@ public static class NotificareInbox
 
     private static INotificareInboxPlatform CreateNotificare()
     {
-#if __IOS__
-        return new iOS.NotificareInboxPlatformIos();
-#elif __ANDROID__
+#if ANDROID
         return new Android.NotificareInboxPlatformAndroid();
+#elif IOS
+        return new iOS.NotificareInboxPlatformIos();
 #endif
     }
 

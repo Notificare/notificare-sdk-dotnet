@@ -99,10 +99,10 @@ public static class NotificarePush
 
     private static INotificarePushPlatform CreateNotificare()
     {
-#if __IOS__
-        return new iOS.NotificarePushPlatformIos();
-#elif __ANDROID__
+#if ANDROID
         return new Android.NotificarePushPlatformAndroid();
+#elif IOS
+        return new iOS.NotificarePushPlatformIos();
 #endif
     }
 

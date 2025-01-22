@@ -64,13 +64,19 @@ public static class Notificare
 #if ANDROID
     public static void Configure(global::Android.Content.Context context) => Platform.Configure(context);
 
-    public static void Configure(global::Android.Content.Context context, string applicationKey, string applicationSecret) =>
-        Platform.Configure(context, applicationKey, applicationSecret);
+    public static void Configure(
+        global::Android.Content.Context context,
+        string applicationKey,
+        string applicationSecret
+    ) => Platform.Configure(context, applicationKey, applicationSecret);
 
 #elif IOS
     public static void Configure() => Platform.Configure();
 
-    public static void Configure(string applicationKey, string applicationSecret) => Platform.Configure(applicationKey, applicationSecret);
+    public static void Configure(
+        string applicationKey, 
+        string applicationSecret
+    ) => Platform.Configure(applicationKey, applicationSecret);
 
 #endif
 
@@ -91,10 +97,10 @@ public static class Notificare
 
     private static INotificarePlatform CreateNotificare()
     {
-#if __IOS__
-        return new iOS.NotificarePlatformIos();
-#elif __ANDROID__
+#if ANDROID
         return new Android.NotificarePlatformAndroid();
+#elif IOS
+        return new iOS.NotificarePlatformIos();
 #endif
     }
 
