@@ -102,11 +102,16 @@ public static class NotificareNativeConverter
             data: content.Data switch
             {
                 Java.Lang.String s => s.ToString(),
-                Java.Util.IMap m => new JavaDictionary<Java.Lang.String, Java.Lang.Object>(m.Handle,
-                    JniHandleOwnership.DoNotRegister).ToDictionary(
-                    kvp => kvp.Key.ToString(),
-                    kvp => FromNativeExtraPrimitive(kvp.Value)
-                ),
+                Java.Util.IMap m => new JavaDictionary<Java.Lang.String, Java.Lang.Object?>(
+                        m.Handle,
+                        JniHandleOwnership.DoNotRegister
+                    )
+                    .Where(e => e.Value != null)
+                    .Cast<KeyValuePair<Java.Lang.String, Java.Lang.Object>>()
+                    .ToDictionary(
+                        kvp => kvp.Key.ToString(),
+                        kvp => FromNativeExtraPrimitive(kvp.Value)
+                    ),
                 _ => new Dictionary<string, object>()
             }
         );
