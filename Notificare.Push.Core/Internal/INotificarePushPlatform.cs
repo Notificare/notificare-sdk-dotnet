@@ -37,6 +37,10 @@ public interface INotificarePushPlatform
 
     bool AllowedUI { get; }
 
+#if ANDROID
+    bool HandleTrampolineIntent(global::Android.Content.Intent intent);
+#endif
+    
     Task EnableRemoteNotificationsAsync();
 
     Task DisableRemoteNotificationsAsync();

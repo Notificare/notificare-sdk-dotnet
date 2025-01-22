@@ -83,6 +83,12 @@ public static class NotificarePush
 
     public static bool AllowedUI => Platform.AllowedUI;
 
+
+#if ANDROID
+    public static bool HandleTrampolineIntent(global::Android.Content.Intent intent) =>
+        Platform.HandleTrampolineIntent(intent);
+#endif
+
     public static Task EnableRemoteNotificationsAsync() => Platform.EnableRemoteNotificationsAsync();
 
     public static Task DisableRemoteNotificationsAsync() => Platform.DisableRemoteNotificationsAsync();

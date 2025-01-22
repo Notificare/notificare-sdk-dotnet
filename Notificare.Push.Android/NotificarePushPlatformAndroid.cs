@@ -52,6 +52,11 @@ public class NotificarePushPlatformAndroid : INotificarePushPlatform
 
     public bool AllowedUI => NativeNotificare.AllowedUI;
 
+    public bool HandleTrampolineIntent(Intent intent)
+    {
+        return NativeNotificare.HandleTrampolineIntent(intent);
+    }
+    
     public async Task EnableRemoteNotificationsAsync()
     {
         var callback = new NotificareAwaitableCallback();
