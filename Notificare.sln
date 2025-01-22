@@ -61,6 +61,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notificare.Push", "Notifica
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notificare.Push.UI", "Notificare.Push.UI", "{C099EA1A-7899-4CA2-AEA0-5766BBD8B0F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.NotificationServiceExtension.iOS.Binding", "NotificareSdk.NotificationServiceExtension.iOS.Binding\NotificareSdk.NotificationServiceExtension.iOS.Binding.csproj", "{C41289C8-00F1-48FC-8B68-F64A54A721D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notificare.NotificationServiceExtension", "Notificare.NotificationServiceExtension", "{351D45E0-2765-48F1-BB4F-CC073427052A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.NotificationServiceExtension.iOS", "NotificareSdk.NotificationServiceExtension.iOS\NotificareSdk.NotificationServiceExtension.iOS.csproj", "{7016B91C-B624-4B4D-969F-8A98A94B5678}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -167,6 +173,14 @@ Global
 		{00CA27B3-4DB9-48DA-A10B-2257BEE5751E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00CA27B3-4DB9-48DA-A10B-2257BEE5751E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00CA27B3-4DB9-48DA-A10B-2257BEE5751E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C41289C8-00F1-48FC-8B68-F64A54A721D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C41289C8-00F1-48FC-8B68-F64A54A721D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C41289C8-00F1-48FC-8B68-F64A54A721D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C41289C8-00F1-48FC-8B68-F64A54A721D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7016B91C-B624-4B4D-969F-8A98A94B5678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7016B91C-B624-4B4D-969F-8A98A94B5678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7016B91C-B624-4B4D-969F-8A98A94B5678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7016B91C-B624-4B4D-969F-8A98A94B5678}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -196,5 +210,7 @@ Global
 		{C9082521-BFD3-4DB4-B427-F9E269A54644} = {C099EA1A-7899-4CA2-AEA0-5766BBD8B0F6}
 		{BB2D30D4-7E90-4AAC-8DAA-80FEC1CFD1EB} = {C099EA1A-7899-4CA2-AEA0-5766BBD8B0F6}
 		{B63D0594-490E-4F6F-81D9-0017C3F5705F} = {C099EA1A-7899-4CA2-AEA0-5766BBD8B0F6}
+		{C41289C8-00F1-48FC-8B68-F64A54A721D2} = {351D45E0-2765-48F1-BB4F-CC073427052A}
+		{7016B91C-B624-4B4D-969F-8A98A94B5678} = {351D45E0-2765-48F1-BB4F-CC073427052A}
 	EndGlobalSection
 EndGlobal
