@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>net9.0-android;net9.0-ios;</TargetFrameworks>
+        <Version>4.0.0-beta.1</Version>
+        <RootNamespace>NotificareSdk.Push.UI</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Notificare.Push.UI.Core\Notificare.Push.UI.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <ProjectReference Include="..\Notificare.Push.UI.Android\Notificare.Push.UI.Android.csproj" />
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('ios'))">
+        <ProjectReference Include="..\Notificare.Push.UI.iOS\Notificare.Push.UI.iOS.csproj" />
+    </ItemGroup>
+</Project>

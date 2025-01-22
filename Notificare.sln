@@ -5,53 +5,53 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "Sample\Sample.csproj", "{CE84E76F-0113-4607-ABE9-02F51E999E8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk", "NotificareSdk\NotificareSdk.csproj", "{BBB3BDDF-8A8A-4B3B-8EAF-E6285D7B387C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare", "Notificare\Notificare.csproj", "{BBB3BDDF-8A8A-4B3B-8EAF-E6285D7B387C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Android.Binding", "NotificareSdk.Android.Binding\NotificareSdk.Android.Binding.csproj", "{CBE9EF05-3582-45FB-A31E-E862F1E68144}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Android.Binding", "Notificare.Android.Binding\Notificare.Android.Binding.csproj", "{CBE9EF05-3582-45FB-A31E-E862F1E68144}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Android", "NotificareSdk.Android\NotificareSdk.Android.csproj", "{D5A160F1-500D-4C7E-8534-70E54D7A3178}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Android", "Notificare.Android\Notificare.Android.csproj", "{D5A160F1-500D-4C7E-8534-70E54D7A3178}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.iOS", "NotificareSdk.iOS\NotificareSdk.iOS.csproj", "{6561BDE7-D9D1-4323-8F01-32295CDDCF47}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.iOS", "Notificare.iOS\Notificare.iOS.csproj", "{6561BDE7-D9D1-4323-8F01-32295CDDCF47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.iOS.Binding", "NotificareSdk.iOS.Binding\NotificareSdk.iOS.Binding.csproj", "{56696B37-E607-40C1-8D43-5841FD8CF242}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.iOS.Binding", "Notificare.iOS.Binding\Notificare.iOS.Binding.csproj", "{56696B37-E607-40C1-8D43-5841FD8CF242}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Core", "NotificareSdk.Core\NotificareSdk.Core.csproj", "{4759D689-DF7C-426B-B5AF-812D1C9D3E42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Core", "Notificare.Core\Notificare.Core.csproj", "{4759D689-DF7C-426B-B5AF-812D1C9D3E42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push", "NotificareSdk.Push\NotificareSdk.Push.csproj", "{9F3263F5-82F7-48AD-A85C-DD33FBC3B4F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Push", "Notificare.Push\Notificare.Push.csproj", "{9F3263F5-82F7-48AD-A85C-DD33FBC3B4F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.Core", "NotificareSdk.Push.Core\NotificareSdk.Push.Core.csproj", "{49BE47CC-4BBE-4FD1-89D8-7CC5E30D9590}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Push.Core", "Notificare.Push.Core\Notificare.Push.Core.csproj", "{49BE47CC-4BBE-4FD1-89D8-7CC5E30D9590}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.Android.Binding", "NotificareSdk.Push.Android.Binding\NotificareSdk.Push.Android.Binding.csproj", "{A0D7BAE2-C024-4C1F-B27D-D1C50B54C2BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Push.Android.Binding", "Notificare.Push.Android.Binding\Notificare.Push.Android.Binding.csproj", "{A0D7BAE2-C024-4C1F-B27D-D1C50B54C2BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.Android", "NotificareSdk.Push.Android\NotificareSdk.Push.Android.csproj", "{0AD02B81-C599-4672-8C79-D57684DA29EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Push.Android", "Notificare.Push.Android\Notificare.Push.Android.csproj", "{0AD02B81-C599-4672-8C79-D57684DA29EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.iOS.Binding", "NotificareSdk.Push.iOS.Binding\NotificareSdk.Push.iOS.Binding.csproj", "{A49A00CB-BAC2-4FCD-9728-841D3CB5B3CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Push.iOS.Binding", "Notificare.Push.iOS.Binding\Notificare.Push.iOS.Binding.csproj", "{A49A00CB-BAC2-4FCD-9728-841D3CB5B3CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.iOS", "NotificareSdk.Push.iOS\NotificareSdk.Push.iOS.csproj", "{C986213C-A79D-46AA-A877-BD5B0E944D83}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Push.iOS", "Notificare.Push.iOS\Notificare.Push.iOS.csproj", "{C986213C-A79D-46AA-A877-BD5B0E944D83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.UI", "NotificareSdk.Push.UI\NotificareSdk.Push.UI.csproj", "{917F57FA-B07F-407B-8EA5-73C22DF62003}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Push.UI", "Notificare.Push.UI\Notificare.Push.UI.csproj", "{917F57FA-B07F-407B-8EA5-73C22DF62003}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.UI.Core", "NotificareSdk.Push.UI.Core\NotificareSdk.Push.UI.Core.csproj", "{C9082521-BFD3-4DB4-B427-F9E269A54644}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Push.UI.Core", "Notificare.Push.UI.Core\Notificare.Push.UI.Core.csproj", "{C9082521-BFD3-4DB4-B427-F9E269A54644}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.UI.Android", "NotificareSdk.Push.UI.Android\NotificareSdk.Push.UI.Android.csproj", "{E03AD9F9-45B7-4A3A-BE32-FCC2FAE7F279}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Push.UI.Android", "Notificare.Push.UI.Android\Notificare.Push.UI.Android.csproj", "{E03AD9F9-45B7-4A3A-BE32-FCC2FAE7F279}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.UI.iOS", "NotificareSdk.Push.UI.iOS\NotificareSdk.Push.UI.iOS.csproj", "{BB2D30D4-7E90-4AAC-8DAA-80FEC1CFD1EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Push.UI.iOS", "Notificare.Push.UI.iOS\Notificare.Push.UI.iOS.csproj", "{BB2D30D4-7E90-4AAC-8DAA-80FEC1CFD1EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.UI.iOS.Binding", "NotificareSdk.Push.UI.iOS.Binding\NotificareSdk.Push.UI.iOS.Binding.csproj", "{B63D0594-490E-4F6F-81D9-0017C3F5705F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Push.UI.iOS.Binding", "Notificare.Push.UI.iOS.Binding\Notificare.Push.UI.iOS.Binding.csproj", "{B63D0594-490E-4F6F-81D9-0017C3F5705F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Push.UI.Android.Binding", "NotificareSdk.Push.UI.Android.Binding\NotificareSdk.Push.UI.Android.Binding.csproj", "{51A10FE7-E8E4-45D1-AAF2-E42A8EBB0517}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Push.UI.Android.Binding", "Notificare.Push.UI.Android.Binding\Notificare.Push.UI.Android.Binding.csproj", "{51A10FE7-E8E4-45D1-AAF2-E42A8EBB0517}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Inbox.iOS.Binding", "NotificareSdk.Inbox.iOS.Binding\NotificareSdk.Inbox.iOS.Binding.csproj", "{934DD6E3-BEA9-4149-8F67-916C5CB7FFA8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Inbox.iOS.Binding", "Notificare.Inbox.iOS.Binding\Notificare.Inbox.iOS.Binding.csproj", "{934DD6E3-BEA9-4149-8F67-916C5CB7FFA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Inbox.iOS", "NotificareSdk.Inbox.iOS\NotificareSdk.Inbox.iOS.csproj", "{0593BBEA-7B36-4514-B1B5-B4A2E7F87201}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Inbox.iOS", "Notificare.Inbox.iOS\Notificare.Inbox.iOS.csproj", "{0593BBEA-7B36-4514-B1B5-B4A2E7F87201}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Inbox.Android.Binding", "NotificareSdk.Inbox.Android.Binding\NotificareSdk.Inbox.Android.Binding.csproj", "{1250CB81-BDD1-4204-BD87-FEEAEA8444E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Inbox.Android.Binding", "Notificare.Inbox.Android.Binding\Notificare.Inbox.Android.Binding.csproj", "{1250CB81-BDD1-4204-BD87-FEEAEA8444E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Inbox.Android", "NotificareSdk.Inbox.Android\NotificareSdk.Inbox.Android.csproj", "{948239FB-7F0A-4F61-8874-F92E9B87A946}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Inbox.Android", "Notificare.Inbox.Android\Notificare.Inbox.Android.csproj", "{948239FB-7F0A-4F61-8874-F92E9B87A946}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Inbox.Core", "NotificareSdk.Inbox.Core\NotificareSdk.Inbox.Core.csproj", "{3AA64A69-B4F1-4655-8A28-4936BDD4468A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Inbox.Core", "Notificare.Inbox.Core\Notificare.Inbox.Core.csproj", "{3AA64A69-B4F1-4655-8A28-4936BDD4468A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.Inbox", "NotificareSdk.Inbox\NotificareSdk.Inbox.csproj", "{00CA27B3-4DB9-48DA-A10B-2257BEE5751E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Inbox", "Notificare.Inbox\Notificare.Inbox.csproj", "{00CA27B3-4DB9-48DA-A10B-2257BEE5751E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notificare", "Notificare", "{27DDBDA5-C37C-41EA-B9A3-3AF994320CD2}"
 EndProject
@@ -61,11 +61,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notificare.Push", "Notifica
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notificare.Push.UI", "Notificare.Push.UI", "{C099EA1A-7899-4CA2-AEA0-5766BBD8B0F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.NotificationServiceExtension.iOS.Binding", "NotificareSdk.NotificationServiceExtension.iOS.Binding\NotificareSdk.NotificationServiceExtension.iOS.Binding.csproj", "{C41289C8-00F1-48FC-8B68-F64A54A721D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.NotificationServiceExtension.iOS.Binding", "Notificare.NotificationServiceExtension.iOS.Binding\Notificare.NotificationServiceExtension.iOS.Binding.csproj", "{C41289C8-00F1-48FC-8B68-F64A54A721D2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notificare.NotificationServiceExtension", "Notificare.NotificationServiceExtension", "{351D45E0-2765-48F1-BB4F-CC073427052A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificareSdk.NotificationServiceExtension.iOS", "NotificareSdk.NotificationServiceExtension.iOS\NotificareSdk.NotificationServiceExtension.iOS.csproj", "{7016B91C-B624-4B4D-969F-8A98A94B5678}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.NotificationServiceExtension.iOS", "Notificare.NotificationServiceExtension.iOS\Notificare.NotificationServiceExtension.iOS.csproj", "{7016B91C-B624-4B4D-969F-8A98A94B5678}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

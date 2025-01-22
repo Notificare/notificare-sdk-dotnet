@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net9.0-ios</TargetFramework>
+        <Version>4.0.0-beta.1</Version>
+        <RootNamespace>NotificareSdk.Push.iOS.Binding</RootNamespace>
+        <SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>true</ImplicitUsings>
+        <IsBindingProject>true</IsBindingProject>
+
+        <!--
+          Enable trim analyzers for class libraries.
+          To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
+        -->
+        <IsTrimmable>true</IsTrimmable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ObjcBindingApiDefinition Include="ApiDefinitions.cs"/>
+        <ObjcBindingCoreSource Include="StructsAndEnums.cs"/>
+    </ItemGroup>
+
+    <!-- Reference to Xcode project -->
+    <ItemGroup>
+        <XcodeProject Include="../Notificare.Push.iOS.Binding.Bridge/NotificarePushBinding/NotificarePushBinding.xcodeproj">
+            <SchemeName>NotificarePushBinding</SchemeName>
+            <!-- Metadata applicable to @(NativeReference) will be used if set, otherwise the following defaults will be used:
+            <Kind>Framework</Kind>
+            <SmartLink>true</SmartLink>
+            -->
+        </XcodeProject>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Notificare.iOS.Binding\Notificare.iOS.Binding.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <NativeReference Include="libs/NotificarePushKit.xcframework">
+            <Kind>Framework</Kind>
+            <ForceLoad>True</ForceLoad>
+            <SmartLink>False</SmartLink>
+            <Frameworks>Foundation UIKit</Frameworks>
+            <Visible>True</Visible>
+        </NativeReference>
+    </ItemGroup>
+</Project>
