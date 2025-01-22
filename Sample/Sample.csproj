@@ -24,6 +24,8 @@
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">23.0</SupportedOSPlatformVersion>
+
+		<CodesignEntitlements>Platforms\iOS\Entitlements.plist</CodesignEntitlements>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -46,9 +48,13 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Maui.Essentials" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
 
-		<ProjectReference Include="../NotificareSdk/NotificareSdk.csproj" />
+		<ProjectReference Include="..\Notificare\Notificare.csproj" />
+		<ProjectReference Include="..\Notificare.Inbox\Notificare.Inbox.csproj" />
+		<ProjectReference Include="..\Notificare.Push\Notificare.Push.csproj" />
+		<ProjectReference Include="..\Notificare.Push.UI\Notificare.Push.UI.csproj" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
@@ -60,5 +66,9 @@
 		<BundleResource Include="Platforms\iOS\NotificareServices.plist">
             <Link>NotificareServices.plist</Link>
         </BundleResource>
+
+		<BundleResource Include="Platforms\iOS\NotificareOptions.plist">
+			<Link>NotificareOptions.plist</Link>
+		</BundleResource>
 	</ItemGroup>
 </Project>
