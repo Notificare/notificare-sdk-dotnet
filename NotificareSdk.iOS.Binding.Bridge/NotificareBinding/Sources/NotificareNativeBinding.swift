@@ -40,6 +40,21 @@ public class NotificareNativeBinding : NSObject {
     public weak var delegate: NotificareNativeBindingDelegate?
 
     @objc
+    public func configure() {
+        Notificare.shared.configure()
+    }
+
+    @objc
+    public func configure(applicationKey: String, applicationSecret: String) {
+        Notificare.shared.configure(
+            servicesInfo: NotificareKit.NotificareServicesInfo(
+                applicationKey: applicationKey,
+                applicationSecret: applicationSecret
+            )
+        )
+    }
+
+    @objc
     public func launch(_ onSuccess: @escaping VoidBlock, _ onFailure: @escaping ErrorBlock) {
         Notificare.shared.launch { result in
             switch result {

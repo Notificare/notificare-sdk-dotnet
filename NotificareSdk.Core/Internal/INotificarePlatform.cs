@@ -18,6 +18,16 @@ public interface INotificarePlatform
 
     NotificareApplication? Application { get; }
 
+#if ANDROID
+    void Configure(Android.Content.Context context);
+    
+    void Configure(Android.Content.Context context, string applicationKey, string applicationSecret);
+#elif IOS
+    void Configure();
+
+    void Configure(string applicationKey, string applicationSecret);
+#endif
+
     Task LaunchAsync();
 
     Task UnlaunchAsync();

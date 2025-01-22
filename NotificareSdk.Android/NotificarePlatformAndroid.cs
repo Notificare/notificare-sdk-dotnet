@@ -1,5 +1,4 @@
 using Android.Content;
-using Android.Runtime;
 using NotificareSdk.Android.Internal;
 using NotificareSdk.Core.Events;
 using NotificareSdk.Core.Internal;
@@ -33,6 +32,16 @@ public class NotificarePlatformAndroid : INotificarePlatform
         }
     }
 
+    public void Configure(Context context)
+    {
+        NativeNotificare.Configure(context);
+    }
+
+    public void Configure(Context context, string applicationKey, string applicationSecret)
+    {
+        NativeNotificare.Configure(context, applicationKey, applicationSecret);
+    }
+    
     public async Task LaunchAsync()
     {
         var callback = new NotificareAwaitableCallback();

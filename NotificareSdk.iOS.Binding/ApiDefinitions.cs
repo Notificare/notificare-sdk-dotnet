@@ -241,6 +241,14 @@ namespace NotificareSdk.iOS.Binding
 		[NullAllowed, Export ("delegate", ArgumentSemantic.Weak)]
 		NSObject WeakDelegate { get; set; }
 
+		// -(void)configure;
+		[Export ("configure")]
+		void Configure ();
+
+		// -(void)configureWithApplicationKey:(NSString * _Nonnull)applicationKey applicationSecret:(NSString * _Nonnull)applicationSecret;
+		[Export ("configureWithApplicationKey:applicationSecret:")]
+		void ConfigureWithApplicationKey (string applicationKey, string applicationSecret);
+
 		// -(void)launch:(void (^ _Nonnull)(void))onSuccess :(void (^ _Nonnull)(NSError * _Nonnull))onFailure;
 		[Export ("launch::")]
 		void Launch (Action onSuccess, Action<NSError> onFailure);

@@ -25,6 +25,16 @@ public class NotificarePlatformIos : INotificarePlatform
 
     public bool IsReady => _native.IsReady;
 
+    public void Configure()
+    {
+        _native.Configure();
+    }
+
+    public void Configure(string applicationKey, string applicationSecret)
+    {
+        _native.ConfigureWithApplicationKey(applicationKey, applicationSecret);
+    }
+    
     public NotificareApplication? Application
     {
         get

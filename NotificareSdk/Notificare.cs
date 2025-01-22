@@ -61,6 +61,19 @@ public static class Notificare
     public static NotificareApplication? Application => Platform.Application;
 
 
+#if ANDROID
+    public static void Configure(global::Android.Content.Context context) => Platform.Configure(context);
+
+    public static void Configure(global::Android.Content.Context context, string applicationKey, string applicationSecret) =>
+        Platform.Configure(context, applicationKey, applicationSecret);
+
+#elif IOS
+    public static void Configure() => Platform.Configure();
+
+    public static void Configure(string applicationKey, string applicationSecret) => Platform.Configure(applicationKey, applicationSecret);
+
+#endif
+
     public static Task LaunchAsync() => Platform.LaunchAsync();
 
     public static Task UnlaunchAsync() => Platform.UnlaunchAsync();
