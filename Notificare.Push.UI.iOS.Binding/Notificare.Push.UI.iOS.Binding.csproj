@@ -22,7 +22,7 @@
 
     <!-- Reference to Xcode project -->
     <ItemGroup>
-        <XcodeProject Include="../Notificare.Push.UI.iOS.Binding.Bridge/NotificarePushUIBinding/NotificarePushUIBinding.xcodeproj">
+        <XcodeProject Include="../Notificare.Push.UI.iOS.Binding.Bridge/NotificarePushUIBinding.xcodeproj">
             <SchemeName>NotificarePushUIBinding</SchemeName>
             <!-- Metadata applicable to @(NativeReference) will be used if set, otherwise the following defaults will be used:
             <Kind>Framework</Kind>

@@ -22,7 +22,7 @@
 
     <!-- Reference to Xcode project -->
     <ItemGroup>
-        <XcodeProject Include="../Notificare.NotificationServiceExtension.iOS.Binding.Bridge/NotificareNotificationServiceExtensionBinding/NotificareNotificationServiceExtensionBinding.xcodeproj">
+        <XcodeProject Include="../Notificare.NotificationServiceExtension.iOS.Binding.Bridge/NotificareNotificationServiceExtensionBinding.xcodeproj">
             <SchemeName>NotificareNotificationServiceExtensionBinding</SchemeName>
             <!-- Metadata applicable to @(NativeReference) will be used if set, otherwise the following defaults will be used:
             <Kind>Framework</Kind>

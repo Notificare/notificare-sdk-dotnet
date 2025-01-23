@@ -7,21 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		83E34F572C21CB2B008AA950 /* NotificarePushBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E34F562C21CB2B008AA950 /* NotificarePushBinding.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		83E34F5E2C21CC53008AA950 /* NotificarePushNativeBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E34F5D2C21CC53008AA950 /* NotificarePushNativeBinding.swift */; };
-		F202B1852D38261D00760FE0 /* NotificarePushKit in Frameworks */ = {isa = PBXBuildFile; productRef = F202B1842D38261D00760FE0 /* NotificarePushKit */; };
-		F202B1872D3918D700760FE0 /* NotificareTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202B1862D3918D700760FE0 /* NotificareTransport.swift */; };
-		F202B1892D391DC900760FE0 /* NotificareSystemNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202B1882D391DC300760FE0 /* NotificareSystemNotification.swift */; };
-		F202B1962D39205C00760FE0 /* NotificareNotificationDeliveryMechanism.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202B1952D39205C00760FE0 /* NotificareNotificationDeliveryMechanism.swift */; };
-		F202B1972D39268200760FE0 /* NotificareBinding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F202B1912D39201200760FE0 /* NotificareBinding.framework */; };
-		F2288DF02D2833EB000B3643 /* NotificarePushSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2288DEF2D2833EB000B3643 /* NotificarePushSubscription.swift */; };
+		83E34F572C21CB2B008AA950 /* NotificareInboxBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E34F562C21CB2B008AA950 /* NotificareInboxBinding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		83E34F5E2C21CC53008AA950 /* NotificareInboxNativeBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E34F5D2C21CC53008AA950 /* NotificareInboxNativeBinding.swift */; };
+		F222D7092D42B58C007E1C8A /* NotificareBinding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F222D7012D42B4FA007E1C8A /* NotificareBinding.framework */; };
+		F2288DF02D2833EB000B3643 /* NotificareInboxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2288DEF2D2833EB000B3643 /* NotificareInboxItem.swift */; };
 		F28F91A22CEF8C8B00D914FD /* NotificareKit in Frameworks */ = {isa = PBXBuildFile; productRef = F28F91A12CEF8C8B00D914FD /* NotificareKit */; };
+		F2FFDE672D3E6CB1009961A2 /* NotificareInboxKit in Frameworks */ = {isa = PBXBuildFile; productRef = F2FFDE662D3E6CB1009961A2 /* NotificareInboxKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F202B1902D39201200760FE0 /* PBXContainerItemProxy */ = {
+		F222D7002D42B4FA007E1C8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F202B18A2D39201200760FE0 /* NotificareBinding.xcodeproj */;
+			containerPortal = F222D6FA2D42B4FA007E1C8A /* NotificareBinding.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 83E34F532C21CB2B008AA950;
 			remoteInfo = NotificareBinding;
@@ -29,14 +26,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		83E34F532C21CB2B008AA950 /* NotificarePushBinding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NotificarePushBinding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		83E34F562C21CB2B008AA950 /* NotificarePushBinding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificarePushBinding.h; sourceTree = "<group>"; };
-		83E34F5D2C21CC53008AA950 /* NotificarePushNativeBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificarePushNativeBinding.swift; sourceTree = "<group>"; };
-		F202B1862D3918D700760FE0 /* NotificareTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificareTransport.swift; sourceTree = "<group>"; };
-		F202B1882D391DC300760FE0 /* NotificareSystemNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificareSystemNotification.swift; sourceTree = "<group>"; };
-		F202B18A2D39201200760FE0 /* NotificareBinding.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NotificareBinding.xcodeproj; path = "/Users/hpinhal/Developer/notificare/notificare-sdk-dotnet/Notificare.iOS.Binding.Bridge/NotificareBinding/NotificareBinding.xcodeproj"; sourceTree = "<absolute>"; };
-		F202B1952D39205C00760FE0 /* NotificareNotificationDeliveryMechanism.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificareNotificationDeliveryMechanism.swift; sourceTree = "<group>"; };
-		F2288DEF2D2833EB000B3643 /* NotificarePushSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificarePushSubscription.swift; sourceTree = "<group>"; };
+		83E34F532C21CB2B008AA950 /* NotificareInboxBinding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NotificareInboxBinding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83E34F562C21CB2B008AA950 /* NotificareInboxBinding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificareInboxBinding.h; sourceTree = "<group>"; };
+		83E34F5D2C21CC53008AA950 /* NotificareInboxNativeBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificareInboxNativeBinding.swift; sourceTree = "<group>"; };
+		F222D6F22D42B2D4007E1C8A /* NotificareBinding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NotificareBinding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F222D6FA2D42B4FA007E1C8A /* NotificareBinding.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NotificareBinding.xcodeproj; path = ../Notificare.iOS.Binding.Bridge/NotificareBinding.xcodeproj; sourceTree = SOURCE_ROOT; };
+		F2288DEF2D2833EB000B3643 /* NotificareInboxItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificareInboxItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,9 +39,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2FFDE672D3E6CB1009961A2 /* NotificareInboxKit in Frameworks */,
+				F222D7092D42B58C007E1C8A /* NotificareBinding.framework in Frameworks */,
 				F28F91A22CEF8C8B00D914FD /* NotificareKit in Frameworks */,
-				F202B1972D39268200760FE0 /* NotificareBinding.framework in Frameworks */,
-				F202B1852D38261D00760FE0 /* NotificarePushKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +51,7 @@
 		83E34F492C21CB2B008AA950 = {
 			isa = PBXGroup;
 			children = (
-				F202B18A2D39201200760FE0 /* NotificareBinding.xcodeproj */,
+				F222D6FA2D42B4FA007E1C8A /* NotificareBinding.xcodeproj */,
 				83E34F552C21CB2B008AA950 /* Sources */,
 				F202B1832D38261D00760FE0 /* Frameworks */,
 				83E34F542C21CB2B008AA950 /* Products */,
@@ -66,7 +61,7 @@
 		83E34F542C21CB2B008AA950 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				83E34F532C21CB2B008AA950 /* NotificarePushBinding.framework */,
+				83E34F532C21CB2B008AA950 /* NotificareInboxBinding.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,8 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				F2288DEA2D280388000B3643 /* Models */,
-				83E34F562C21CB2B008AA950 /* NotificarePushBinding.h */,
-				83E34F5D2C21CC53008AA950 /* NotificarePushNativeBinding.swift */,
+				83E34F562C21CB2B008AA950 /* NotificareInboxBinding.h */,
+				83E34F5D2C21CC53008AA950 /* NotificareInboxNativeBinding.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -84,14 +79,15 @@
 		F202B1832D38261D00760FE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F222D6F22D42B2D4007E1C8A /* NotificareBinding.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F202B18D2D39201200760FE0 /* Products */ = {
+		F222D6FD2D42B4FA007E1C8A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F202B1912D39201200760FE0 /* NotificareBinding.framework */,
+				F222D7012D42B4FA007E1C8A /* NotificareBinding.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,10 +95,7 @@
 		F2288DEA2D280388000B3643 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F202B1952D39205C00760FE0 /* NotificareNotificationDeliveryMechanism.swift */,
-				F2288DEF2D2833EB000B3643 /* NotificarePushSubscription.swift */,
-				F202B1882D391DC300760FE0 /* NotificareSystemNotification.swift */,
-				F202B1862D3918D700760FE0 /* NotificareTransport.swift */,
+				F2288DEF2D2833EB000B3643 /* NotificareInboxItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -114,16 +107,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83E34F572C21CB2B008AA950 /* NotificarePushBinding.h in Headers */,
+				83E34F572C21CB2B008AA950 /* NotificareInboxBinding.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		83E34F522C21CB2B008AA950 /* NotificarePushBinding */ = {
+		83E34F522C21CB2B008AA950 /* NotificareInboxBinding */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 83E34F5A2C21CB2B008AA950 /* Build configuration list for PBXNativeTarget "NotificarePushBinding" */;
+			buildConfigurationList = 83E34F5A2C21CB2B008AA950 /* Build configuration list for PBXNativeTarget "NotificareInboxBinding" */;
 			buildPhases = (
 				83E34F4E2C21CB2B008AA950 /* Headers */,
 				83E34F4F2C21CB2B008AA950 /* Sources */,
@@ -134,9 +127,9 @@
 			);
 			dependencies = (
 			);
-			name = NotificarePushBinding;
-			productName = NotificarePushBinding;
-			productReference = 83E34F532C21CB2B008AA950 /* NotificarePushBinding.framework */;
+			name = NotificareInboxBinding;
+			productName = NotificareInboxBinding;
+			productReference = 83E34F532C21CB2B008AA950 /* NotificareInboxBinding.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -154,7 +147,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83E34F4D2C21CB2B008AA950 /* Build configuration list for PBXProject "NotificarePushBinding" */;
+			buildConfigurationList = 83E34F4D2C21CB2B008AA950 /* Build configuration list for PBXProject "NotificareInboxBinding" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -170,23 +163,23 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = F202B18D2D39201200760FE0 /* Products */;
-					ProjectRef = F202B18A2D39201200760FE0 /* NotificareBinding.xcodeproj */;
+					ProductGroup = F222D6FD2D42B4FA007E1C8A /* Products */;
+					ProjectRef = F222D6FA2D42B4FA007E1C8A /* NotificareBinding.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				83E34F522C21CB2B008AA950 /* NotificarePushBinding */,
+				83E34F522C21CB2B008AA950 /* NotificareInboxBinding */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		F202B1912D39201200760FE0 /* NotificareBinding.framework */ = {
+		F222D7012D42B4FA007E1C8A /* NotificareBinding.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = NotificareBinding.framework;
-			remoteRef = F202B1902D39201200760FE0 /* PBXContainerItemProxy */;
+			remoteRef = F222D7002D42B4FA007E1C8A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -206,11 +199,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F202B1872D3918D700760FE0 /* NotificareTransport.swift in Sources */,
-				F202B1892D391DC900760FE0 /* NotificareSystemNotification.swift in Sources */,
-				F202B1962D39205C00760FE0 /* NotificareNotificationDeliveryMechanism.swift in Sources */,
-				83E34F5E2C21CC53008AA950 /* NotificarePushNativeBinding.swift in Sources */,
-				F2288DF02D2833EB000B3643 /* NotificarePushSubscription.swift in Sources */,
+				83E34F5E2C21CC53008AA950 /* NotificareInboxNativeBinding.swift in Sources */,
+				F2288DF02D2833EB000B3643 /* NotificareInboxItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,7 +357,7 @@
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = re.notifica.push.binding;
+				PRODUCT_BUNDLE_IDENTIFIER = re.notifica.inbox.binding;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
 				SKIP_INSTALL = NO;
@@ -411,7 +401,7 @@
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = re.notifica.push.binding;
+				PRODUCT_BUNDLE_IDENTIFIER = re.notifica.inbox.binding;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
 				SKIP_INSTALL = NO;
@@ -427,7 +417,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		83E34F4D2C21CB2B008AA950 /* Build configuration list for PBXProject "NotificarePushBinding" */ = {
+		83E34F4D2C21CB2B008AA950 /* Build configuration list for PBXProject "NotificareInboxBinding" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83E34F582C21CB2B008AA950 /* Debug */,
@@ -436,7 +426,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83E34F5A2C21CB2B008AA950 /* Build configuration list for PBXNativeTarget "NotificarePushBinding" */ = {
+		83E34F5A2C21CB2B008AA950 /* Build configuration list for PBXNativeTarget "NotificareInboxBinding" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83E34F5B2C21CB2B008AA950 /* Debug */,
@@ -459,15 +449,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F202B1842D38261D00760FE0 /* NotificarePushKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F28F91A02CEF8C8B00D914FD /* XCRemoteSwiftPackageReference "notificare-sdk-ios" */;
-			productName = NotificarePushKit;
-		};
 		F28F91A12CEF8C8B00D914FD /* NotificareKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F28F91A02CEF8C8B00D914FD /* XCRemoteSwiftPackageReference "notificare-sdk-ios" */;
 			productName = NotificareKit;
+		};
+		F2FFDE662D3E6CB1009961A2 /* NotificareInboxKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F28F91A02CEF8C8B00D914FD /* XCRemoteSwiftPackageReference "notificare-sdk-ios" */;
+			productName = NotificareInboxKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
