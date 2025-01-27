@@ -1,9 +1,5 @@
-using Newtonsoft.Json;
-using NotificareSdk.Core.Converters;
-
 namespace NotificareSdk.Core.Models;
 
-[JsonConverter(typeof(NotificareTimeJsonConverter))]
 public class NotificareTime
 {
     public int Hours { get; }
@@ -24,11 +20,6 @@ public class NotificareTime
 
         Hours = hours;
         Minutes = minutes;
-    }
-
-    public string ToJson()
-    {
-        return ToString();
     }
 
     public override string ToString()
@@ -55,10 +46,5 @@ public class NotificareTime
         {
             throw new ArgumentException("Invalid time string.", nameof(time));
         }
-    }
-
-    public static NotificareTime FromJson(string json)
-    {
-        return FromString(json);
     }
 }
