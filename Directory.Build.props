@@ -9,12 +9,14 @@
     </PropertyGroup>
 
     <PropertyGroup Condition="$(MSBuildProjectName.Contains('Android'))">
-        <TargetFramework>net9.0-android</TargetFramework>
+        <!--suppress MsbuildTargetFrameworkTagInspection -->
+        <TargetFrameworks>net9.0-android</TargetFrameworks>
         <SupportedOSPlatformVersion>23</SupportedOSPlatformVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition="$(MSBuildProjectName.Contains('iOS'))">
-        <TargetFramework>net9.0-ios</TargetFramework>
+        <!--suppress MsbuildTargetFrameworkTagInspection -->
+        <TargetFrameworks>net9.0-ios</TargetFrameworks>
         <SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
     </PropertyGroup>
 
