@@ -1,20 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net9.0-android</TargetFramework>
-        <Version>4.0.0-beta.1</Version>
         <RootNamespace>NotificareSdk.Push.UI.Android.Binding</RootNamespace>
-        <SupportedOSPlatformVersion>23</SupportedOSPlatformVersion>
-        <Nullable>enable</Nullable>
-        <ImplicitUsings>enable</ImplicitUsings>
         <!--
           Enable trim analyzers for Android class libraries.
           To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
         -->
         <IsTrimmable>true</IsTrimmable>
-        <!--
-          NOTE: you can simply add .aar or .jar files in this directory to be included in the project.
-          To learn more, see: https://learn.microsoft.com/dotnet/maui/migration/android-binding-projects
-        -->
     </PropertyGroup>
 
     <ItemGroup>
@@ -29,10 +20,10 @@
     <ItemGroup>
         <ProjectReference Include="..\Notificare.Android.Binding\Notificare.Android.Binding.csproj"/>
     </ItemGroup>
-    
+
     <ItemGroup>
-        <PackageReference Include="Xamarin.AndroidX.ConstraintLayout" Version="2.1.4.14" />
-        <PackageReference Include="Xamarin.AndroidX.DataBinding.ViewBinding" Version="8.2.2.1" />
-        <PackageReference Include="Xamarin.GooglePlayServices.Maps" Version="118.2.0.4" />
+        <PackageReference Include="Xamarin.AndroidX.ConstraintLayout" Version="2.1.4.14"/>
+        <PackageReference Include="Xamarin.AndroidX.DataBinding.ViewBinding" Version="8.2.2.1"/>
+        <PackageReference Include="Xamarin.GooglePlayServices.Maps" Version="118.2.0.4"/>
     </ItemGroup>
 </Project>

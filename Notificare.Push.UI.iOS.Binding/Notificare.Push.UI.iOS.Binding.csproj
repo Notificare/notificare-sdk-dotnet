@@ -1,12 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net9.0-ios</TargetFramework>
-        <Version>4.0.0-beta.1</Version>
         <RootNamespace>NotificareSdk.Push.UI.iOS.Binding</RootNamespace>
-        <SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
-        <Nullable>enable</Nullable>
-        <ImplicitUsings>true</ImplicitUsings>
-        <IsBindingProject>true</IsBindingProject>
 
         <!--
           Enable trim analyzers for class libraries.
@@ -20,7 +14,6 @@
         <ObjcBindingCoreSource Include="StructsAndEnums.cs"/>
     </ItemGroup>
 
-    <!-- Reference to Xcode project -->
     <ItemGroup>
         <XcodeProject Include="../Notificare.Push.UI.iOS.Binding.Bridge/NotificarePushUIBinding.xcodeproj">
             <SchemeName>NotificarePushUIBinding</SchemeName>
@@ -32,7 +25,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Notificare.iOS.Binding\Notificare.iOS.Binding.csproj" />
+        <ProjectReference Include="..\Notificare.iOS.Binding\Notificare.iOS.Binding.csproj"/>
     </ItemGroup>
 
     <ItemGroup>

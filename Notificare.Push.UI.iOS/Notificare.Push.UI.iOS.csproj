@@ -1,22 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net9.0-ios</TargetFramework>
-    <Version>4.0.0-beta.1</Version>
-    <RootNamespace>NotificareSdk.Push.UI.iOS</RootNamespace>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <PropertyGroup>
+        <RootNamespace>NotificareSdk.Push.UI.iOS</RootNamespace>
 
-    <!--
-      Enable trim analyzers for class libraries.
-      To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
-    -->
-    <IsTrimmable>true</IsTrimmable>
-  </PropertyGroup>
+        <!--
+          Enable trim analyzers for class libraries.
+          To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
+        -->
+        <IsTrimmable>true</IsTrimmable>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Notificare.iOS\Notificare.iOS.csproj" />
-    
-    <ProjectReference Include="..\Notificare.Push.UI.Core\Notificare.Push.UI.Core.csproj" />
-    <ProjectReference Include="..\Notificare.Push.UI.iOS.Binding\Notificare.Push.UI.iOS.Binding.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Notificare.iOS\Notificare.iOS.csproj"/>
+
+        <ProjectReference Include="..\Notificare.Push.UI.Core\Notificare.Push.UI.Core.csproj"/>
+        <ProjectReference Include="..\Notificare.Push.UI.iOS.Binding\Notificare.Push.UI.iOS.Binding.csproj"/>
+    </ItemGroup>
 </Project>

@@ -1,20 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net9.0-android</TargetFramework>
-        <Version>4.0.0-beta.1</Version>
         <RootNamespace>NotificareSdk.Push.Android.Binding</RootNamespace>
-        <SupportedOSPlatformVersion>23</SupportedOSPlatformVersion>
-        <Nullable>enable</Nullable>
-        <ImplicitUsings>enable</ImplicitUsings>
+
         <!--
           Enable trim analyzers for Android class libraries.
           To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
         -->
         <IsTrimmable>true</IsTrimmable>
-        <!--
-          NOTE: you can simply add .aar or .jar files in this directory to be included in the project.
-          To learn more, see: https://learn.microsoft.com/dotnet/maui/migration/android-binding-projects
-        -->
     </PropertyGroup>
 
     <ItemGroup>
@@ -31,6 +23,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Xamarin.Firebase.Messaging" Version="124.1.0" />
+        <PackageReference Include="Xamarin.Firebase.Messaging" Version="124.1.0"/>
     </ItemGroup>
 </Project>
