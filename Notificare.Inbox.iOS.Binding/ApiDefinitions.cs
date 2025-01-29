@@ -1,8 +1,8 @@
+using NotificareSdk.iOS.Binding;
+
 using System;
 using Foundation;
-using NotificareInboxBinding;
 using ObjCRuntime;
-using NotificareSdk.iOS.Binding;
 
 namespace NotificareSdk.Inbox.iOS.Binding
 {

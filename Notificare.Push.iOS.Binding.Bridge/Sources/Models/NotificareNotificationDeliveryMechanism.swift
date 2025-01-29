@@ -6,6 +6,10 @@ public enum NotificareNotificationDeliveryMechanism : Int {
     case standard
     case silent
 
+    // Objective-Sharpie uses the Objective-C, but removes the common prefix in enum cases.
+    // Without this case, 'NotificareNotificationDeliveryMechanismStandard' would become 'tandard'.
+    case unknown
+
     init(from deliveryMechanism: NotificarePushKit.NotificareNotificationDeliveryMechanism) {
         switch deliveryMechanism {
         case .standard:

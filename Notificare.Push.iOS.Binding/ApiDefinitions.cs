@@ -1,9 +1,9 @@
+using NotificareSdk.iOS.Binding;
+
 using System;
 using Foundation;
-using NotificarePushBinding;
 using ObjCRuntime;
 using UserNotifications;
-using NotificareSdk.iOS.Binding;
 
 namespace NotificareSdk.Push.iOS.Binding
 {
@@ -130,3 +130,4 @@ namespace NotificareSdk.Push.iOS.Binding
 		NativeHandle Constructor (string id, string type, NSDictionary<NSString, NSObject> extra);
 	}
 }
+

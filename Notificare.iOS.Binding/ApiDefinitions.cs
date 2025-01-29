@@ -1,6 +1,7 @@
+using NotificareSdk.iOS.Binding;
+
 using System;
 using Foundation;
-using NotificareBinding;
 using ObjCRuntime;
 
 namespace NotificareSdk.iOS.Binding
@@ -537,3 +538,4 @@ namespace NotificareSdk.iOS.Binding
 		NativeHandle Constructor (nint hours, nint minutes);
 	}
 }
+

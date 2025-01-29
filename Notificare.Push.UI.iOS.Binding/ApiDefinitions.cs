@@ -1,7 +1,7 @@
-using Foundation;
-using NotificarePushUIBinding;
-using UIKit;
 using NotificareSdk.iOS.Binding;
+
+using Foundation;
+using UIKit;
 
 namespace NotificareSdk.Push.UI.iOS.Binding
 {
@@ -25,3 +25,4 @@ namespace NotificareSdk.Push.UI.iOS.Binding
 	{
 	}
 }
+
