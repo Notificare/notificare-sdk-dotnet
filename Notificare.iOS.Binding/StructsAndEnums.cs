@@ -1,3 +1,0 @@
-namespace NotificareBinding.MaciOS.Binding {
-
-}

@@ -1,6 +1,5 @@
 using System;
 using Foundation;
-using NotificareNotificationServiceExtensionBinding;
 using UserNotifications;
 
 namespace NotificareSdk.NotificationServiceExtension.iOS.Binding

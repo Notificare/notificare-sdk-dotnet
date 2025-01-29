@@ -1,3 +1,0 @@
-namespace NotificarePushUIBinding.MaciOS.Binding {
-
-}
