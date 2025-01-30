@@ -5,6 +5,9 @@
       location = "group:Notificare.iOS.Binding.Bridge/NotificareBinding.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Notificare.Assets.iOS.Binding.Bridge/NotificareAssetsBinding.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Notificare.Inbox.iOS.Binding.Bridge/NotificareInboxBinding.xcodeproj">
    </FileRef>
    <FileRef

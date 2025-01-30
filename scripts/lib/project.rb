@@ -25,6 +25,16 @@ class CSProject
           directory: 'Notificare.iOS.Binding'
         ),
         CSProject.new(
+          component: :assets,
+          platform: :android,
+          directory: 'Notificare.Assets.Android.Binding'
+        ),
+        CSProject.new(
+          component: :assets,
+          platform: :ios,
+          directory: 'Notificare.Assets.iOS.Binding'
+        ),
+        CSProject.new(
           component: :inbox,
           platform: :android,
           directory: 'Notificare.Inbox.Android.Binding'
@@ -152,6 +162,14 @@ class CSProject
 
       #{contents}
       CONTENT
+    end
+
+    puts "▸ Applying known exceptions to generated code".blue
+
+    # iOS NotificareAsset needs to conform to INativeObject because 'fetch' returns an
+    # NSArray<NotificareAsset> and NSArray<T> requires T to be INativeObject.
+    if component == :assets && platform == :ios
+      contents = contents.gsub(/interface NotificareAsset$/, 'interface NotificareAsset : INativeObject')
     end
 
     File.write(File.join(directory, 'ApiDefinitions.cs'), contents)

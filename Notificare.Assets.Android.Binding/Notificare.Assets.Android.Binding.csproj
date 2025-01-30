@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>NotificareSdk.Assets.Android.Binding</RootNamespace>
+
+        <!--
+          Enable trim analyzers for Android class libraries.
+          To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
+        -->
+        <IsTrimmable>true</IsTrimmable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <AndroidMavenLibrary
+                Include="re.notifica:notificare-assets"
+                Version="4.0.0"
+                VerifyDependencies="false"
+                Bind="true"
+                Repository="https://maven.notifica.re/releases"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Notificare.Android.Binding\Notificare.Android.Binding.csproj"/>
+    </ItemGroup>
+</Project>

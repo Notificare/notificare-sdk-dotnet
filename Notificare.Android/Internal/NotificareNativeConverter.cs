@@ -206,7 +206,7 @@ public static class NotificareNativeConverter
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    internal static IDictionary<string, object> FromNativeExtraDictionary(IDictionary<string, Java.Lang.Object> data)
+    public static IDictionary<string, object> FromNativeExtraDictionary(IDictionary<string, Java.Lang.Object> data)
     {
         return data.ToDictionary(
             kvp => kvp.Key,
