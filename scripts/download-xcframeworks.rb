@@ -39,8 +39,8 @@ ios_projects.each do |project|
 
   destination = File.join(project.directory, 'libs')
 
-  FileUtils.rm_rf(destination)
-  FileUtils.mkdir(destination)
+  FileUtils.mkdir(destination) unless File.exists?(destination)
+  FileUtils.rm_rf(File.join(destination, '*.xcframework'))
 
   project.xcframeworks.each do |xcframework|
     puts "▸ Copying #{xcframework}".blue
