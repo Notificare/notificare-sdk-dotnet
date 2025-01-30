@@ -35,6 +35,16 @@ class CSProject
           directory: 'Notificare.Assets.iOS.Binding'
         ),
         CSProject.new(
+          component: :in_app_messaging,
+          platform: :android,
+          directory: 'Notificare.InAppMessaging.Android.Binding'
+        ),
+        CSProject.new(
+          component: :in_app_messaging,
+          platform: :ios,
+          directory: 'Notificare.InAppMessaging.iOS.Binding'
+        ),
+        CSProject.new(
           component: :inbox,
           platform: :android,
           directory: 'Notificare.Inbox.Android.Binding'

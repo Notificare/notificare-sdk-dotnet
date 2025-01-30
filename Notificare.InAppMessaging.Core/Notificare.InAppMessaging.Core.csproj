@@ -1,0 +1,5 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>NotificareSdk.InAppMessaging.Core</RootNamespace>
+    </PropertyGroup>
+</Project>

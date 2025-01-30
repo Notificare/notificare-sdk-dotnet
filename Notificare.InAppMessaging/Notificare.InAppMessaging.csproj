@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>NotificareSdk.InAppMessaging</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Notificare.InAppMessaging.Core\Notificare.InAppMessaging.Core.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <ProjectReference Include="..\Notificare.InAppMessaging.Android\Notificare.InAppMessaging.Android.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('ios'))">
+        <ProjectReference Include="..\Notificare.InAppMessaging.iOS\Notificare.InAppMessaging.iOS.csproj"/>
+    </ItemGroup>
+</Project>

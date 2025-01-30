@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>NotificareSdk.InAppMessaging.Android</RootNamespace>
+        <!--
+          Enable trim analyzers for Android class libraries.
+          To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
+        -->
+        <IsTrimmable>true</IsTrimmable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Notificare.InAppMessaging.Core\Notificare.InAppMessaging.Core.csproj"/>
+        <ProjectReference Include="..\Notificare.InAppMessaging.Android.Binding\Notificare.InAppMessaging.Android.Binding.csproj"/>
+    </ItemGroup>
+</Project>
