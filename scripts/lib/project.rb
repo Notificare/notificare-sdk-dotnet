@@ -35,6 +35,16 @@ class CSProject
           directory: 'Notificare.Assets.iOS.Binding'
         ),
         CSProject.new(
+          component: :geo,
+          platform: :android,
+          directory: 'Notificare.Geo.Android.Binding'
+        ),
+        CSProject.new(
+          component: :geo,
+          platform: :ios,
+          directory: 'Notificare.Geo.iOS.Binding'
+        ),
+        CSProject.new(
           component: :in_app_messaging,
           platform: :android,
           directory: 'Notificare.InAppMessaging.Android.Binding'

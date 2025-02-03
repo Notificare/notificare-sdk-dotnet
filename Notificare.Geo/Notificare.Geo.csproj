@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>NotificareSdk.Geo</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Notificare.Geo.Core\Notificare.Geo.Core.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <ProjectReference Include="..\Notificare.Geo.Android\Notificare.Geo.Android.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('ios'))">
+        <ProjectReference Include="..\Notificare.Geo.iOS\Notificare.Geo.iOS.csproj"/>
+    </ItemGroup>
+</Project>
