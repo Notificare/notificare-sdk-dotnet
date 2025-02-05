@@ -65,7 +65,17 @@ class CSProject
           directory: 'Notificare.Inbox.iOS.Binding'
         ),
         CSProject.new(
-          component: :inbox,
+          component: :loyalty,
+          platform: :android,
+          directory: 'Notificare.Loyalty.Android.Binding'
+        ),
+        CSProject.new(
+          component: :loyalty,
+          platform: :ios,
+          directory: 'Notificare.Loyalty.iOS.Binding'
+        ),
+        CSProject.new(
+          component: :notification_service_extension,
           platform: :ios,
           directory: 'Notificare.NotificationServiceExtension.iOS.Binding'
         ),

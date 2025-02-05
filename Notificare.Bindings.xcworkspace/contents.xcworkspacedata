@@ -17,6 +17,9 @@
       location = "group:Notificare.Inbox.iOS.Binding.Bridge/NotificareInboxBinding.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Notificare.Loyalty.iOS.Binding.Bridge/NotificareLoyaltyBinding.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Notificare.NotificationServiceExtension.iOS.Binding.Bridge/NotificareNotificationServiceExtensionBinding.xcodeproj">
    </FileRef>
    <FileRef

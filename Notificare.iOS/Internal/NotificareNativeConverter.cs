@@ -304,7 +304,7 @@ public static class NotificareNativeConverter
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    internal static NSDictionary<NSString, NSObject> ToNativeExtraDictionary(IDictionary<string, object> data)
+    public static NSDictionary<NSString, NSObject> ToNativeExtraDictionary(IDictionary<string, object> data)
     {
         if (data.Count == 0) return new NSDictionary<NSString, NSObject>();
         

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>NotificareSdk.Loyalty.iOS</RootNamespace>
+
+        <!--
+          Enable trim analyzers for class libraries.
+          To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
+        -->
+        <IsTrimmable>true</IsTrimmable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Notificare.iOS\Notificare.iOS.csproj"/>
+
+        <ProjectReference Include="..\Notificare.Loyalty.Core\Notificare.Loyalty.Core.csproj"/>
+        <ProjectReference Include="..\Notificare.Loyalty.iOS.Binding\Notificare.Loyalty.iOS.Binding.csproj"/>
+    </ItemGroup>
+</Project>
