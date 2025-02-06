@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>NotificareSdk.Scannables.iOS</RootNamespace>
+
+        <!--
+          Enable trim analyzers for class libraries.
+          To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
+        -->
+        <IsTrimmable>true</IsTrimmable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Notificare.iOS\Notificare.iOS.csproj"/>
+
+        <ProjectReference Include="..\Notificare.Scannables.Core\Notificare.Scannables.Core.csproj"/>
+        <ProjectReference Include="..\Notificare.Scannables.iOS.Binding\Notificare.Scannables.iOS.Binding.csproj"/>
+    </ItemGroup>
+</Project>
