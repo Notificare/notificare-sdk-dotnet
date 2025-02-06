@@ -99,6 +99,26 @@ class CSProject
           platform: :ios,
           directory: 'Notificare.Push.UI.iOS.Binding'
         ),
+        CSProject.new(
+          component: :scannables,
+          platform: :android,
+          directory: 'Notificare.Scannables.Android.Binding'
+        ),
+        CSProject.new(
+          component: :scannables,
+          platform: :ios,
+          directory: 'Notificare.Scannables.iOS.Binding'
+        ),
+        CSProject.new(
+          component: :user_inbox,
+          platform: :android,
+          directory: 'Notificare.UserInbox.Android.Binding'
+        ),
+        CSProject.new(
+          component: :user_inbox,
+          platform: :ios,
+          directory: 'Notificare.UserInbox.iOS.Binding'
+        ),
       ]
     end
 

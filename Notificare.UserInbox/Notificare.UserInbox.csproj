@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>NotificareSdk.UserInbox</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Notificare.UserInbox.Core\Notificare.UserInbox.Core.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <ProjectReference Include="..\Notificare.UserInbox.Android\Notificare.UserInbox.Android.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('ios'))">
+        <ProjectReference Include="..\Notificare.UserInbox.iOS\Notificare.UserInbox.iOS.csproj"/>
+    </ItemGroup>
+</Project>

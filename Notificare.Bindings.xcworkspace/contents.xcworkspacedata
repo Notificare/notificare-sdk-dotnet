@@ -28,4 +28,10 @@
    <FileRef
       location = "group:Notificare.Push.UI.iOS.Binding.Bridge/NotificarePushUIBinding.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Notificare.Scannables.iOS.Binding.Bridge/NotificareScannablesBinding.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Notificare.UserInbox.iOS.Binding.Bridge/NotificareUserInboxBinding.xcodeproj">
+   </FileRef>
 </Workspace>
