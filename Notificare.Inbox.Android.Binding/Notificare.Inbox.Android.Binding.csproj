@@ -12,7 +12,7 @@
     <ItemGroup>
         <AndroidMavenLibrary
                 Include="re.notifica:notificare-inbox"
-                Version="4.0.0"
+                Version="4.0.1"
                 VerifyDependencies="false"
                 Bind="true"
                 Repository="https://maven.notifica.re/releases"/>

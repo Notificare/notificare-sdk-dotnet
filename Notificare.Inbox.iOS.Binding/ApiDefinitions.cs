@@ -102,3 +102,4 @@ namespace NotificareSdk.Inbox.iOS.Binding
 		void DidUpdateBadge (NotificareInboxNativeBinding notificareInbox, nint badge);
 	}
 }
+

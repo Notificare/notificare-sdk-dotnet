@@ -117,7 +117,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1610;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					83E34F522C21CB2B008AA950 = {
 						CreatedOnToolsVersion = 15.3;
@@ -405,7 +405,7 @@
 			repositoryURL = "https://github.com/Notificare/notificare-sdk-ios";
 			requirement = {
 				kind = exactVersion;
-				version = 4.0.0;
+				version = 4.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
