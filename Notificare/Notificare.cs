@@ -98,8 +98,10 @@ public static class Notificare
     public static bool HandleTestDeviceIntent(global::Android.Content.Intent intent) =>
         Platform.HandleTestDeviceIntent(intent);
 
-    public static bool HandleDynamicLinkIntent(global::Android.Content.Intent intent) =>
-        Platform.HandleDynamicLinkIntent(intent);
+    public static bool HandleDynamicLinkIntent(
+        global::Android.App.Activity activity, 
+        global::Android.Content.Intent intent
+    ) => Platform.HandleDynamicLinkIntent(activity, intent);
 
 #elif IOS
     public static bool HandleTestDeviceUrl(global::Foundation.NSUrl url) => Platform.HandleTestDeviceUrl(url);
