@@ -64,7 +64,7 @@ public static class NotificarePush
         remove => Platform.NotificationSettingsChanged -= value;
     }
 
-    public static event EventHandler<NotificarePushSubscriptionChangedEvent> SubscriptionChanged
+    public static event EventHandler<NotificarePushSubscriptionChangedEventArgs> SubscriptionChanged
     {
         add => Platform.SubscriptionChanged += value;
         remove => Platform.SubscriptionChanged -= value;

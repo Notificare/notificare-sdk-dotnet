@@ -23,7 +23,7 @@ public interface INotificarePushPlatform
 
     event EventHandler<NotificareNotificationSettingsChangedEventArgs> NotificationSettingsChanged;
 
-    event EventHandler<NotificarePushSubscriptionChangedEvent> SubscriptionChanged;
+    event EventHandler<NotificarePushSubscriptionChangedEventArgs> SubscriptionChanged;
 
     // TODO: onShouldOpenNotificationSettings
 

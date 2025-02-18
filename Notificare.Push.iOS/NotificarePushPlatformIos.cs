@@ -24,7 +24,7 @@ public class NotificarePushPlatformIos : INotificarePushPlatform
     public event EventHandler<NotificareNotificationOpenedEventArgs>? NotificationOpened;
     public event EventHandler<NotificareNotificationActionOpenedEventArgs>? NotificationActionOpened;
     public event EventHandler<NotificareNotificationSettingsChangedEventArgs>? NotificationSettingsChanged;
-    public event EventHandler<NotificarePushSubscriptionChangedEvent>? SubscriptionChanged;
+    public event EventHandler<NotificarePushSubscriptionChangedEventArgs>? SubscriptionChanged;
 
     public bool HasRemoteNotificationsEnabled => _native.HasRemoteNotificationsEnabled;
 
@@ -200,7 +200,7 @@ public class NotificarePushPlatformIos : INotificarePushPlatform
         {
             _platform.SubscriptionChanged?.Invoke(
                 _platform,
-                new NotificarePushSubscriptionChangedEvent(
+                new NotificarePushSubscriptionChangedEventArgs(
                     subscription: subscription == null ? null : NativeConverter.FromNativeSubscription(subscription)
                 )
             );
