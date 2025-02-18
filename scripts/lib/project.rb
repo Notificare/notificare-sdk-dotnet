@@ -127,6 +127,10 @@ class CSProject
     end
   end
 
+  def name
+    "#{component}/#{platform}"
+  end
+
   def clean
     Dir.chdir(directory) do
       execute_system_command('dotnet clean')
