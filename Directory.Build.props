@@ -6,18 +6,20 @@
         <ImplicitUsings>enable</ImplicitUsings>
 
         <Version>4.0.0-beta.1</Version>
+
+        <TargetPlatformIdentifier>$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)'))</TargetPlatformIdentifier>
+        <SupportedOSPlatformVersion Condition="'$(TargetPlatformIdentifier)' == 'android'">23</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="'$(TargetPlatformIdentifier)' == 'ios'">13.0</SupportedOSPlatformVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition="$(MSBuildProjectName.Contains('Android'))">
         <!--suppress MsbuildTargetFrameworkTagInspection -->
         <TargetFrameworks>net9.0-android</TargetFrameworks>
-        <SupportedOSPlatformVersion>23</SupportedOSPlatformVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition="$(MSBuildProjectName.Contains('iOS'))">
         <!--suppress MsbuildTargetFrameworkTagInspection -->
         <TargetFrameworks>net9.0-ios</TargetFrameworks>
-        <SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition="$(MSBuildProjectName.Contains('iOS.Binding'))">
