@@ -25,6 +25,7 @@ public class NotificarePushPlatformIos : INotificarePushPlatform
     public event EventHandler<NotificareNotificationActionOpenedEventArgs>? NotificationActionOpened;
     public event EventHandler<NotificareNotificationSettingsChangedEventArgs>? NotificationSettingsChanged;
     public event EventHandler<NotificarePushSubscriptionChangedEventArgs>? SubscriptionChanged;
+    public event EventHandler<NotificareShouldOpenNotificationSettingsEventArgs>? ShouldOpenNotificationSettings;
 
     public bool HasRemoteNotificationsEnabled => _native.HasRemoteNotificationsEnabled;
 
@@ -112,7 +113,7 @@ public class NotificarePushPlatformIos : INotificarePushPlatform
                     break;
             }
         }
-        
+
         _native.AuthorizationOptions = options;
     }
 
@@ -147,7 +148,7 @@ public class NotificarePushPlatformIos : INotificarePushPlatform
                     break;
             }
         }
-        
+
         _native.CategoryOptions = options;
     }
 
@@ -237,6 +238,21 @@ public class NotificarePushPlatformIos : INotificarePushPlatform
                 _platform,
                 new NotificareSystemNotificationReceivedEventArgs(
                     notification: NativeConverter.FromNativeSystemNotification(notification)
+                )
+            );
+        }
+
+        public override void ShouldOpenSettings(
+            Binding.NotificarePushNativeBinding notificarePush,
+            NotificareSdk.iOS.Binding.NotificareNotification? notification
+        )
+        {
+            _platform.ShouldOpenNotificationSettings?.Invoke(
+                _platform,
+                new NotificareShouldOpenNotificationSettingsEventArgs(
+                    notification: notification == null
+                        ? null
+                        : NotificareNativeConverter.FromNativeNotification(notification)
                 )
             );
         }

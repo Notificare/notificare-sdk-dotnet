@@ -81,6 +81,11 @@ namespace NotificareSdk.Push.iOS.Binding
 		[Export ("notificare:didReceiveSystemNotification:")]
 		void DidReceiveSystemNotification (NotificarePushNativeBinding notificarePush, NotificareSystemNotification notification);
 
+		// @required -(void)notificare:(NotificarePushNativeBinding * _Nonnull)notificarePush shouldOpenSettings:(NotificareNotification * _Nullable)notification;
+		[Abstract]
+		[Export ("notificare:shouldOpenSettings:")]
+		void ShouldOpenSettings (NotificarePushNativeBinding notificarePush, [NullAllowed] NotificareNotification notification);
+
 		// @required -(void)notificare:(NotificarePushNativeBinding * _Nonnull)notificarePush didOpenNotification:(NotificareNotification * _Nonnull)notification;
 		[Abstract]
 		[Export ("notificare:didOpenNotification:")]

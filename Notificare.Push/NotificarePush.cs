@@ -70,9 +70,13 @@ public static class NotificarePush
         remove => Platform.SubscriptionChanged -= value;
     }
 
-    // TODO: onShouldOpenNotificationSettings
-
-    // TODO: onFailedToRegisterForRemoteNotifications
+#if IOS
+    public static event EventHandler<NotificareShouldOpenNotificationSettingsEventArgs> ShouldOpenNotificationSettings
+    {
+        add => Platform.ShouldOpenNotificationSettings += value;
+        remove => Platform.ShouldOpenNotificationSettings -= value;
+    }
+#endif
 
 
     public static bool HasRemoteNotificationsEnabled => Platform.HasRemoteNotificationsEnabled;

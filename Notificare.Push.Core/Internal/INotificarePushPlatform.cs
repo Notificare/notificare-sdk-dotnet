@@ -25,9 +25,9 @@ public interface INotificarePushPlatform
 
     event EventHandler<NotificarePushSubscriptionChangedEventArgs> SubscriptionChanged;
 
-    // TODO: onShouldOpenNotificationSettings
-
-    // TODO: onFailedToRegisterForRemoteNotifications
+#if IOS
+    event EventHandler<NotificareShouldOpenNotificationSettingsEventArgs> ShouldOpenNotificationSettings;
+#endif
 
     bool HasRemoteNotificationsEnabled { get; }
 

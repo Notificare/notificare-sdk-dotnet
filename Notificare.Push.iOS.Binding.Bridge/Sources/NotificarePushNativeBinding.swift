@@ -112,6 +112,10 @@ extension NotificarePushNativeBinding : NotificarePushDelegate {
         delegate?.notificare(self, didReceiveSystemNotification: NotificareSystemNotification(from: notification))
     }
 
+    public func notificare(_ notificarePush: any NotificarePush, shouldOpenSettings notification: NotificareKit.NotificareNotification?) {
+        delegate?.notificare(self, shouldOpenSettings: notification.map { NotificareNotification(from: $0) })
+    }
+
     public func notificare(_ notificarePush: any NotificarePush, didOpenNotification notification: NotificareKit.NotificareNotification) {
         delegate?.notificare(self, didOpenNotification: NotificareBinding.NotificareNotification(from: notification))
     }
@@ -135,7 +139,7 @@ public protocol NotificarePushNativeBindingDelegate : NSObjectProtocol {
 
     func notificare(_ notificarePush: NotificarePushNativeBinding, didReceiveSystemNotification notification: NotificareSystemNotification)
 
-//    func notificare(_ notificarePush: NotificarePushNativeBinding, shouldOpenSettings notification: NotificareBinding.NotificareNotification?)
+    func notificare(_ notificarePush: NotificarePushNativeBinding, shouldOpenSettings notification: NotificareBinding.NotificareNotification?)
 
     func notificare(_ notificarePush: NotificarePushNativeBinding, didOpenNotification notification: NotificareBinding.NotificareNotification)
 
