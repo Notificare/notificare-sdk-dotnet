@@ -1,4 +1,5 @@
 ﻿using NotificareSdk.Core.Models;
+using NotificareSdk.Push.UI.Core.Events;
 using NotificareSdk.Push.UI.Core.Internal;
 
 namespace NotificareSdk.Push.UI;
@@ -27,7 +28,65 @@ public static class NotificarePushUI
     }
 
 
-    // TODO: notification lifecycle events
+    public static event EventHandler<NotificareNotificationWillPresentEventArgs> NotificationWillPresent
+    {
+        add => Platform.NotificationWillPresent += value;
+        remove => Platform.NotificationWillPresent -= value;
+    }
+
+    public static event EventHandler<NotificareNotificationPresentedEventArgs> NotificationPresented
+    {
+        add => Platform.NotificationPresented += value;
+        remove => Platform.NotificationPresented -= value;
+    }
+
+    public static event EventHandler<NotificareNotificationFinishedPresentingEventArgs> NotificationFinishedPresenting
+    {
+        add => Platform.NotificationFinishedPresenting += value;
+        remove => Platform.NotificationFinishedPresenting -= value;
+    }
+
+    public static event EventHandler<NotificareNotificationFailedToPresentEventArgs> NotificationFailedToPresent
+    {
+        add => Platform.NotificationFailedToPresent += value;
+        remove => Platform.NotificationFailedToPresent -= value;
+    }
+
+    public static event EventHandler<NotificareNotificationUrlClickedEventArgs> NotificationUrlClicked
+    {
+        add => Platform.NotificationUrlClicked += value;
+        remove => Platform.NotificationUrlClicked -= value;
+    }
+
+    public static event EventHandler<NotificareActionWillExecuteEventArgs> ActionWillExecute
+    {
+        add => Platform.ActionWillExecute += value;
+        remove => Platform.ActionWillExecute -= value;
+    }
+
+    public static event EventHandler<NotificareActionExecutedEventArgs> ActionExecuted
+    {
+        add => Platform.ActionExecuted += value;
+        remove => Platform.ActionExecuted -= value;
+    }
+
+    public static event EventHandler<NotificareActionNotExecutedEventArgs> ActionNotExecuted
+    {
+        add => Platform.ActionNotExecuted += value;
+        remove => Platform.ActionNotExecuted -= value;
+    }
+
+    public static event EventHandler<NotificareActionFailedToExecuteEventArgs> ActionFailedToExecute
+    {
+        add => Platform.ActionFailedToExecute += value;
+        remove => Platform.ActionFailedToExecute -= value;
+    }
+
+    public static event EventHandler<NotificareCustomActionReceivedEventArgs> CustomActionReceived
+    {
+        add => Platform.CustomActionReceived += value;
+        remove => Platform.CustomActionReceived -= value;
+    }
 
 
 #if ANDROID
