@@ -51,6 +51,11 @@ public class NotificarePushUIPlatformIos : INotificarePushUIPlatform
         );
     }
 
+    public bool RequiresViewController(NotificareNotification notification)
+    {
+        return _native.RequiresViewController(NotificareNativeConverter.ToNativeNotification(notification));
+    }
+
 
     private sealed class InternalNotificarePushUIDelegate : Binding.NotificarePushUINativeBindingDelegate
     {

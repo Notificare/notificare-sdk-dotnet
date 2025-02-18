@@ -25,6 +25,10 @@ namespace NotificareSdk.Push.UI.iOS.Binding
 		// -(void)presentAction:(NotificareNotificationAction * _Nonnull)action for:(NotificareNotification * _Nonnull)notification in:(UIViewController * _Nonnull)controller;
 		[Export ("presentAction:for:in:")]
 		void PresentAction (NotificareNotificationAction action, NotificareNotification notification, UIViewController controller);
+
+		// -(BOOL)requiresViewController:(NotificareNotification * _Nonnull)notification __attribute__((warn_unused_result("")));
+		[Export ("requiresViewController:")]
+		bool RequiresViewController (NotificareNotification notification);
 	}
 
 	// @protocol NotificarePushUINativeBindingDelegate <NSObject>

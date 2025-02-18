@@ -54,6 +54,11 @@ public static class NotificarePushUI
         UIViewController controller
     ) => Platform.PresentAction(notification, action, controller);
 
+    public static bool RequiresViewController(this NotificareNotification notification)
+    {
+        return Platform.RequiresViewController(notification);
+    }
+
 #endif
 
 

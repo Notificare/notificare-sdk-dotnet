@@ -29,6 +29,11 @@ public class NotificarePushUINativeBinding : NSObject {
     public func presentAction(_ action: NotificareBinding.NotificareNotificationAction, for notification: NotificareBinding.NotificareNotification, in controller: UIViewController) {
         Notificare.shared.pushUI().presentAction(action.toNative(), for: notification.toNative(), in: controller)
     }
+
+    @objc
+    public func requiresViewController(_ notification: NotificareBinding.NotificareNotification) -> Bool {
+        return notification.toNative().requiresViewController
+    }
 }
 
 extension NotificarePushUINativeBinding : NotificarePushUIDelegate {

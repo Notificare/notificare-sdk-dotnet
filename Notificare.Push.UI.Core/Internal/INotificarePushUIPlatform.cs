@@ -26,5 +26,7 @@ public interface INotificarePushUIPlatform
     void PresentNotification(NotificareNotification notification, UIViewController controller);
 
     void PresentAction(NotificareNotification notification, NotificareNotificationAction action, UIViewController controller);
+    
+    bool RequiresViewController(NotificareNotification notification);
 #endif
 }
