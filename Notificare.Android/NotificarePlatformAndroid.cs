@@ -116,6 +116,16 @@ public class NotificarePlatformAndroid : INotificarePlatform
         return evaluatedDeferredLink.BooleanValue();
     }
 
+    public bool HandleTestDeviceIntent(Intent intent)
+    {
+        return NativeNotificare.HandleTestDeviceIntent(intent);
+    }
+
+    public bool HandleDynamicLinkIntent(Activity activity, Intent intent)
+    {
+        return NativeNotificare.HandleDynamicLinkIntent(activity, intent);
+    }
+
     #region Device Module
 
     public NotificareDevice? CurrentDevice

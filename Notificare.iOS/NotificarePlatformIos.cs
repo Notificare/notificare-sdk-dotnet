@@ -128,6 +128,16 @@ public class NotificarePlatformIos : INotificarePlatform
         return completion.Task;
     }
 
+    public bool HandleTestDeviceUrl(NSUrl url)
+    {
+        return _native.HandleTestDeviceUrl(url);
+    }
+
+    public bool HandleDynamicLinkUrl(NSUrl url)
+    {
+        return _native.HandleDynamicLinkUrl(url);
+    }
+
     #region Device Module
 
     public NotificareDevice? CurrentDevice

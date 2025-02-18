@@ -45,7 +45,7 @@ public interface INotificarePlatform
 #if ANDROID
     bool HandleTestDeviceIntent(global::Android.Content.Intent intent);
     
-    bool HandleDynamicLinkIntent(global::Android.Content.Intent intent);
+    bool HandleDynamicLinkIntent(global::Android.App.Activity activity, global::Android.Content.Intent intent);
 #elif IOS
     bool HandleTestDeviceUrl(global::Foundation.NSUrl url);
     
