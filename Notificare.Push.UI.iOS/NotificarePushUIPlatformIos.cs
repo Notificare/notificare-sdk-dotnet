@@ -66,7 +66,7 @@ public class NotificarePushUIPlatformIos : INotificarePushUIPlatform
             _platform = platform;
         }
 
-        public void WillPresentNotification(
+        public override void WillPresentNotification(
             Binding.NotificarePushUINativeBinding notificarePushUI,
             NotificareSdk.iOS.Binding.NotificareNotification notification
         )
@@ -79,7 +79,7 @@ public class NotificarePushUIPlatformIos : INotificarePushUIPlatform
             );
         }
 
-        public void DidPresentNotification(
+        public override void DidPresentNotification(
             Binding.NotificarePushUINativeBinding notificarePushUI,
             NotificareSdk.iOS.Binding.NotificareNotification notification
         )
@@ -92,7 +92,7 @@ public class NotificarePushUIPlatformIos : INotificarePushUIPlatform
             );
         }
 
-        public void DidFinishPresentingNotification(
+        public override void DidFinishPresentingNotification(
             Binding.NotificarePushUINativeBinding notificarePushUI,
             NotificareSdk.iOS.Binding.NotificareNotification notification
         )
@@ -105,7 +105,7 @@ public class NotificarePushUIPlatformIos : INotificarePushUIPlatform
             );
         }
 
-        public void DidFailToPresentNotification(
+        public override void DidFailToPresentNotification(
             Binding.NotificarePushUINativeBinding notificarePushUI,
             NotificareSdk.iOS.Binding.NotificareNotification notification
         )
@@ -118,7 +118,7 @@ public class NotificarePushUIPlatformIos : INotificarePushUIPlatform
             );
         }
 
-        public void DidClickURL(
+        public override void DidClickURL(
             Binding.NotificarePushUINativeBinding notificarePushUI,
             NSUrl url,
             NotificareSdk.iOS.Binding.NotificareNotification notification
@@ -136,7 +136,7 @@ public class NotificarePushUIPlatformIos : INotificarePushUIPlatform
             );
         }
 
-        public void WillExecuteAction(
+        public override void WillExecuteAction(
             Binding.NotificarePushUINativeBinding notificarePushUI,
             NotificareSdk.iOS.Binding.NotificareNotificationAction action,
             NotificareSdk.iOS.Binding.NotificareNotification notification
@@ -151,7 +151,7 @@ public class NotificarePushUIPlatformIos : INotificarePushUIPlatform
             );
         }
 
-        public void DidExecuteAction(
+        public override void DidExecuteAction(
             Binding.NotificarePushUINativeBinding notificarePushUI,
             NotificareSdk.iOS.Binding.NotificareNotificationAction action,
             NotificareSdk.iOS.Binding.NotificareNotification notification
@@ -166,7 +166,7 @@ public class NotificarePushUIPlatformIos : INotificarePushUIPlatform
             );
         }
 
-        public void DidNotExecuteAction(
+        public override void DidNotExecuteAction(
             Binding.NotificarePushUINativeBinding notificarePushUI,
             NotificareSdk.iOS.Binding.NotificareNotificationAction action,
             NotificareSdk.iOS.Binding.NotificareNotification notification
@@ -181,7 +181,7 @@ public class NotificarePushUIPlatformIos : INotificarePushUIPlatform
             );
         }
 
-        public void DidFailToExecuteAction(
+        public override void DidFailToExecuteAction(
             Binding.NotificarePushUINativeBinding notificarePushUI,
             NotificareSdk.iOS.Binding.NotificareNotificationAction action,
             NotificareSdk.iOS.Binding.NotificareNotification notification,
@@ -198,7 +198,7 @@ public class NotificarePushUIPlatformIos : INotificarePushUIPlatform
             );
         }
 
-        public void DidReceiveCustomAction(
+        public override void DidReceiveCustomAction(
             Binding.NotificarePushUINativeBinding notificarePushUI,
             NSUrl url,
             NotificareSdk.iOS.Binding.NotificareNotificationAction action,
