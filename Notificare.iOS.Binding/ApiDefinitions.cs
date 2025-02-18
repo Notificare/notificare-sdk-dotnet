@@ -274,6 +274,14 @@ namespace NotificareSdk.iOS.Binding
 		[Export ("evaluateDeferredLink::")]
 		void EvaluateDeferredLink (Action<bool> onSuccess, Action<NSError> onFailure);
 
+		// -(BOOL)handleTestDeviceUrl:(NSURL * _Nonnull)url __attribute__((warn_unused_result("")));
+		[Export ("handleTestDeviceUrl:")]
+		bool HandleTestDeviceUrl (NSUrl url);
+
+		// -(BOOL)handleDynamicLinkUrl:(NSURL * _Nonnull)url __attribute__((warn_unused_result("")));
+		[Export ("handleDynamicLinkUrl:")]
+		bool HandleDynamicLinkUrl (NSUrl url);
+
 		// @property (readonly, nonatomic, strong) NotificareDevice * _Nullable currentDevice;
 		[NullAllowed, Export ("currentDevice", ArgumentSemantic.Strong)]
 		NotificareDevice CurrentDevice { get; }

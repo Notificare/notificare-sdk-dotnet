@@ -41,6 +41,16 @@ public interface INotificarePlatform
     Task<bool> CanEvaluateDeferredLinkAsync();
 
     Task<bool> EvaluateDeferredLinkAsync();
+    
+#if ANDROID
+    bool HandleTestDeviceIntent(global::Android.Content.Intent intent);
+    
+    bool HandleDynamicLinkIntent(global::Android.Content.Intent intent);
+#elif IOS
+    bool HandleTestDeviceUrl(global::Foundation.NSUrl url);
+    
+    bool HandleDynamicLinkUrl(global::Foundation.NSUrl url);
+#endif
 
     #region Device Module
 

@@ -94,6 +94,20 @@ public static class Notificare
 
     public static Task<bool> EvaluateDeferredLinkAsync() => Platform.EvaluateDeferredLinkAsync();
 
+#if ANDROID
+    public static bool HandleTestDeviceIntent(global::Android.Content.Intent intent) =>
+        Platform.HandleTestDeviceIntent(intent);
+
+    public static bool HandleDynamicLinkIntent(global::Android.Content.Intent intent) =>
+        Platform.HandleDynamicLinkIntent(intent);
+
+#elif IOS
+    public static bool HandleTestDeviceUrl(global::Foundation.NSUrl url) => Platform.HandleTestDeviceUrl(url);
+    
+    public static bool HandleDynamicLinkUrl(global::Foundation.NSUrl url) => Platform.HandleDynamicLinkUrl(url);
+
+#endif
+
 
     private static INotificarePlatform CreateNotificare()
     {

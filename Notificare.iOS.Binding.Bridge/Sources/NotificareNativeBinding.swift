@@ -126,6 +126,16 @@ public class NotificareNativeBinding : NSObject {
         }
     }
 
+    @objc
+    public func handleTestDeviceUrl(_ url: URL) -> Bool {
+        return Notificare.shared.handleTestDeviceUrl(url)
+    }
+
+    @objc
+    public func handleDynamicLinkUrl(_ url: URL) -> Bool {
+        return Notificare.shared.handleDynamicLinkUrl(url)
+    }
+
     // MARK: - Notificare Device
 
     @objc
