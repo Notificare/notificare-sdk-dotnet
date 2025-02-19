@@ -26,7 +26,6 @@ public partial class InboxPage : ContentPage
         viewModel.Cleanup();
     }
 
-    // TODO: Currently we dismiss popup before presenting notification (https://github.com/CommunityToolkit/Maui/issues/1973). Implement better solution
     private void OnItemTapped(NotificareInboxItem item)
     {
         var viewModel = (InboxViewModel)BindingContext;
@@ -46,10 +45,10 @@ public partial class InboxPage : ContentPage
                         Text = "Open",
                         TextColor = Colors.Black,
                         BackgroundColor = Colors.White,
-                        Command = new Command(async () =>
+                        Command = new Command(() =>
                         {
-                            await popup.CloseAsync();
                             viewModel.Open(item);
+                            popup.Close();
                         }),
                     },
                     new Button

@@ -1,6 +1,7 @@
 ﻿using NotificareSdk.Push;
 using NotificareSdk.Push.Core.Events;
 using NotificareSdk.Push.UI;
+using UIKit;
 
 namespace Sample;
 
@@ -21,7 +22,7 @@ public partial class App : Application
             NotificarePushUI.PresentNotification(e.Notification, activity!);
 
 #elif IOS
-            var viewController = Platform.GetCurrentUIViewController();
+            var viewController = UIApplication.SharedApplication.KeyWindow.RootViewController;
             NotificarePushUI.PresentNotification(e.Notification, viewController!);
 #endif
 	}
@@ -33,7 +34,7 @@ public partial class App : Application
             NotificarePushUI.PresentAction(e.Notification, e.Action, activity!);
 
 #elif IOS
-            var viewController = Platform.GetCurrentUIViewController();
+            var viewController = UIApplication.SharedApplication.KeyWindow.RootViewController;
             NotificarePushUI.PresentAction(e.Notification, e.Action, viewController!);
 
 #endif

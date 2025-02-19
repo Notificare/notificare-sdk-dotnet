@@ -4,6 +4,7 @@ using NotificareSdk.Inbox;
 using NotificareSdk.Inbox.Core.Events;
 using NotificareSdk.Inbox.Core.Models;
 using NotificareSdk.Push.UI;
+using UIKit;
 
 namespace Sample.ViewModels;
 
@@ -51,7 +52,7 @@ public partial class InboxViewModel : ObservableObject
             try
             {
                 var notification = await NotificareInbox.OpenAsync(item);
-                var viewController = Platform.GetCurrentUIViewController();
+                var viewController = UIApplication.SharedApplication.KeyWindow.RootViewController;
                 NotificarePushUI.PresentNotification(notification, viewController!);
 
                 Console.WriteLine("Opened and presented inbox item successfully.");

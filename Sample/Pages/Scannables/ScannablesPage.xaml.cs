@@ -1,6 +1,7 @@
 using NotificareSdk.Push.UI;
 using NotificareSdk.Scannables;
 using NotificareSdk.Scannables.Core.Events;
+using UIKit;
 
 namespace Sample.Pages.Scannables;
 
@@ -28,20 +29,16 @@ public partial class ScannablesPage : ContentPage
         }
 
         NotificareScannables.StartQrCodeScannableSession(activity);
-
 #elif IOS
-        var viewController = Platform.GetCurrentUIViewController();
+        var viewController = UIApplication.SharedApplication.KeyWindow.RootViewController;
 
         if (viewController == null)
         {
-            Console.WriteLine("Could not initiate QrCode scannable session. Activity is null.");
+            Console.WriteLine("Could not initiate QrCode scannable session. View controller is null.");
             return;
         }
-        
-        Console.WriteLine("Start QR here.");
 
         NotificareScannables.StartQrCodeScannableSession(viewController, true);
-
 #endif
     }
 
@@ -57,9 +54,8 @@ public partial class ScannablesPage : ContentPage
         }
 
         NotificareScannables.StartNfcScannableSession(activity);
-
 #elif IOS
-        var viewController = Platform.GetCurrentUIViewController();
+        var viewController = UIApplication.SharedApplication.KeyWindow.RootViewController;
 
         if (viewController == null)
         {
@@ -68,14 +64,11 @@ public partial class ScannablesPage : ContentPage
         }
 
         NotificareScannables.StartNfcScannableSession();
-
 #endif
     }
 
     private void OnScannableDetected(object? sender, NotificareScannableDetectedEventArgs e)
     {
-        Console.WriteLine("Scannable detected.");
-        
         var notification = e.Scannable.Notification;
 
         if (notification == null)
@@ -96,7 +89,7 @@ public partial class ScannablesPage : ContentPage
         NotificarePushUI.PresentNotification(notification, activity);
 
 #elif IOS
-        var viewController = Platform.GetCurrentUIViewController();
+        var viewController = UIApplication.SharedApplication.KeyWindow.RootViewController;
 
         if (viewController == null)
         {
