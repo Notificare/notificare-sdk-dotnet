@@ -22,6 +22,8 @@ public class AppDelegate : MauiUIApplicationDelegate
             {
                 NotificarePush.SetPresentationOptions(new List<string> { "banner", "badge", "sound" });
                 await Notificare.LaunchAsync();
+                
+                Console.WriteLine($"Notificare launch finish here!");
             }
             catch (Exception e)
             {
@@ -30,5 +32,41 @@ public class AppDelegate : MauiUIApplicationDelegate
         });
 
         return base.FinishedLaunching(application, launchOptions);
+    }
+    
+    public override bool OpenUrl(UIApplication application, NSUrl url, NSDictionary options)
+    {
+        if (Notificare.HandleTestDeviceUrl(url))
+        {
+            return true;
+        }
+        
+        if (Notificare.HandleDynamicLinkUrl(url))
+        {
+            return true;
+        }
+
+        HandleAppLink(url.AbsoluteString);
+        return false;
+    }
+
+    public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity,
+        UIApplicationRestorationHandler completionHandler)
+    {
+        var url = userActivity.WebPageUrl;
+        if (url == null) return false;
+
+        if (Notificare.HandleTestDeviceUrl(url))
+        {
+            return true;
+        }
+
+        return Notificare.HandleDynamicLinkUrl(url);
+    }
+    
+    static void HandleAppLink(string url)
+    {
+        if (Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out var uri))
+            App.Current?.SendOnAppLinkRequestReceived(uri);
     }
 }
