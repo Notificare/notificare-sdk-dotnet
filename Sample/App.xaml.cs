@@ -1,7 +1,10 @@
 ﻿using NotificareSdk.Push;
 using NotificareSdk.Push.Core.Events;
 using NotificareSdk.Push.UI;
+
+#if IOS
 using UIKit;
+#endif
 
 namespace Sample;
 
@@ -48,12 +51,12 @@ public partial class App : Application
 	protected override async void OnAppLinkRequestReceived(Uri uri)
 	{
 		base.OnAppLinkRequestReceived(uri);
+		
+		Console.WriteLine("Deep link received:  " + uri);
 
 		await Dispatcher.DispatchAsync(async () =>
 		{
 			await Windows[0].Page!.DisplayAlert("Deep link received", uri.ToString(), "OK");
 		});
-
-		Console.WriteLine("Deep link received:  " + uri.ToString());
 	}
 }

@@ -1,7 +1,10 @@
 using NotificareSdk.Push.UI;
 using NotificareSdk.Scannables;
 using NotificareSdk.Scannables.Core.Events;
+
+#if IOS
 using UIKit;
+#endif
 
 namespace Sample.Pages.Scannables;
 

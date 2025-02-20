@@ -4,7 +4,10 @@ using NotificareSdk.Inbox;
 using NotificareSdk.Inbox.Core.Events;
 using NotificareSdk.Inbox.Core.Models;
 using NotificareSdk.Push.UI;
+
+#if IOS
 using UIKit;
+#endif
 
 namespace Sample.ViewModels;
 
