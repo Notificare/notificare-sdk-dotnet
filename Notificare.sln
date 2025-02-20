@@ -151,6 +151,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.UserInbox.Androi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.UserInbox", "Notificare.UserInbox\Notificare.UserInbox.csproj", "{052F6FA6-CCD5-46E1-8FA2-A7A4F24F7EE1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notificare.Geo.Android.Beacons", "Notificare.Geo.Android.Beacons\Notificare.Geo.Android.Beacons.csproj", "{A4D4F5BE-865F-4E8D-9A3A-01170B7BAF8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -409,6 +411,10 @@ Global
 		{052F6FA6-CCD5-46E1-8FA2-A7A4F24F7EE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{052F6FA6-CCD5-46E1-8FA2-A7A4F24F7EE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{052F6FA6-CCD5-46E1-8FA2-A7A4F24F7EE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4D4F5BE-865F-4E8D-9A3A-01170B7BAF8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4D4F5BE-865F-4E8D-9A3A-01170B7BAF8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4D4F5BE-865F-4E8D-9A3A-01170B7BAF8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4D4F5BE-865F-4E8D-9A3A-01170B7BAF8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -476,5 +482,6 @@ Global
 		{7D6C3E89-B8EF-4967-BA94-B9DCB360F337} = {E7C6186C-8602-40D7-84BE-8AFE8EC2CDA8}
 		{BDDF51C8-2F17-402F-A356-7DF8DF88FFF3} = {E7C6186C-8602-40D7-84BE-8AFE8EC2CDA8}
 		{052F6FA6-CCD5-46E1-8FA2-A7A4F24F7EE1} = {E7C6186C-8602-40D7-84BE-8AFE8EC2CDA8}
+		{A4D4F5BE-865F-4E8D-9A3A-01170B7BAF8E} = {B75044A9-4319-47A6-846D-7608EF787314}
 	EndGlobalSection
 EndGlobal
