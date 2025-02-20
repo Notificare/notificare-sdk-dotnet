@@ -28,6 +28,14 @@
 		<CodesignEntitlements>Platforms\iOS\Entitlements.plist</CodesignEntitlements>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="$(TargetFramework.Contains('-android')) and '$(Configuration)' == 'Debug'">
+		<AndroidKeyStore>true</AndroidKeyStore>
+		<AndroidSigningKeyStore>Platforms\Android\debug.keystore</AndroidSigningKeyStore>
+		<AndroidSigningKeyAlias>notificare</AndroidSigningKeyAlias>
+		<AndroidSigningKeyPass>env:AndroidSigningKeyPass</AndroidSigningKeyPass>
+		<AndroidSigningStorePass>env:AndroidSigningStorePass</AndroidSigningStorePass>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
