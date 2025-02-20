@@ -21,8 +21,11 @@ public class NotificarePushPlatformIos : INotificarePushPlatform
 
     public event EventHandler<NotificareNotificationReceivedEventArgs>? NotificationReceived;
     public event EventHandler<NotificareSystemNotificationReceivedEventArgs>? SystemNotificationReceived;
+    public event EventHandler<NotificareUnknownNotificationReceivedEventArgs>? UnknownNotificationReceived;
     public event EventHandler<NotificareNotificationOpenedEventArgs>? NotificationOpened;
+    public event EventHandler<NotificareUnknownNotificationOpenedEventArgs>? UnknownNotificationOpened;
     public event EventHandler<NotificareNotificationActionOpenedEventArgs>? NotificationActionOpened;
+    public event EventHandler<NotificareUnknownNotificationActionOpenedEventArgs>? UnknownNotificationActionOpened;
     public event EventHandler<NotificareNotificationSettingsChangedEventArgs>? NotificationSettingsChanged;
     public event EventHandler<NotificarePushSubscriptionChangedEventArgs>? SubscriptionChanged;
     public event EventHandler<NotificareShouldOpenNotificationSettingsEventArgs>? ShouldOpenNotificationSettings;
@@ -196,8 +199,10 @@ public class NotificarePushPlatformIos : INotificarePushPlatform
         }
 
 
-        public override void DidChangeSubscription(Binding.NotificarePushNativeBinding notificarePush,
-            Binding.NotificarePushSubscription? subscription)
+        public override void DidChangeSubscription(
+            Binding.NotificarePushNativeBinding notificarePush,
+            Binding.NotificarePushSubscription? subscription
+        )
         {
             _platform.SubscriptionChanged?.Invoke(
                 _platform,
@@ -207,8 +212,10 @@ public class NotificarePushPlatformIos : INotificarePushPlatform
             );
         }
 
-        public override void DidChangeNotificationSettings(Binding.NotificarePushNativeBinding notificarePush,
-            bool allowedUI)
+        public override void DidChangeNotificationSettings(
+            Binding.NotificarePushNativeBinding notificarePush,
+            bool allowedUI
+        )
         {
             _platform.NotificationSettingsChanged?.Invoke(
                 _platform,
@@ -218,9 +225,11 @@ public class NotificarePushPlatformIos : INotificarePushPlatform
             );
         }
 
-        public override void DidReceiveNotification(Binding.NotificarePushNativeBinding notificarePush,
+        public override void DidReceiveNotification(
+            Binding.NotificarePushNativeBinding notificarePush,
             NotificareSdk.iOS.Binding.NotificareNotification notification,
-            Binding.NotificareNotificationDeliveryMechanism deliveryMechanism)
+            Binding.NotificareNotificationDeliveryMechanism deliveryMechanism
+        )
         {
             _platform.NotificationReceived?.Invoke(
                 _platform,
@@ -231,13 +240,28 @@ public class NotificarePushPlatformIos : INotificarePushPlatform
             );
         }
 
-        public override void DidReceiveSystemNotification(Binding.NotificarePushNativeBinding notificarePush,
-            Binding.NotificareSystemNotification notification)
+        public override void DidReceiveSystemNotification(
+            Binding.NotificarePushNativeBinding notificarePush,
+            Binding.NotificareSystemNotification notification
+        )
         {
             _platform.SystemNotificationReceived?.Invoke(
                 _platform,
                 new NotificareSystemNotificationReceivedEventArgs(
                     notification: NativeConverter.FromNativeSystemNotification(notification)
+                )
+            );
+        }
+
+        public override void DidReceiveUnknownNotification(
+            Binding.NotificarePushNativeBinding notificarePush,
+            NSDictionary userInfo
+        )
+        {
+            _platform.UnknownNotificationReceived?.Invoke(
+                _platform,
+                new NotificareUnknownNotificationReceivedEventArgs(
+                    notification: NotificareNativeConverter.FromNativeExtraDictionary(userInfo)
                 )
             );
         }
@@ -257,8 +281,10 @@ public class NotificarePushPlatformIos : INotificarePushPlatform
             );
         }
 
-        public override void DidOpenNotification(Binding.NotificarePushNativeBinding notificarePush,
-            NotificareSdk.iOS.Binding.NotificareNotification notification)
+        public override void DidOpenNotification(
+            Binding.NotificarePushNativeBinding notificarePush,
+            NotificareSdk.iOS.Binding.NotificareNotification notification
+        )
         {
             _platform.NotificationOpened?.Invoke(
                 _platform,
@@ -268,15 +294,47 @@ public class NotificarePushPlatformIos : INotificarePushPlatform
             );
         }
 
-        public override void DidOpenAction(Binding.NotificarePushNativeBinding notificarePush,
+        public override void DidOpenUnknownNotification(
+            Binding.NotificarePushNativeBinding notificarePush,
+            NSDictionary userInfo
+        )
+        {
+            _platform.UnknownNotificationOpened?.Invoke(
+                _platform,
+                new NotificareUnknownNotificationOpenedEventArgs(
+                    notification: NotificareNativeConverter.FromNativeExtraDictionary(userInfo)
+                )
+            );
+        }
+
+        public override void DidOpenAction(
+            Binding.NotificarePushNativeBinding notificarePush,
             NotificareSdk.iOS.Binding.NotificareNotificationAction action,
-            NotificareSdk.iOS.Binding.NotificareNotification notification)
+            NotificareSdk.iOS.Binding.NotificareNotification notification
+        )
         {
             _platform.NotificationActionOpened?.Invoke(
                 _platform,
                 new NotificareNotificationActionOpenedEventArgs(
                     notification: NotificareNativeConverter.FromNativeNotification(notification),
                     action: NotificareNativeConverter.FromNativeNotificationAction(action)
+                )
+            );
+        }
+
+        public override void DidOpenUnknownAction(
+            Binding.NotificarePushNativeBinding notificarePush,
+            string action,
+            NSDictionary notification,
+            string? responseText
+        )
+        {
+            _platform.UnknownNotificationActionOpened?.Invoke(
+                _platform,
+                new NotificareUnknownNotificationActionOpenedEventArgs(
+                    notification: NotificareNativeConverter.FromNativeExtraDictionary(notification),
+                    action: action,
+                    responseText: responseText
                 )
             );
         }

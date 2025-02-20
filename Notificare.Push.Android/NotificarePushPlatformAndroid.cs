@@ -25,8 +25,11 @@ public class NotificarePushPlatformAndroid : INotificarePushPlatform
 
     public event EventHandler<NotificareNotificationReceivedEventArgs>? NotificationReceived;
     public event EventHandler<NotificareSystemNotificationReceivedEventArgs>? SystemNotificationReceived;
+    public event EventHandler<NotificareUnknownNotificationReceivedEventArgs>? UnknownNotificationReceived;
     public event EventHandler<NotificareNotificationOpenedEventArgs>? NotificationOpened;
+    public event EventHandler<NotificareUnknownNotificationOpenedEventArgs>? UnknownNotificationOpened;
     public event EventHandler<NotificareNotificationActionOpenedEventArgs>? NotificationActionOpened;
+    public event EventHandler<NotificareUnknownNotificationActionOpenedEventArgs>? UnknownNotificationActionOpened;
     public event EventHandler<NotificareNotificationSettingsChangedEventArgs>? NotificationSettingsChanged;
     public event EventHandler<NotificarePushSubscriptionChangedEventArgs>? SubscriptionChanged;
 
@@ -56,7 +59,7 @@ public class NotificarePushPlatformAndroid : INotificarePushPlatform
     {
         return NativeNotificare.HandleTrampolineIntent(intent);
     }
-    
+
     public async Task EnableRemoteNotificationsAsync()
     {
         var callback = new NotificareAwaitableCallback();
@@ -212,6 +215,12 @@ public class NotificarePushPlatformAndroid : INotificarePushPlatform
             Context context,
             Binding.Models.NotificareUnknownNotification notification)
         {
+            Platform?.UnknownNotificationReceived?.Invoke(
+                this,
+                new NotificareUnknownNotificationReceivedEventArgs(
+                    notification: NativeConverter.FromNativeUnknownNotification(notification)
+                )
+            );
         }
 
         protected override void OnNotificationOpened(

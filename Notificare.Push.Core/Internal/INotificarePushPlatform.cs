@@ -11,15 +11,15 @@ public interface INotificarePushPlatform
 
     event EventHandler<NotificareSystemNotificationReceivedEventArgs> SystemNotificationReceived;
 
-    // TODO: onUnknownNotificationReceived
+    event EventHandler<NotificareUnknownNotificationReceivedEventArgs> UnknownNotificationReceived; 
 
     event EventHandler<NotificareNotificationOpenedEventArgs> NotificationOpened;
 
-    // TODO: onUnknownNotificationOpened
+    event EventHandler<NotificareUnknownNotificationOpenedEventArgs> UnknownNotificationOpened;
 
     event EventHandler<NotificareNotificationActionOpenedEventArgs> NotificationActionOpened;
 
-    // TODO: onUnknownNotificationActionOpened
+    event EventHandler<NotificareUnknownNotificationActionOpenedEventArgs> UnknownNotificationActionOpened;
 
     event EventHandler<NotificareNotificationSettingsChangedEventArgs> NotificationSettingsChanged;
 

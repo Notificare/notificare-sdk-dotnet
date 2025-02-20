@@ -40,7 +40,11 @@ public static class NotificarePush
         remove => Platform.SystemNotificationReceived -= value;
     }
 
-    // TODO: onUnknownNotificationReceived
+    public static event EventHandler<NotificareUnknownNotificationReceivedEventArgs> UnknownNotificationReceived
+    {
+        add => Platform.UnknownNotificationReceived += value;
+        remove => Platform.UnknownNotificationReceived -= value;
+    }
 
     public static event EventHandler<NotificareNotificationOpenedEventArgs> NotificationOpened
     {
@@ -48,7 +52,11 @@ public static class NotificarePush
         remove => Platform.NotificationOpened -= value;
     }
 
-    // TODO: onUnknownNotificationOpened
+    public static event EventHandler<NotificareUnknownNotificationOpenedEventArgs> UnknownNotificationOpened
+    {
+        add => Platform.UnknownNotificationOpened += value;
+        remove => Platform.UnknownNotificationOpened -= value;
+    }
 
     public static event EventHandler<NotificareNotificationActionOpenedEventArgs> NotificationActionOpened
     {
@@ -56,7 +64,11 @@ public static class NotificarePush
         remove => Platform.NotificationActionOpened -= value;
     }
 
-    // TODO: onUnknownNotificationActionOpened
+    public static event EventHandler<NotificareUnknownNotificationActionOpenedEventArgs> UnknownNotificationActionOpened
+    {
+        add => Platform.UnknownNotificationActionOpened += value;
+        remove => Platform.UnknownNotificationActionOpened -= value;
+    }
 
     public static event EventHandler<NotificareNotificationSettingsChangedEventArgs> NotificationSettingsChanged
     {
