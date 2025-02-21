@@ -57,7 +57,5 @@
                 </FlexLayout>
             </VerticalStackLayout>
         </views:CardView>
-
     </VerticalStackLayout>
-
 </ContentView>

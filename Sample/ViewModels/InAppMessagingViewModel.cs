@@ -13,9 +13,9 @@ public partial class InAppMessagingViewModel : ObservableObject
         Suppressed = NotificareInAppMessaging.HasMessagesSuppressed;
     }
 
-    partial void OnSuppressedChanged(bool suppressed)
+    partial void OnSuppressedChanged(bool value)
     {
-        SetMessagesSuppressed(suppressed);
+        SetMessagesSuppressed(value);
     }
 
     private void SetMessagesSuppressed(bool  suppressed)

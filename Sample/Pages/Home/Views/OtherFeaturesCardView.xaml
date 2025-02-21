@@ -41,8 +41,6 @@
                     IconText="{x:Static models:Icons.Event}"
                     LabelText="Custom Events" />
             </ContentView>
-
         </VerticalStackLayout>
     </views:CardView>
-
 </ContentView>

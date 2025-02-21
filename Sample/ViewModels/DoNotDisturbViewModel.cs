@@ -20,7 +20,7 @@ public partial class DoNotDisturbViewModel : ObservableObject
         {
             try
             {
-                Console.WriteLine($"Check DnD here");
+                Console.WriteLine("Check DnD here");
                 await Notificare.Device.ClearDoNotDisturbAsync();
 
                 Console.WriteLine("DnD cleared successfully.");

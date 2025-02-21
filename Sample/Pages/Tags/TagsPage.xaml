@@ -35,13 +35,23 @@
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>
-
+                        
                         <Label
-                            x:Name="NoTagsLabel"
                             Text="No Tags"
                             TextTransform="Uppercase"
                             FontSize="12"
-                            Padding="8, 0" />
+                            IsVisible="False"
+                            Padding="8, 0">
+
+                            <Label.Triggers>
+                                <DataTrigger
+                                    TargetType="Label"
+                                    Binding="{Binding Tags.Count, FallbackValue='0'}"
+                                    Value="0">
+                                    <Setter Property="IsVisible" Value="True" />
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
                     </VerticalStackLayout>
                 </views:CardView>
 

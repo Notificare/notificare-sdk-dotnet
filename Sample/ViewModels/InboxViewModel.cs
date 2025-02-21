@@ -142,7 +142,6 @@ public partial class InboxViewModel : ObservableObject
 
     private void OnInboxUpdated(object? sender, NotificareInboxUpdatedEventArgs e)
     {
-        Console.WriteLine($"✅ OnInboxUpdated here: {e.Items.Count}");
         Items = e.Items;
     }
 }

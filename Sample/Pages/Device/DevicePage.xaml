@@ -165,7 +165,6 @@
                             CornerRadius="0" />
                     </VerticalStackLayout>
                 </views:CardView>
-
             </VerticalStackLayout>
         </ScrollView>
     </ContentPage.Content>

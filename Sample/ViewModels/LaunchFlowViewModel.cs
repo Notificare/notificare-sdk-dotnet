@@ -28,7 +28,7 @@ public partial class LaunchFlowViewModel : ObservableObject
     }
 
     [RelayCommand]
-    private async void Launch()
+    private async Task Launch()
     {
         try
         {
@@ -42,7 +42,7 @@ public partial class LaunchFlowViewModel : ObservableObject
     }
 
     [RelayCommand]
-    private async void Unlaunch()
+    private async Task Unlaunch()
     {
         try
         {

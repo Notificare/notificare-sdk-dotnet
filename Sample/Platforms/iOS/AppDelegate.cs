@@ -22,8 +22,6 @@ public class AppDelegate : MauiUIApplicationDelegate
             {
                 NotificarePush.SetPresentationOptions(new List<string> { "banner", "badge", "sound" });
                 await Notificare.LaunchAsync();
-                
-                Console.WriteLine($"Notificare launch finish here!");
             }
             catch (Exception e)
             {

@@ -27,6 +27,5 @@
                     LabelText="Current Device" />
             </ContentView>
         </views:CardView>
-
     </VerticalStackLayout>
 </ContentView>

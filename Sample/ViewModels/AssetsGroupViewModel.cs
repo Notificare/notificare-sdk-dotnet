@@ -14,11 +14,12 @@ public partial class AssetsGroupViewModel : ObservableObject
         try
         {
             Assets = await NotificareAssets.FetchAsync(group);
+            Console.WriteLine("Successfully fetched assets.");
         }
         catch (Exception e)
         {
             Assets = Array.Empty<NotificareAsset>();
-            Console.WriteLine($"Error fetching assets: {e.Message}");
+            Console.WriteLine($"Error fetching assets: {e.Message}.");
         }
     }
 }
