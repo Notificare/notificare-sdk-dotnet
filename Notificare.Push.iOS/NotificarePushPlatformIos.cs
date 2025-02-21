@@ -188,6 +188,25 @@ public class NotificarePushPlatformIos : INotificarePushPlatform
         _native.PresentationOptions = options;
     }
 
+    public void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
+    {
+        _native.RegisteredForRemoteNotifications(application, deviceToken);
+    }
+
+    public void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
+    {
+        _native.FailedToRegisterForRemoteNotifications(application, error);
+    }
+
+    public void DidReceiveRemoteNotification(
+        UIApplication application,
+        NSDictionary userInfo,
+        Action<UIBackgroundFetchResult> completionHandler
+    )
+    {
+        _native.DidReceiveRemoteNotification(application, userInfo, completionHandler);
+    }
+
 
     private sealed class InternalNotificarePushDelegate : Binding.NotificarePushNativeBindingDelegate
     {

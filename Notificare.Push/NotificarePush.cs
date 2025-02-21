@@ -207,6 +207,36 @@ public static class NotificarePush
     public static void SetPresentationOptions(IList<string> presentationOptions) =>
         Platform.SetPresentationOptions(presentationOptions);
 
+#if IOS
+    /// <summary>
+    /// Called when the app successfully registers with Apple Push Notification Service (APNS).
+    /// </summary>
+    /// <param name="application">The singleton app instance.</param>
+    /// <param name="deviceToken">The device token data for remote notifications.</param>
+    public static void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken) =>
+        Platform.RegisteredForRemoteNotifications(application, deviceToken);
+
+    /// <summary>
+    /// Called when the app fails to register for remote notifications.
+    /// </summary>
+    /// <param name="application">The singleton app instance.</param>
+    /// <param name="error">An error object describing why registration failed.</param>
+    public static void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error) =>
+        Platform.FailedToRegisterForRemoteNotifications(application, error);
+
+    /// <summary>
+    /// Called when a remote notification is received. Used to handle notification content and initiate background processing if necessary.
+    /// </summary>
+    /// <param name="application">The singleton app instance.</param>
+    /// <param name="userInfo">The payload of the received remote notification.</param>
+    /// <param name="completionHandler">A handler to be called with a <see cref="UIBackgroundFetchResult"/> after processing the notification.</param>
+    public static void DidReceiveRemoteNotification(
+        UIApplication application,
+        NSDictionary userInfo,
+        Action<UIBackgroundFetchResult> completionHandler
+    ) => Platform.DidReceiveRemoteNotification(application, userInfo, completionHandler);
+#endif
+
 
     private static INotificarePushPlatform CreateNotificare()
     {

@@ -11,7 +11,7 @@ public interface INotificarePushPlatform
 
     event EventHandler<NotificareSystemNotificationReceivedEventArgs> SystemNotificationReceived;
 
-    event EventHandler<NotificareUnknownNotificationReceivedEventArgs> UnknownNotificationReceived; 
+    event EventHandler<NotificareUnknownNotificationReceivedEventArgs> UnknownNotificationReceived;
 
     event EventHandler<NotificareNotificationOpenedEventArgs> NotificationOpened;
 
@@ -40,7 +40,7 @@ public interface INotificarePushPlatform
 #if ANDROID
     bool HandleTrampolineIntent(global::Android.Content.Intent intent);
 #endif
-    
+
     Task EnableRemoteNotificationsAsync();
 
     Task DisableRemoteNotificationsAsync();
@@ -48,6 +48,18 @@ public interface INotificarePushPlatform
     void SetAuthorizationOptions(IList<string> authorizationOptions);
 
     void SetCategoryOptions(IList<string> categoryOptions);
-    
+
     void SetPresentationOptions(IList<string> presentationOptions);
+
+#if IOS
+    void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken);
+
+    void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error);
+
+    void DidReceiveRemoteNotification(
+        UIApplication application,
+        NSDictionary userInfo,
+        Action<UIBackgroundFetchResult> completionHandler
+    );
+#endif
 }

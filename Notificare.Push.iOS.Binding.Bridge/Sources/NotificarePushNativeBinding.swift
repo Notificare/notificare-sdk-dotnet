@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 import UserNotifications
 import NotificareKit
 import NotificarePushKit
@@ -92,6 +93,21 @@ public class NotificarePushNativeBinding : NSObject {
                 onFailure(error)
             }
         }
+    }
+
+    @objc
+    public func registeredForRemoteNotifications(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken token: Data) {
+        Notificare.shared.push().application(application, didRegisterForRemoteNotificationsWithDeviceToken: token)
+    }
+
+    @objc
+    public func failedToRegisterForRemoteNotifications(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        Notificare.shared.push().application(application, didFailToRegisterForRemoteNotificationsWithError: error)
+    }
+
+    @objc
+    public func didReceiveRemoteNotification(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        Notificare.shared.push().application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
     }
 }
 

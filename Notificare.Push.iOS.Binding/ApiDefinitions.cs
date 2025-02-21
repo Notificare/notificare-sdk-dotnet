@@ -3,6 +3,7 @@ using NotificareSdk.iOS.Binding;
 using System;
 using Foundation;
 using ObjCRuntime;
+using UIKit;
 using UserNotifications;
 
 namespace NotificareSdk.Push.iOS.Binding
@@ -54,6 +55,18 @@ namespace NotificareSdk.Push.iOS.Binding
 		// -(void)disableRemoteNotifications:(void (^ _Nonnull)(void))onSuccess :(void (^ _Nonnull)(NSError * _Nonnull))onFailure;
 		[Export ("disableRemoteNotifications::")]
 		void DisableRemoteNotifications (Action onSuccess, Action<NSError> onFailure);
+
+		// -(void)registeredForRemoteNotifications:(UIApplication * _Nonnull)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)token;
+		[Export ("registeredForRemoteNotifications:didRegisterForRemoteNotificationsWithDeviceToken:")]
+		void RegisteredForRemoteNotifications (UIApplication application, NSData token);
+
+		// -(void)failedToRegisterForRemoteNotifications:(UIApplication * _Nonnull)application didFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
+		[Export ("failedToRegisterForRemoteNotifications:didFailToRegisterForRemoteNotificationsWithError:")]
+		void FailedToRegisterForRemoteNotifications (UIApplication application, NSError error);
+
+		// -(void)didReceiveRemoteNotification:(UIApplication * _Nonnull)application didReceiveRemoteNotification:(NSDictionary * _Nonnull)userInfo fetchCompletionHandler:(void (^ _Nonnull)(UIBackgroundFetchResult))completionHandler;
+		[Export ("didReceiveRemoteNotification:didReceiveRemoteNotification:fetchCompletionHandler:")]
+		void DidReceiveRemoteNotification (UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler);
 	}
 
 	// @protocol NotificarePushNativeBindingDelegate <NSObject>
