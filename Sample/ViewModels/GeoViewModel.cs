@@ -12,18 +12,6 @@ public partial class GeoViewModel : ObservableObject
         UpdateLocationUpdatesStatus();
     }
 
-    public void EnabledLocationUpdates()
-    {
-        NotificareGeo.EnableLocationUpdates();
-        UpdateLocationUpdatesStatus();
-    }
-
-    public void DisabledLocationUpdates()
-    {
-        NotificareGeo.DisableLocationUpdates();
-        UpdateLocationUpdatesStatus();
-    }
-
     private void UpdateLocationUpdatesStatus()
     {
         HasLocationEnabled = NotificareGeo.HasLocationServicesEnabled;

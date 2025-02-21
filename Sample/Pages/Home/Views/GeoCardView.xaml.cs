@@ -1,6 +1,5 @@
 using NotificareSdk.Geo;
 using Sample.Pages.Beacons;
-using Sample.ViewModels;
 
 namespace Sample.Pages.Home.Views;
 
@@ -34,8 +33,6 @@ public partial class GeoCardView : ContentView
 
     private void OnLocationSwitchToggled(object sender, ToggledEventArgs e)
     {
-        var viewModel = (GeoViewModel)BindingContext;
-
         if (e.Value)
         {
             MainThread.InvokeOnMainThreadAsync(async () =>
@@ -51,7 +48,7 @@ public partial class GeoCardView : ContentView
                     await EnsureBluetoothPermission();
                 }
 
-                viewModel.EnabledLocationUpdates();
+                NotificareGeo.EnableLocationUpdates();
             });
         }
         else
