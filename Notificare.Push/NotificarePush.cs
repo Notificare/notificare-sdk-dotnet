@@ -235,6 +235,40 @@ public static class NotificarePush
         NSDictionary userInfo,
         Action<UIBackgroundFetchResult> completionHandler
     ) => Platform.DidReceiveRemoteNotification(application, userInfo, completionHandler);
+
+    /// <summary>
+    /// Called when a notification is delivered to the app while it’s in the foreground.
+    /// </summary>
+    /// <param name="center">The notification center managing notifications for the app.</param>
+    /// <param name="notification">The notification being presented.</param>
+    /// <param name="completionHandler">A completion handler to call with the desired presentation options.</param>
+    public static void WillPresentNotification(
+        UserNotifications.UNUserNotificationCenter center,
+        UserNotifications.UNNotification notification,
+        Action<UserNotifications.UNNotificationPresentationOptions> completionHandler
+    ) => Platform.WillPresentNotification(center, notification, completionHandler);
+
+    /// <summary>
+    /// Called when the user interacts with a notification.
+    /// </summary>
+    /// <param name="center">The notification center managing notifications for the app.</param>
+    /// <param name="response">The user’s response to the notification.</param>
+    /// <param name="completionHandler">A completion handler to call after processing the response.</param>
+    public static void DidReceiveNotificationResponse(
+        UserNotifications.UNUserNotificationCenter center,
+        UserNotifications.UNNotificationResponse response,
+        Action completionHandler
+    ) => Platform.DidReceiveNotificationResponse(center, response, completionHandler);
+
+    /// <summary>
+    /// Called when a notification prompts the app to open its settings screen.
+    /// </summary>
+    /// <param name="center">The notification center managing notifications for the app.</param>
+    /// <param name="notification">The notification that prompted the settings to be opened, if applicable.</param>
+    public static void OpenSettings(
+        UserNotifications.UNUserNotificationCenter center,
+        UserNotifications.UNNotification? notification
+    ) => Platform.OpenSettings(center, notification);
 #endif
 
 

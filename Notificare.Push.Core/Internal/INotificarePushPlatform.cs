@@ -61,5 +61,22 @@ public interface INotificarePushPlatform
         NSDictionary userInfo,
         Action<UIBackgroundFetchResult> completionHandler
     );
+
+    void WillPresentNotification(
+        UserNotifications.UNUserNotificationCenter center,
+        UserNotifications.UNNotification notification,
+        Action<UserNotifications.UNNotificationPresentationOptions> completionHandler
+    );
+
+    void DidReceiveNotificationResponse(
+        UserNotifications.UNUserNotificationCenter center,
+        UserNotifications.UNNotificationResponse response,
+        Action completionHandler
+    );
+
+    void OpenSettings(
+        UserNotifications.UNUserNotificationCenter center,
+        UserNotifications.UNNotification? notification
+    );
 #endif
 }

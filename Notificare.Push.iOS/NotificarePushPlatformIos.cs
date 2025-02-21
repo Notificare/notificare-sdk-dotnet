@@ -207,6 +207,22 @@ public class NotificarePushPlatformIos : INotificarePushPlatform
         _native.DidReceiveRemoteNotification(application, userInfo, completionHandler);
     }
 
+    public void WillPresentNotification(UNUserNotificationCenter center, UNNotification notification, Action<UNNotificationPresentationOptions> completionHandler)
+    {
+        _native.WillPresentNotification(center, notification, completionHandler);
+    }
+
+    public void DidReceiveNotificationResponse(UNUserNotificationCenter center, UNNotificationResponse response,
+        Action completionHandler)
+    {
+        _native.DidReceiveNotificationResponse(center, response, completionHandler);
+    }
+
+    public void OpenSettings(UNUserNotificationCenter center, UNNotification? notification)
+    {
+        _native.OpenSettings(center, notification);
+    }
+
 
     private sealed class InternalNotificarePushDelegate : Binding.NotificarePushNativeBindingDelegate
     {

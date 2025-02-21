@@ -96,18 +96,33 @@ public class NotificarePushNativeBinding : NSObject {
     }
 
     @objc
-    public func registeredForRemoteNotifications(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken token: Data) {
+    public func registeredForRemoteNotifications(_ application: UIApplication, _ token: Data) {
         Notificare.shared.push().application(application, didRegisterForRemoteNotificationsWithDeviceToken: token)
     }
 
     @objc
-    public func failedToRegisterForRemoteNotifications(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+    public func failedToRegisterForRemoteNotifications(_ application: UIApplication, _ error: Error) {
         Notificare.shared.push().application(application, didFailToRegisterForRemoteNotificationsWithError: error)
     }
 
     @objc
-    public func didReceiveRemoteNotification(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    public func didReceiveRemoteNotification(_ application: UIApplication, _ userInfo: [AnyHashable: Any], _ completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         Notificare.shared.push().application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
+    }
+
+    @objc
+    public func willPresentNotification(_ center: UNUserNotificationCenter, _ notification: UNNotification, _ completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        Notificare.shared.push().userNotificationCenter(center, willPresent: notification, withCompletionHandler: completionHandler)
+    }
+
+    @objc
+    public func didReceiveNotificationResponse(_ center: UNUserNotificationCenter, _ response: UNNotificationResponse, _ completionHandler: @escaping () -> Void) {
+        Notificare.shared.push().userNotificationCenter(center, didReceive: response, withCompletionHandler: completionHandler)
+    }
+
+    @objc
+    public func openSettings(_ center: UNUserNotificationCenter, _ notification: UNNotification?) {
+        Notificare.shared.push().userNotificationCenter(center, openSettingsFor: notification)
     }
 }
 

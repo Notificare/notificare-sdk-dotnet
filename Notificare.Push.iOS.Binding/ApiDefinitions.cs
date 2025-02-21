@@ -56,17 +56,29 @@ namespace NotificareSdk.Push.iOS.Binding
 		[Export ("disableRemoteNotifications::")]
 		void DisableRemoteNotifications (Action onSuccess, Action<NSError> onFailure);
 
-		// -(void)registeredForRemoteNotifications:(UIApplication * _Nonnull)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)token;
-		[Export ("registeredForRemoteNotifications:didRegisterForRemoteNotificationsWithDeviceToken:")]
+		// -(void)registeredForRemoteNotifications:(UIApplication * _Nonnull)application :(NSData * _Nonnull)token;
+		[Export ("registeredForRemoteNotifications::")]
 		void RegisteredForRemoteNotifications (UIApplication application, NSData token);
 
-		// -(void)failedToRegisterForRemoteNotifications:(UIApplication * _Nonnull)application didFailToRegisterForRemoteNotificationsWithError:(NSError * _Nonnull)error;
-		[Export ("failedToRegisterForRemoteNotifications:didFailToRegisterForRemoteNotificationsWithError:")]
+		// -(void)failedToRegisterForRemoteNotifications:(UIApplication * _Nonnull)application :(NSError * _Nonnull)error;
+		[Export ("failedToRegisterForRemoteNotifications::")]
 		void FailedToRegisterForRemoteNotifications (UIApplication application, NSError error);
 
-		// -(void)didReceiveRemoteNotification:(UIApplication * _Nonnull)application didReceiveRemoteNotification:(NSDictionary * _Nonnull)userInfo fetchCompletionHandler:(void (^ _Nonnull)(UIBackgroundFetchResult))completionHandler;
-		[Export ("didReceiveRemoteNotification:didReceiveRemoteNotification:fetchCompletionHandler:")]
+		// -(void)didReceiveRemoteNotification:(UIApplication * _Nonnull)application :(NSDictionary * _Nonnull)userInfo :(void (^ _Nonnull)(UIBackgroundFetchResult))completionHandler;
+		[Export ("didReceiveRemoteNotification:::")]
 		void DidReceiveRemoteNotification (UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler);
+
+		// -(void)willPresentNotification:(UNUserNotificationCenter * _Nonnull)center :(UNNotification * _Nonnull)notification :(void (^ _Nonnull)(UNNotificationPresentationOptions))completionHandler;
+		[Export ("willPresentNotification:::")]
+		void WillPresentNotification (UNUserNotificationCenter center, UNNotification notification, Action<UNNotificationPresentationOptions> completionHandler);
+
+		// -(void)didReceiveNotificationResponse:(UNUserNotificationCenter * _Nonnull)center :(UNNotificationResponse * _Nonnull)response :(void (^ _Nonnull)(void))completionHandler;
+		[Export ("didReceiveNotificationResponse:::")]
+		void DidReceiveNotificationResponse (UNUserNotificationCenter center, UNNotificationResponse response, Action completionHandler);
+
+		// -(void)openSettings:(UNUserNotificationCenter * _Nonnull)center :(UNNotification * _Nullable)notification;
+		[Export ("openSettings::")]
+		void OpenSettings (UNUserNotificationCenter center, [NullAllowed] UNNotification notification);
 	}
 
 	// @protocol NotificarePushNativeBindingDelegate <NSObject>
