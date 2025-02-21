@@ -112,6 +112,10 @@ extension NotificarePushNativeBinding : NotificarePushDelegate {
         delegate?.notificare(self, didReceiveSystemNotification: NotificareSystemNotification(from: notification))
     }
 
+    public func notificare(_ notificarePush: any NotificarePush, didReceiveUnknownNotification userInfo: [AnyHashable : Any]) {
+        delegate?.notificare(self, didReceiveUnknownNotification: userInfo)
+    }
+
     public func notificare(_ notificarePush: any NotificarePush, shouldOpenSettings notification: NotificareKit.NotificareNotification?) {
         delegate?.notificare(self, shouldOpenSettings: notification.map { NotificareNotification(from: $0) })
     }
@@ -120,8 +124,16 @@ extension NotificarePushNativeBinding : NotificarePushDelegate {
         delegate?.notificare(self, didOpenNotification: NotificareBinding.NotificareNotification(from: notification))
     }
 
+    public func notificare(_ notificarePush: any NotificarePush, didOpenUnknownNotification userInfo: [AnyHashable : Any]) {
+        delegate?.notificare(self, didOpenUnknownNotification: userInfo)
+    }
+
     public func notificare(_ notificarePush: any NotificarePush, didOpenAction action: NotificareKit.NotificareNotification.Action, for notification: NotificareKit.NotificareNotification) {
         delegate?.notificare(self, didOpenAction: NotificareBinding.NotificareNotificationAction(from: action), for: NotificareBinding.NotificareNotification(from: notification))
+    }
+
+    public func notificare(_ notificarePush: any NotificarePush, didOpenUnknownAction action: String, for notification: [AnyHashable : Any], responseText: String?) {
+        delegate?.notificare(self, didOpenUnknownAction: action, for: notification, responseText: responseText)
     }
 }
 
@@ -133,7 +145,7 @@ public protocol NotificarePushNativeBindingDelegate : NSObjectProtocol {
 
     func notificare(_ notificarePush: NotificarePushNativeBinding, didChangeNotificationSettings allowedUI: Bool)
 
-    // func notificare(_ notificarePush: NotificarePushNativeBinding, didReceiveUnknownNotification userInfo: [AnyHashable : Any])
+    func notificare(_ notificarePush: NotificarePushNativeBinding, didReceiveUnknownNotification userInfo: [AnyHashable : Any])
 
     func notificare(_ notificarePush: NotificarePushNativeBinding, didReceiveNotification notification: NotificareBinding.NotificareNotification, deliveryMechanism: NotificareNotificationDeliveryMechanism)
 
@@ -143,9 +155,9 @@ public protocol NotificarePushNativeBindingDelegate : NSObjectProtocol {
 
     func notificare(_ notificarePush: NotificarePushNativeBinding, didOpenNotification notification: NotificareBinding.NotificareNotification)
 
-//    func notificare(_ notificarePush: NotificarePushNativeBinding, didOpenUnknownNotification userInfo: [AnyHashable : Any])
+    func notificare(_ notificarePush: NotificarePushNativeBinding, didOpenUnknownNotification userInfo: [AnyHashable : Any])
 
     func notificare(_ notificarePush: NotificarePushNativeBinding, didOpenAction action: NotificareBinding.NotificareNotificationAction, for notification: NotificareBinding.NotificareNotification)
 
-//    func notificare(_ notificarePush: NotificarePushNativeBinding, didOpenUnknownAction action: String, for notification: [AnyHashable : Any], responseText: String?)
+    func notificare(_ notificarePush: NotificarePushNativeBinding, didOpenUnknownAction action: String, for notification: [AnyHashable : Any], responseText: String?)
 }

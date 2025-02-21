@@ -71,6 +71,11 @@ namespace NotificareSdk.Push.iOS.Binding
 		[Export ("notificare:didChangeNotificationSettings:")]
 		void DidChangeNotificationSettings (NotificarePushNativeBinding notificarePush, bool allowedUI);
 
+		// @required -(void)notificare:(NotificarePushNativeBinding * _Nonnull)notificarePush didReceiveUnknownNotification:(NSDictionary * _Nonnull)userInfo;
+		[Abstract]
+		[Export ("notificare:didReceiveUnknownNotification:")]
+		void DidReceiveUnknownNotification (NotificarePushNativeBinding notificarePush, NSDictionary userInfo);
+
 		// @required -(void)notificare:(NotificarePushNativeBinding * _Nonnull)notificarePush didReceiveNotification:(NotificareNotification * _Nonnull)notification deliveryMechanism:(enum NotificareNotificationDeliveryMechanism)deliveryMechanism;
 		[Abstract]
 		[Export ("notificare:didReceiveNotification:deliveryMechanism:")]
@@ -91,10 +96,20 @@ namespace NotificareSdk.Push.iOS.Binding
 		[Export ("notificare:didOpenNotification:")]
 		void DidOpenNotification (NotificarePushNativeBinding notificarePush, NotificareNotification notification);
 
+		// @required -(void)notificare:(NotificarePushNativeBinding * _Nonnull)notificarePush didOpenUnknownNotification:(NSDictionary * _Nonnull)userInfo;
+		[Abstract]
+		[Export ("notificare:didOpenUnknownNotification:")]
+		void DidOpenUnknownNotification (NotificarePushNativeBinding notificarePush, NSDictionary userInfo);
+
 		// @required -(void)notificare:(NotificarePushNativeBinding * _Nonnull)notificarePush didOpenAction:(NotificareNotificationAction * _Nonnull)action for:(NotificareNotification * _Nonnull)notification;
 		[Abstract]
 		[Export ("notificare:didOpenAction:for:")]
 		void DidOpenAction (NotificarePushNativeBinding notificarePush, NotificareNotificationAction action, NotificareNotification notification);
+
+		// @required -(void)notificare:(NotificarePushNativeBinding * _Nonnull)notificarePush didOpenUnknownAction:(NSString * _Nonnull)action for:(NSDictionary * _Nonnull)notification responseText:(NSString * _Nullable)responseText;
+		[Abstract]
+		[Export ("notificare:didOpenUnknownAction:for:responseText:")]
+		void DidOpenUnknownAction (NotificarePushNativeBinding notificarePush, string action, NSDictionary notification, [NullAllowed] string responseText);
 	}
 
 	// @interface NotificarePushSubscription : NSObject

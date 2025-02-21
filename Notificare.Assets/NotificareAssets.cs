@@ -25,8 +25,15 @@ public static class NotificareAssets
             return Implementation.Value;
         }
     }
-    
 
+
+    /// <summary>
+    /// Fetches a list of <see cref="NotificareAsset"/> for a specified group.
+    /// </summary>
+    /// <param name="group">The name of the group whose assets are to be fetched.</param>
+    /// <returns>
+    /// A task that resolves to a list of <see cref="NotificareAsset"/> belonging to the specified group.
+    /// </returns>
     public static Task<IList<NotificareAsset>> FetchAsync(string group) => Platform.FetchAsync(group);
 
 
