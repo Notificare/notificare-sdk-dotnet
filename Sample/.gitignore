@@ -3,6 +3,7 @@ notificare-services.json
 agconnect-services.json
 google-services.json
 *.keystore
+manifest_properties.xml
 
 # iOS
 NotificareServices.plist

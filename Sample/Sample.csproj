@@ -28,6 +28,14 @@
 		<CodesignEntitlements>Platforms\iOS\Entitlements.plist</CodesignEntitlements>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="$(TargetFramework.Contains('-android')) and '$(Configuration)' == 'Debug'">
+		<AndroidKeyStore>true</AndroidKeyStore>
+		<AndroidSigningKeyStore>Platforms\Android\debug.keystore</AndroidSigningKeyStore>
+		<AndroidSigningKeyAlias>notificare</AndroidSigningKeyAlias>
+		<AndroidSigningKeyPass>env:AndroidSigningKeyPass</AndroidSigningKeyPass>
+		<AndroidSigningStorePass>env:AndroidSigningStorePass</AndroidSigningStorePass>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -47,18 +55,26 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Maui.Essentials" Version="$(MauiVersion)" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="11.0.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.30" />
+		<PackageReference Include="Microsoft.Maui.Essentials" Version="9.0.30" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
 
 		<ProjectReference Include="..\Notificare\Notificare.csproj" />
 		<ProjectReference Include="..\Notificare.Inbox\Notificare.Inbox.csproj" />
 		<ProjectReference Include="..\Notificare.Push\Notificare.Push.csproj" />
 		<ProjectReference Include="..\Notificare.Push.UI\Notificare.Push.UI.csproj" />
+		<ProjectReference Include="..\Notificare.Geo\Notificare.Geo.csproj" />
+		<ProjectReference Include="..\Notificare.InAppMessaging\Notificare.InAppMessaging.csproj" />
+		<ProjectReference Include="..\Notificare.Scannables\Notificare.Scannables.csproj" />
+		<ProjectReference Include="..\Notificare.Assets\Notificare.Assets.csproj" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
-		<PackageReference Include="Xamarin.GooglePlayServices.Base" Version="118.5.0.3" />
+		<ProjectReference Include="..\Notificare.Geo.Android.Beacons\Notificare.Geo.Android.Beacons.csproj" />
+
+		<PackageReference Include="Xamarin.GooglePlayServices.Base" Version="118.5.0.4" />
     	<GoogleServicesJson Include="Platforms\Android\google-services.json" />
 	</ItemGroup>
 

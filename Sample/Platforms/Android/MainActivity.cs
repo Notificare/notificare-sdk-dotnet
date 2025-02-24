@@ -2,6 +2,7 @@
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
+using NotificareSdk.Android.Binding;
 using NotificareSdk.Push;
 
 namespace Sample;
@@ -15,11 +16,22 @@ namespace Sample;
 [IntentFilter(
     ["re.notifica.intent.action.RemoteMessageOpened"],
     Categories = [Intent.CategoryDefault])]
+[IntentFilter(
+    new string[] { Intent.ActionView },
+    Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
+    DataScheme = "re.notifica.sample.app.dev")]   
+[IntentFilter(
+    new string[] { Intent.ActionView },
+    Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
+    DataScheme = "https",
+    DataHost = "sample-app-dev.ntc.re",
+    AutoVerify = true)]
 public class MainActivity : MauiAppCompatActivity
 {
     protected override void OnCreate(Bundle? savedInstanceState)
     {
         base.OnCreate(savedInstanceState);
+
         if (Intent != null) HandleIntent(Intent);
     }
 
@@ -31,6 +43,22 @@ public class MainActivity : MauiAppCompatActivity
 
     private void HandleIntent(Intent intent)
     {
-        NotificarePush.HandleTrampolineIntent(intent);
+        if (NotificarePush.HandleTrampolineIntent(intent)) return;
+        if (Notificare.HandleTestDeviceIntent(intent)) return;
+        if (Notificare.HandleDynamicLinkIntent(this, intent)) return;
+        
+        var action = intent.Action;
+        var data = intent.Data?.ToString();
+
+        if (action == Intent.ActionView && data is not null)
+        {
+            HandleDeepLink(data);
+        }
+    }
+
+    private void HandleDeepLink(string url)
+    {
+        if (Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out var uri))
+            App.Current?.SendOnAppLinkRequestReceived(uri);
     }
 }
