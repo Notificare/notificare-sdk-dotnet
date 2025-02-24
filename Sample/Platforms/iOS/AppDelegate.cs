@@ -62,7 +62,7 @@ public class AppDelegate : MauiUIApplicationDelegate
         return Notificare.HandleDynamicLinkUrl(url);
     }
     
-    static void HandleAppLink(string url)
+    private static void HandleAppLink(string url)
     {
         if (Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out var uri))
             App.Current?.SendOnAppLinkRequestReceived(uri);
