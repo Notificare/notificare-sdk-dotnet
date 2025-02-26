@@ -22,11 +22,6 @@
         <TargetFrameworks>net9.0-ios</TargetFrameworks>
     </PropertyGroup>
 
-    <PropertyGroup Condition="$(MSBuildProjectName.Contains('Notificare.BuildTasks'))">
-        <!--suppress MsbuildTargetFrameworkTagInspection -->
-        <TargetFrameworks>net9.0</TargetFrameworks>
-    </PropertyGroup>
-
     <PropertyGroup Condition="$(MSBuildProjectName.Contains('iOS.Binding'))">
         <IsBindingProject>true</IsBindingProject>
     </PropertyGroup>
