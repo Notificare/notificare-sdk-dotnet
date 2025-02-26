@@ -1,0 +1,68 @@
+<Project>
+    <Target Name="CheckForNotificareServicesJson" Condition=" '@(NotificareServicesJson)' == '' " BeforeTargets="BeforeBuild">
+        <Message Text="NotificareServicesJson file not specified. Make sure to configure Notificare manually." />
+    </Target>
+
+    <PropertyGroup>
+        <ProcessNotificareServicesJsonTaskFilename Condition=" '$(ProcessNotificareServicesJsonTaskFilename)' == '' ">$(MSBuildThisFileDirectory)Notificare.BuildTasks.dll</ProcessNotificareServicesJsonTaskFilename>
+        <ProcessNotificareServicesJsonResDirName Condition=" '$(ProcessNotificareServicesJsonResDirName)' == '' ">process$(Configuration)NotificareServices</ProcessNotificareServicesJsonResDirName>
+        <ProcessDebugNotificareServicesJsonResDirPath>$(IntermediateOutputPath)processDebugNotificareServices\</ProcessDebugNotificareServicesJsonResDirPath>
+        <ProcessReleaseNotificareServicesJsonResDirPath>$(IntermediateOutputPath)processReleaseNotificareServices\</ProcessReleaseNotificareServicesJsonResDirPath>
+
+        <ProcessNotificareServicesJsonResDirPath>$(IntermediateOutputPath)$(ProcessNotificareServicesJsonResDirName)\</ProcessNotificareServicesJsonResDirPath>
+        <ProcessNotificareServicesJsonResStringsPath>$(ProcessNotificareServicesJsonResDirPath)values\values.xml</ProcessNotificareServicesJsonResStringsPath>
+        <ProcessNotificareServicesJsonStampPath>$(IntermediateOutputPath)notificare-services-json.stamp</ProcessNotificareServicesJsonStampPath>
+
+        <ProcessNotificareServicesJsonAssemblyPath>$(MSBuildThisFileDirectory)$(MSBuildThisFileName).dll</ProcessNotificareServicesJsonAssemblyPath>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <CleanDependsOn>
+            $(CleanDependsOn);
+            _CleanNotificareServicesResources;
+        </CleanDependsOn>
+    </PropertyGroup>
+
+    <Target
+        Name="SetupNotificareServicesJson"
+        Condition=" '@(NotificareServicesJson)' != '' AND '$(AndroidApplication)' == 'True'">
+
+        <ConvertToAbsolutePath Paths="$(ProcessNotificareServicesJsonResDirPath)">
+            <Output TaskParameter="AbsolutePaths" PropertyName="ProcessNotificareServicesJsonResDirPathAbs" />
+        </ConvertToAbsolutePath>
+    </Target>
+
+    <UsingTask
+        AssemblyFile="$(ProcessNotificareServicesJsonAssemblyPath)"
+        TaskName="NotificareSDK.BuildTasks.ProcessNotificareServicesJson" />
+
+    <Target
+        Name="ProcessNotificareServicesJson"
+        Condition=" '@(NotificareServicesJson)' != '' AND '$(AndroidApplication)' == 'True'"
+        AfterTargets="_ValidateAndroidPackageProperties"
+        DependsOnTargets="SetupNotificareServicesJson"
+        Inputs="@(NotificareServicesJson)"
+        Outputs="$(IntermediateOutputPath)notificare-services-json.stamp">
+
+        <ProcessNotificareServicesJson
+            NotificareServicesJsonPaths="@(NotificareServicesJson)"
+            ResPath="$(ProcessNotificareServicesJsonResDirPath)"
+            StampPath="$(ProcessNotificareServicesJsonStampPath)"
+            ResStringsPath="$(ProcessNotificareServicesJsonResStringsPath)">
+            <Output TaskParameter="ResPathAbsolute" ItemName="LibraryResourceDirectories" />
+        </ProcessNotificareServicesJson>
+
+        <ItemGroup>
+            <LibraryResourceDirectories Condition="Exists ('$(ProcessNotificareServicesJsonResDirPathAbs)')" Include="$(ProcessNotificareServicesJsonResDirPathAbs)">
+                <StampFile>$(IntermediateOutputPath)notificare-services-json.stamp</StampFile>
+            </LibraryResourceDirectories>
+            <FileWrites Condition="Exists ('$(ProcessNotificareServicesJsonResStringsPath)')" Include="$(ProcessNotificareServicesJsonResStringsPath)" />
+        </ItemGroup>
+    </Target>
+
+    <Target Name="_CleanNotificareServicesResources">
+        <RemoveDir Directories="$(ProcessDebugNotificareServicesJsonResDirPath)" Condition="Exists ('$(ProcessDebugNotificareServicesJsonResDirPath)' )" />
+        <RemoveDir Directories="$(ProcessReleaseNotificareServicesJsonResDirPath)" Condition="Exists ('$(ProcessReleaseNotificareServicesJsonResDirPath)' )" />
+        <Delete Files="$(ProcessNotificareServicesJsonStampPath)" />
+    </Target>
+</Project>

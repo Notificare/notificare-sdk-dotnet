@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <RootNamespace>NotificareSDK.BuildTasks</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Build" Version="17.12.6" IncludeAssets="compile" />
+        <PackageReference Include="Microsoft.Build.Framework" Version="17.12.6" IncludeAssets="compile" />
+        <PackageReference Include="Microsoft.Build.Tasks.Core" Version="17.12.6" IncludeAssets="compile" />
+        <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.12.6" IncludeAssets="compile" />
+    </ItemGroup>
+
+    <ItemGroup Label="Package">
+        <NotificareTasksTargetFolders Include="build" />
+        <NotificareTasksTargetFolders Include="buildTransitive" />
+        
+        <None Include="Notificare.BuildTasks.targets" PackagePath="@(NotificareTasksTargetFolders)" Pack="true" />
+        <None Include="bin\$(Configuration)\Notificare.BuildTasks.dll" PackagePath="@(NotificareTasksTargetFolders)" Pack="True" />
+    </ItemGroup>
+</Project>
