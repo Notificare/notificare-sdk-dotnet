@@ -12,12 +12,4 @@
         <PackageReference Include="Microsoft.Build.Tasks.Core" Version="17.12.6" IncludeAssets="compile" />
         <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.12.6" IncludeAssets="compile" />
     </ItemGroup>
-
-    <ItemGroup Label="Package">
-        <NotificareTasksTargetFolders Include="build" />
-        <NotificareTasksTargetFolders Include="buildTransitive" />
-        
-        <None Include="Notificare.BuildTasks.targets" PackagePath="@(NotificareTasksTargetFolders)" Pack="true" />
-        <None Include="bin\$(Configuration)\Notificare.BuildTasks.dll" PackagePath="@(NotificareTasksTargetFolders)" Pack="True" />
-    </ItemGroup>
 </Project>

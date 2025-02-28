@@ -13,7 +13,7 @@
         <ProcessNotificareServicesJsonResStringsPath>$(ProcessNotificareServicesJsonResDirPath)values\values.xml</ProcessNotificareServicesJsonResStringsPath>
         <ProcessNotificareServicesJsonStampPath>$(IntermediateOutputPath)notificare-services-json.stamp</ProcessNotificareServicesJsonStampPath>
 
-        <ProcessNotificareServicesJsonAssemblyPath>$(MSBuildThisFileDirectory)$(MSBuildThisFileName).dll</ProcessNotificareServicesJsonAssemblyPath>
+        <ProcessNotificareServicesJsonAssemblyPath>$(MSBuildThisFileDirectory)Notificare.BuildTasks.dll</ProcessNotificareServicesJsonAssemblyPath>
     </PropertyGroup>
 
     <PropertyGroup>
