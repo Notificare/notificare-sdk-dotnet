@@ -13,16 +13,16 @@ public class NotificareUserInboxPlatformAndroid : INotificareUserInboxPlatform
     {
     }
 
-    public Task<NotificareUserInboxResponse> ParseResponse(string json)
+    public Task<NotificareUserInboxResponse> ParseResponseAsync(string json)
     {
         var response = NativeNotificare.ParseResponse(json);
         return Task.FromResult(NativeConverter.FromNativeResponse(response));
     }
 
-    public async Task<NotificareUserInboxResponse> ParseResponse(HttpResponseMessage response)
+    public async Task<NotificareUserInboxResponse> ParseResponseAsync(HttpResponseMessage response)
     {
         var responseStr = await response.Content.ReadAsStringAsync();
-        return await ParseResponse(responseStr);
+        return await ParseResponseAsync(responseStr);
     }
 
     public async Task<NotificareNotification> OpenAsync(NotificareUserInboxItem item)

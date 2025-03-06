@@ -37,7 +37,7 @@ public static class NotificareUserInbox
     /// <returns>
     /// A promise that resolves to a <see cref="NotificareUserInboxResponse"/> object parsed from the provided JSON string.
     /// </returns>
-    public static Task<NotificareUserInboxResponse> ParseResponse(string json) => Platform.ParseResponse(json);
+    public static Task<NotificareUserInboxResponse> ParseResponseAsync(string json) => Platform.ParseResponseAsync(json);
 
     /// <summary>
     /// Parses a <see cref="HttpRequestMessage"/> to produce a <see cref="NotificareUserInboxResponse"/>.
@@ -46,8 +46,8 @@ public static class NotificareUserInbox
     /// <returns>
     /// A promise that resolves to a <see cref="NotificareUserInboxResponse"/> object parsed from the provided HTTP request message.
     /// </returns>
-    public static Task<NotificareUserInboxResponse> ParseResponse(HttpResponseMessage response) =>
-        Platform.ParseResponse(response);
+    public static Task<NotificareUserInboxResponse> ParseResponseAsync(HttpResponseMessage response) =>
+        Platform.ParseResponseAsync(response);
 
     /// <summary>
     /// Opens an inbox item and retrieves its associated notification.

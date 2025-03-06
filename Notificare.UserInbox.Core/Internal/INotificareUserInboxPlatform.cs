@@ -7,9 +7,9 @@ public interface INotificareUserInboxPlatform
 {
     void Initialize();
 
-    Task<NotificareUserInboxResponse> ParseResponse(string json);
+    Task<NotificareUserInboxResponse> ParseResponseAsync(string json);
     
-    Task<NotificareUserInboxResponse> ParseResponse(HttpResponseMessage response);
+    Task<NotificareUserInboxResponse> ParseResponseAsync(HttpResponseMessage response);
     
     Task<NotificareNotification> OpenAsync(NotificareUserInboxItem item);
 
