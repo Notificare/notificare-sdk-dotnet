@@ -13,12 +13,4 @@
         <ProjectReference Include="..\Notificare.Core\Notificare.Core.csproj" />
         <ProjectReference Include="..\Notificare.Android.Binding\Notificare.Android.Binding.csproj" />
     </ItemGroup>
-
-    <ItemGroup Label="Package">
-        <None Include="..\Notificare.BuildTasks\NotificareServices.targets" PackagePath="build\Notificare.Android.targets" Pack="true" />
-        <None Include="..\Notificare.BuildTasks\NotificareServices.targets" PackagePath="buildTransitive\Notificare.Android.targets" Pack="true" />
-        
-        <None Include="..\Notificare.BuildTasks\bin\$(Configuration)\Notificare.BuildTasks.dll" PackagePath="build" Pack="True" />
-        <None Include="..\Notificare.BuildTasks\bin\$(Configuration)\Notificare.BuildTasks.dll" PackagePath="buildTransitive" Pack="True" />
-    </ItemGroup>
 </Project>

@@ -50,4 +50,12 @@
         <PackageReference Include="Xamarin.AndroidX.Collection" Version="1.4.5.1"/>
         <PackageReference Include="Xamarin.AndroidX.Collection.Ktx" Version="1.4.5.1"/>
     </ItemGroup>
+
+    <ItemGroup Label="Package">
+        <None Include="..\Notificare.BuildTasks\NotificareServices.targets" PackagePath="build\Notificare.Android.Binding.targets" Pack="true" />
+        <None Include="..\Notificare.BuildTasks\NotificareServices.targets" PackagePath="buildTransitive\Notificare.Android.Binding.targets" Pack="true" />
+
+        <None Include="..\Notificare.BuildTasks\bin\$(Configuration)\Notificare.BuildTasks.dll" PackagePath="build" Pack="True" />
+        <None Include="..\Notificare.BuildTasks\bin\$(Configuration)\Notificare.BuildTasks.dll" PackagePath="buildTransitive" Pack="True" />
+    </ItemGroup>
 </Project>
