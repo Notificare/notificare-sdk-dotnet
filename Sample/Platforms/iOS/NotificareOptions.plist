@@ -4,5 +4,7 @@
 <dict>
 	<key>DEBUG_LOGGING_ENABLED</key>
 	<true/>
+	<key>SWIZZLING_ENABLED</key>
+	<false/>
 </dict>
 </plist>

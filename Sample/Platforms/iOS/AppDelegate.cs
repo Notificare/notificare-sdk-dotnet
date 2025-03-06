@@ -7,7 +7,7 @@ using UIKit;
 namespace Sample;
 
 [Register("AppDelegate")]
-public class AppDelegate : MauiUIApplicationDelegate
+public class AppDelegate : MauiUIApplicationDelegate, IUIApplicationDelegate
 {
     protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
 
@@ -15,7 +15,7 @@ public class AppDelegate : MauiUIApplicationDelegate
     {
         var logger = new CoreFoundation.OSLog(subsystem: "com.foo.maui", category: "category");
         logger.Log(OSLogLevel.Error, "FinishedLaunching");
-        
+
         Task.Run(async () =>
         {
             try
@@ -31,14 +31,33 @@ public class AppDelegate : MauiUIApplicationDelegate
 
         return base.FinishedLaunching(application, launchOptions);
     }
-    
+
+    public void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
+    {
+        NotificarePush.RegisteredForRemoteNotifications(application, deviceToken);
+    }
+
+    public void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
+    {
+        NotificarePush.FailedToRegisterForRemoteNotifications(application, error);
+    }
+
+    public void DidReceiveRemoteNotification(
+        UIApplication application,
+        NSDictionary userInfo,
+        Action<UIBackgroundFetchResult> completionHandler
+    )
+    {
+        NotificarePush.DidReceiveRemoteNotification(application, userInfo, completionHandler);
+    }
+
     public override bool OpenUrl(UIApplication application, NSUrl url, NSDictionary options)
     {
         if (Notificare.HandleTestDeviceUrl(url))
         {
             return true;
         }
-        
+
         if (Notificare.HandleDynamicLinkUrl(url))
         {
             return true;
@@ -61,7 +80,7 @@ public class AppDelegate : MauiUIApplicationDelegate
 
         return Notificare.HandleDynamicLinkUrl(url);
     }
-    
+
     private static void HandleAppLink(string url)
     {
         if (Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out var uri))
