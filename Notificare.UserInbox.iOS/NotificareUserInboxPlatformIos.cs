@@ -14,7 +14,7 @@ public class NotificareUserInboxPlatformIos : INotificareUserInboxPlatform
     {
     }
 
-    public Task<NotificareUserInboxResponse> ParseResponse(string json)
+    public Task<NotificareUserInboxResponse> ParseResponseAsync(string json)
     {
         TaskCompletionSource<NotificareUserInboxResponse> completion = new();
 
@@ -27,10 +27,10 @@ public class NotificareUserInboxPlatformIos : INotificareUserInboxPlatform
         return completion.Task;
     }
 
-    public async Task<NotificareUserInboxResponse> ParseResponse(HttpResponseMessage response)
+    public async Task<NotificareUserInboxResponse> ParseResponseAsync(HttpResponseMessage response)
     {
         var responseStr = await response.Content.ReadAsStringAsync();
-        return await ParseResponse(responseStr);
+        return await ParseResponseAsync(responseStr);
     }
 
     public Task<NotificareNotification> OpenAsync(NotificareUserInboxItem item)

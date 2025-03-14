@@ -72,59 +72,58 @@ public class NotificareGeoPlatformIos : INotificareGeoPlatform
             );
         }
 
-        // public override void DidFailWith(
-        //     Binding.NotificareGeoNativeBinding notificareGeo,
-        //     NSError error
-        // )
-        // {
-        //     
-        // }
+        public override void DidFailWith(
+            Binding.NotificareGeoNativeBinding notificareGeo,
+            NSError error
+        )
+        {
+        }
 
-        // public override void DidStartMonitoringForRegion(
-        //     Binding.NotificareGeoNativeBinding notificareGeo,
-        //     Binding.NotificareRegion region
-        // )
-        // {
-        // }
+        public override void DidStartMonitoringForRegion(
+            Binding.NotificareGeoNativeBinding notificareGeo,
+            Binding.NotificareRegion region
+        )
+        {
+        }
 
-        // public override void DidStartMonitoringForBeacon(
-        //     Binding.NotificareGeoNativeBinding notificareGeo,
-        //     Binding.NotificareBeacon beacon
-        // )
-        // {
-        // }
+        public override void DidStartMonitoringForBeacon(
+            Binding.NotificareGeoNativeBinding notificareGeo,
+            Binding.NotificareBeacon beacon
+        )
+        {
+        }
 
-        // public override void MonitoringDidFailForRegion(
-        //     Binding.NotificareGeoNativeBinding notificareGeo,
-        //     Binding.NotificareRegion region,
-        //     NSError error
-        // )
-        // {
-        // }
+        public override void MonitoringDidFailForRegion(
+            Binding.NotificareGeoNativeBinding notificareGeo,
+            Binding.NotificareRegion region,
+            NSError error
+        )
+        {
+        }
 
-        // public override void MonitoringDidFailForBeacon(
-        //     Binding.NotificareGeoNativeBinding notificareGeo,
-        //     Binding.NotificareBeacon beacon,
-        //     NSError error
-        // )
-        // {
-        // }
+        public override void MonitoringDidFailForBeacon(
+            Binding.NotificareGeoNativeBinding notificareGeo,
+            Binding.NotificareBeacon beacon,
+            NSError error
+        )
+        {
+        }
 
-        // public override void DidDetermineState(
-        //     Binding.NotificareGeoNativeBinding notificareGeo,
-        //     CoreLocation.CLRegionState state,
-        //     NotificareRegion region
-        // )
-        // {
-        // }
+        public override void DidDetermineState(
+            Binding.NotificareGeoNativeBinding notificareGeo,
+            CoreLocation.CLRegionState state,
+            Binding.NotificareRegion region
+        )
+        {
+        }
 
-        // public override void DidDetermineState(
-        //     Binding.NotificareGeoNativeBinding notificareGeo,
-        //     CoreLocation.CLRegionState state,
-        //     Binding.NotificareBeacon beacon
-        // )
-        // {
-        // }
+        public override void DidDetermineState(
+            Binding.NotificareGeoNativeBinding notificareGeo,
+            CoreLocation.CLRegionState state,
+            Binding.NotificareBeacon beacon
+        )
+        {
+        }
 
         public override void DidEnterRegion(
             Binding.NotificareGeoNativeBinding notificareGeo,
@@ -219,12 +218,12 @@ public class NotificareGeoPlatformIos : INotificareGeoPlatform
             );
         }
 
-        // public override void DidFailRangingFor(
-        //     Binding.NotificareGeoNativeBinding notificareGeo,
-        //     Binding.NotificareRegion region,
-        //     NSError error
-        // )
-        // {
-        // }
+        public override void DidFailRangingFor(
+            Binding.NotificareGeoNativeBinding notificareGeo,
+            Binding.NotificareRegion region,
+            NSError error
+        )
+        {
+        }
     }
 }
