@@ -1,8 +1,8 @@
 using System.Runtime.Serialization.Json;
 
-namespace NotificareSDK.BuildTasks;
+namespace Notificare.Build.Tasks.ProcessNotificareServices;
 
-public class NotificareServicesLoader
+internal static class NotificareServicesLoader
 {
     public static NotificareServices ProcessJson(Stream json)
     {

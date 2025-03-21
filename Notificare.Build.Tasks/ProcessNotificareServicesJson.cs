@@ -1,9 +1,10 @@
+using System.Xml;
 using Microsoft.Build.Framework;
 using Microsoft.Build.Utilities;
-using System.Xml;
+using Notificare.Build.Tasks.ProcessNotificareServices;
 using Task = Microsoft.Build.Utilities.Task;
 
-namespace NotificareSDK.BuildTasks;
+namespace Notificare.Build.Tasks;
 
 public class ProcessNotificareServicesJson : Task
 {
@@ -23,7 +24,7 @@ public class ProcessNotificareServicesJson : Task
         // Return the absolute path of our resources dir
         ResPathAbsolute = [new TaskItem(resPath)];
 
-        if (!NotificareServicesJsonPaths.Any())
+        if (NotificareServicesJsonPaths.Length == 0)
         {
             Log.LogWarning(
                 "NotificareServicesJson not defined, make sure to manually configure Notificare or set the NotificareServicesJson."
@@ -35,7 +36,7 @@ public class ProcessNotificareServicesJson : Task
 
         if (NotificareServicesJsonPaths.Length > 1)
             Log.LogWarning(
-                "Multiple NotificareServicesJson files defined, continuing with the 1st one."
+                "Multiple NotificareServicesJson files defined, continuing with the first one."
             );
 
         var notificareServicesJson = NotificareServicesJsonPaths.First();
@@ -111,7 +112,7 @@ public class ProcessNotificareServicesJson : Task
         };
 
         using var sw = File.Create(path);
-        using var xw = XmlTextWriter.Create(sw, xws);
+        using var xw = XmlWriter.Create(sw, xws);
         xw.WriteStartDocument();
         xw.WriteStartElement("resources");
 

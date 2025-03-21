@@ -52,3 +52,6 @@ xcuserdata/
 *.ipa
 *.dSYM.zip
 *.dSYM
+
+# Local packages
+/packages/
