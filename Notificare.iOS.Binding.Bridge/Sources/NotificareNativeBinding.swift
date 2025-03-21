@@ -39,12 +39,12 @@ public class NotificareNativeBinding : NSObject {
     @objc
     public weak var delegate: NotificareNativeBindingDelegate?
 
-    @objc
+    @MainActor @objc
     public func configure() {
         Notificare.shared.configure()
     }
 
-    @objc
+    @MainActor @objc
     public func configure(applicationKey: String, applicationSecret: String) {
         Notificare.shared.configure(
             servicesInfo: NotificareKit.NotificareServicesInfo(
