@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFrameworks>net9.0-android;net9.0-ios</TargetFrameworks>
 
@@ -74,8 +74,8 @@
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<ProjectReference Include="..\Notificare.Geo.Android.Beacons\Notificare.Geo.Android.Beacons.csproj" />
 
-		<PackageReference Include="Xamarin.GooglePlayServices.Base" Version="118.5.0.4" />
     	<GoogleServicesJson Include="Platforms\Android\google-services.json" />
+		<NotificareServicesJson Include="Platforms\Android\notificare-services.json" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$(TargetFramework.Contains('ios'))">
