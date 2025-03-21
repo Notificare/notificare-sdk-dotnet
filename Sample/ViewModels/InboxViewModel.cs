@@ -55,8 +55,30 @@ public partial class InboxViewModel : ObservableObject
             try
             {
                 var notification = await NotificareInbox.OpenAsync(item);
-                var viewController = UIApplication.SharedApplication.KeyWindow.RootViewController;
-                NotificarePushUI.PresentNotification(notification, viewController!);
+                var rootViewController = UIApplication.SharedApplication.KeyWindow.RootViewController;
+
+                if (rootViewController is null)
+                {
+                    Console.WriteLine("Cannot present a notification with a null root view controller.");
+                    return;
+                }
+
+                if (notification.RequiresViewController())
+                {
+                    var navigationController = new UINavigationController();
+                    if (navigationController.View is not null)
+                        navigationController.View.BackgroundColor = UIColor.SystemBackground;
+
+                    rootViewController.PresentViewController(
+                        navigationController,
+                        true,
+                        () => NotificarePushUI.PresentNotification(notification, navigationController)
+                    );
+                }
+                else
+                {
+                    NotificarePushUI.PresentNotification(notification, rootViewController);
+                }
 
                 Console.WriteLine("Opened and presented inbox item successfully.");
             }
@@ -66,8 +88,8 @@ public partial class InboxViewModel : ObservableObject
             }
         });
     }
-
 #endif
+
     internal void MarkAsRead(NotificareInboxItem item)
     {
         Task.Run(async () =>

@@ -5,7 +5,8 @@ using NotificareSdk;
 namespace Sample;
 
 [Application(Theme = "@style/Maui.MainTheme")]
-[MetaData("re.notifica.auto_configuration_enabled", Value = "true")]
+[MetaData("re.notifica.auto_configuration_enabled", Value = "false")]
+[MetaData("re.notifica.debug_logging_enabled", Value = "true")]
 public class MainApplication : MauiApplication
 {
     public MainApplication(IntPtr handle, JniHandleOwnership ownership)
