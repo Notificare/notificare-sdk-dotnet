@@ -10,7 +10,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Notificare.Core\Notificare.Core.csproj"/>
-        <ProjectReference Include="..\Notificare.Android.Binding\Notificare.Android.Binding.csproj"/>
+        <ProjectReference Include="..\Notificare.Core\Notificare.Core.csproj" />
+        <ProjectReference Include="..\Notificare.Android.Binding\Notificare.Android.Binding.csproj" />
     </ItemGroup>
 </Project>

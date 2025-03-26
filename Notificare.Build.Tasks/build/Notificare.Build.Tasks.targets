@@ -1,0 +1,67 @@
+<!--
+  NuGet automatically imports this file into any project that has a PackageReference to 'Notificare.Build.Tasks'.
+
+  To see this in action, execute "dotnet restore" on the consumer project and look in the obj/ folder for
+  a file named YourProject.csproj.g.nuget.targets. You'll see inside that it contains an "Import" to this file.
+ -->
+<Project>
+    <!-- the pre-build checks -->
+    <Target Name="CheckForNotificareServicesJson" Condition=" '@(NotificareServicesJson)' == '' " BeforeTargets="BeforeBuild">
+        <Message Text="NotificareServicesJson file not specified. Make sure to configure Notificare manually." Importance="high"/>
+    </Target>
+
+    <PropertyGroup>
+        <ProcessNotificareServicesJsonResDirName Condition=" '$(ProcessNotificareServicesJsonResDirName)' == '' ">notificare-services-json</ProcessNotificareServicesJsonResDirName>
+
+        <ProcessNotificareServicesJsonResDirPath>$(IntermediateOutputPath)$(ProcessNotificareServicesJsonResDirName)\</ProcessNotificareServicesJsonResDirPath>
+        <ProcessNotificareServicesJsonResStringsPath>$(ProcessNotificareServicesJsonResDirPath)values\notificare_services_json.xml</ProcessNotificareServicesJsonResStringsPath>
+        <ProcessNotificareServicesJsonStampPath>$(IntermediateOutputPath)notificare-services-json.stamp</ProcessNotificareServicesJsonStampPath>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <CleanDependsOn>
+            $(CleanDependsOn);
+            _CleanProcessNotificareServicesJson;
+        </CleanDependsOn>
+    </PropertyGroup>
+
+    <Target
+            Name="SetupNotificareServicesJson"
+            Condition=" '@(NotificareServicesJson)' != '' AND '$(AndroidApplication)' == 'True' ">
+
+        <ConvertToAbsolutePath Paths="$(ProcessNotificareServicesJsonResDirPath)">
+            <Output TaskParameter="AbsolutePaths" PropertyName="ProcessNotificareServicesJsonResDirPathAbs"/>
+        </ConvertToAbsolutePath>
+    </Target>
+
+    <Target
+            Name="ProcessNotificareServicesJson"
+            Condition=" '@(NotificareServicesJson)' != '' AND '$(AndroidApplication)' == 'True' "
+            AfterTargets="_ValidateAndroidPackageProperties"
+            DependsOnTargets="SetupNotificareServicesJson"
+            Inputs="@(NotificareServicesJson)"
+            Outputs="$(ProcessNotificareServicesJsonStampPath)">
+
+        <ProcessNotificareServicesJson
+                NotificareServicesJsonPaths="@(NotificareServicesJson)"
+                ResPath="$(ProcessNotificareServicesJsonResDirPath)"
+                StampPath="$(ProcessNotificareServicesJsonStampPath)"
+                ResStringsPath="$(ProcessNotificareServicesJsonResStringsPath)">
+            <Output TaskParameter="ResPathAbsolute" ItemName="LibraryResourceDirectories"/>
+        </ProcessNotificareServicesJson>
+
+        <ItemGroup>
+            <LibraryResourceDirectories Condition="Exists ('$(ProcessNotificareServicesJsonResDirPathAbs)')" Include="$(ProcessNotificareServicesJsonResDirPathAbs)">
+                <StampFile>$(ProcessNotificareServicesJsonStampPath)</StampFile>
+            </LibraryResourceDirectories>
+            <FileWrites
+                    Condition="Exists ('$(ProcessNotificareServicesJsonResStringsPath)')"
+                    Include="$(ProcessNotificareServicesJsonResStringsPath)"/>
+        </ItemGroup>
+    </Target>
+
+    <Target Name="_CleanProcessNotificareServicesJson">
+        <RemoveDir Directories="$(ProcessNotificareServicesJsonResDirPath)" Condition="Exists ('$(ProcessNotificareServicesJsonResDirPath)' )"/>
+        <Delete Files="$(ProcessNotificareServicesJsonStampPath)"/>
+    </Target>
+</Project>

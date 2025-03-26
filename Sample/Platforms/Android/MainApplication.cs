@@ -5,7 +5,7 @@ using NotificareSdk;
 namespace Sample;
 
 [Application(Theme = "@style/Maui.MainTheme")]
-[MetaData("re.notifica.auto_configuration_enabled", Value = "true")]
+[MetaData("re.notifica.debug_logging_enabled", Value = "true")]
 public class MainApplication : MauiApplication
 {
     public MainApplication(IntPtr handle, JniHandleOwnership ownership)
@@ -18,12 +18,6 @@ public class MainApplication : MauiApplication
     public override void OnCreate()
     {
         base.OnCreate();
-
-        Notificare.Configure(
-            context: this,
-            applicationKey: "",
-            applicationSecret: ""
-        );
 
         Task.Run(async () =>
         {
