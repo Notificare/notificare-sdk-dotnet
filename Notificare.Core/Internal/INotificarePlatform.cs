@@ -82,7 +82,7 @@ public interface INotificarePlatform
 
     Task<IDictionary<string, string>> FetchUserDataAsync();
 
-    Task UpdateUserDataAsync(IDictionary<string, string> userData);
+    Task UpdateUserDataAsync(IDictionary<string, string?> userData);
 
     #endregion
 

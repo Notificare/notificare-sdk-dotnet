@@ -39,12 +39,12 @@ public class NotificareNativeBinding : NSObject {
     @objc
     public weak var delegate: NotificareNativeBindingDelegate?
 
-    @objc
+    @MainActor @objc
     public func configure() {
         Notificare.shared.configure()
     }
 
-    @objc
+    @MainActor @objc
     public func configure(applicationKey: String, applicationSecret: String) {
         Notificare.shared.configure(
             servicesInfo: NotificareKit.NotificareServicesInfo(
@@ -297,8 +297,12 @@ public class NotificareNativeBinding : NSObject {
     }
 
     @objc
-    public func updateUserData(_ userData: [String : String], _ onSuccess: @escaping VoidBlock, _ onFailure: @escaping ErrorBlock) {
-        Notificare.shared.device().updateUserData(userData) { result in
+    public func updateUserData(_ userData: [String : Any], _ onSuccess: @escaping VoidBlock, _ onFailure: @escaping ErrorBlock) {
+        let data = userData.mapValues { value in
+            return value as? String
+        }
+
+        Notificare.shared.device().updateUserData(data) { result in
             switch result {
             case .success:
                 onSuccess()

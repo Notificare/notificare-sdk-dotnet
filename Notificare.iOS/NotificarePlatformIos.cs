@@ -34,7 +34,7 @@ public class NotificarePlatformIos : INotificarePlatform
     {
         _native.ConfigureWithApplicationKey(applicationKey, applicationSecret);
     }
-    
+
     public NotificareApplication? Application
     {
         get
@@ -308,15 +308,16 @@ public class NotificarePlatformIos : INotificarePlatform
         return completion.Task;
     }
 
-    public Task UpdateUserDataAsync(IDictionary<string, string> userData)
+    public Task UpdateUserDataAsync(IDictionary<string, string?> userData)
     {
         TaskCompletionSource completion = new();
 
         _native.UpdateUserData(
             userData.Count == 0
-                ? new NSDictionary<NSString, NSString>()
-                : NSDictionary<NSString, NSString>.FromObjectsAndKeys(
-                    userData.Values.Select(value => new NSString(value)).ToArray(),
+                ? new NSDictionary<NSString, NSObject>()
+                : NSDictionary<NSString, NSObject>.FromObjectsAndKeys(
+                    userData.Values.Select(value =>
+                        value != null ? (NSObject)new NSString(value) : NSNull.Null).ToArray(),
                     userData.Keys.Select(key => new NSString(key)).ToArray(),
                     userData.Count
                 ),

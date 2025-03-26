@@ -338,9 +338,9 @@ namespace NotificareSdk.iOS.Binding
 		[Export ("fetchUserData::")]
 		void FetchUserData (Action<NSDictionary<NSString, NSString>> onSuccess, Action<NSError> onFailure);
 
-		// -(void)updateUserData:(NSDictionary<NSString *,NSString *> * _Nonnull)userData :(void (^ _Nonnull)(void))onSuccess :(void (^ _Nonnull)(NSError * _Nonnull))onFailure;
+		// -(void)updateUserData:(NSDictionary<NSString *,id> * _Nonnull)userData :(void (^ _Nonnull)(void))onSuccess :(void (^ _Nonnull)(NSError * _Nonnull))onFailure;
 		[Export ("updateUserData:::")]
-		void UpdateUserData (NSDictionary<NSString, NSString> userData, Action onSuccess, Action<NSError> onFailure);
+		void UpdateUserData (NSDictionary<NSString, NSObject> userData, Action onSuccess, Action<NSError> onFailure);
 
 		// -(void)logCustom:(NSString * _Nonnull)eventName data:(NSDictionary<NSString *,id> * _Nullable)data :(void (^ _Nonnull)(void))onSuccess :(void (^ _Nonnull)(NSError * _Nonnull))onFailure;
 		[Export ("logCustom:data:::")]

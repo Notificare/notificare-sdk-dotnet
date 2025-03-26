@@ -289,7 +289,7 @@ public class NotificarePlatformAndroid : INotificarePlatform
         return new Dictionary<string, string>();
     }
 
-    public async Task UpdateUserDataAsync(IDictionary<string, string> userData)
+    public async Task UpdateUserDataAsync(IDictionary<string, string?> userData)
     {
         var module = Binding.Ktx.AugmentKt.Device(NativeNotificare.Instance);
 

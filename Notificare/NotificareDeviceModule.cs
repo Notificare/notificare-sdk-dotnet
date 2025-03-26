@@ -134,5 +134,5 @@ public class NotificareDeviceModule
     /// <returns>
     /// A task that resolves when the user data has been successfully updated.
     /// </returns>
-    public Task UpdateUserDataAsync(IDictionary<string, string> userData) => _platform.UpdateUserDataAsync(userData);
+    public Task UpdateUserDataAsync(IDictionary<string, string?> userData) => _platform.UpdateUserDataAsync(userData);
 }

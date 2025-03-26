@@ -163,6 +163,13 @@
                             Text="Update user data"
                             Command="{Binding UpdateUserDataCommand}"
                             CornerRadius="0" />
+                        
+                        <views:HorizontalDivider />
+
+                        <Button
+                            Text="Reset user data"
+                            Command="{Binding ResetUserDataCommand}"
+                            CornerRadius="0" />
                     </VerticalStackLayout>
                 </views:CardView>
             </VerticalStackLayout>

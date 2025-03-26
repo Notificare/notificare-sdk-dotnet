@@ -120,4 +120,26 @@ public partial class DeviceViewModel : ObservableObject
             Console.WriteLine($"Failed to update user data: {e.Message}");
         }
     }
+    
+    [RelayCommand]
+    private async Task ResetUserData()
+    {
+        try
+        {
+            await Notificare.Device.UpdateUserDataAsync(new Dictionary<string, string?>
+                {
+                    { "firstName", null },
+                    { "lastName", "LastNameExample" }
+                }
+            );
+
+            Console.WriteLine("User data reset successfully.");
+
+            LoadDeviceData();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Failed to reset user data: {e.Message}");
+        }
+    }
 }
