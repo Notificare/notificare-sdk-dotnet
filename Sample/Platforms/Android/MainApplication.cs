@@ -1,11 +1,10 @@
-﻿using Android.App;
+using Android.App;
 using Android.Runtime;
 using NotificareSdk;
 
 namespace Sample;
 
 [Application(Theme = "@style/Maui.MainTheme")]
-[MetaData("re.notifica.auto_configuration_enabled", Value = "false")]
 [MetaData("re.notifica.debug_logging_enabled", Value = "true")]
 public class MainApplication : MauiApplication
 {
@@ -19,12 +18,6 @@ public class MainApplication : MauiApplication
     public override void OnCreate()
     {
         base.OnCreate();
-
-        Notificare.Configure(
-            context: this,
-            applicationKey: "",
-            applicationSecret: ""
-        );
 
         Task.Run(async () =>
         {
