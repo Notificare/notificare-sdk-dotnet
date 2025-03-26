@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFrameworks>net9.0-android;net9.0-ios</TargetFrameworks>
 
@@ -79,6 +79,11 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="$(TargetFramework.Contains('ios'))">
+		<ProjectReference Include="..\Sample.NotificationServiceExtension\Sample.NotificationServiceExtension.csproj">
+			<IsAppExtension>true</IsAppExtension>
+			<IsWatchApp>false</IsWatchApp>
+		</ProjectReference>
+		
 		<BundleResource Include="Platforms\iOS\NotificareServices.plist">
             <Link>NotificareServices.plist</Link>
         </BundleResource>
