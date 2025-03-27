@@ -5,7 +5,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
 
-        <Version>4.0.1-beta.1</Version>
+        <Version>4.1.0</Version>
 
         <TargetPlatformIdentifier>$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)'))</TargetPlatformIdentifier>
         <SupportedOSPlatformVersion Condition="'$(TargetPlatformIdentifier)' == 'android'">23</SupportedOSPlatformVersion>
