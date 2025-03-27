@@ -17,6 +17,7 @@
         <RepositoryUrl>https://github.com/Notificare/notificare-sdk-dotnet.git</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageIcon>icon.png</PackageIcon>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageTags>.NET, MAUI, Xamarin, Notificare, remote notifications, push, geo, in-app messages, loyalty</PackageTags>
     </PropertyGroup>
@@ -24,6 +25,7 @@
     <ItemGroup>
         <None Include="..\icon.png" Pack="true" PackagePath=""/>
         <None Include="..\LICENSE" Pack="true" PackagePath=""/>
+        <None Include="..\README.md" Pack="true" PackagePath=""/>
     </ItemGroup>
 
     <PropertyGroup Condition="$(MSBuildProjectName.Contains('Android'))">
