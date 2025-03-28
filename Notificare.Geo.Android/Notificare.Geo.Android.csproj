@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>NotificareSdk.Geo.Android</RootNamespace>
+        <!--
+          Enable trim analyzers for Android class libraries.
+          To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
+        -->
+        <IsTrimmable>true</IsTrimmable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Notificare.Geo.Core\Notificare.Geo.Core.csproj"/>
+        <ProjectReference Include="..\Notificare.Geo.Android.Binding\Notificare.Geo.Android.Binding.csproj"/>
+    </ItemGroup>
+</Project>

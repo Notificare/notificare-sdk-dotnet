@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>NotificareSdk.Push.Android</RootNamespace>
+
+        <!--
+          Enable trim analyzers for Android class libraries.
+          To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
+        -->
+        <IsTrimmable>true</IsTrimmable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Notificare.Android\Notificare.Android.csproj"/>
+
+        <ProjectReference Include="..\Notificare.Push.Core\Notificare.Push.Core.csproj"/>
+        <ProjectReference Include="..\Notificare.Push.Android.Binding\Notificare.Push.Android.Binding.csproj"/>
+    </ItemGroup>
+</Project>

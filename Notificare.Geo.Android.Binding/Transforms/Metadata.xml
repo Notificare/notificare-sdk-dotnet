@@ -1,0 +1,14 @@
+﻿<metadata>
+  <attr path="/api/package[@name='re.notifica.geo']" name="managedName">NotificareSdk.Geo.Android.Binding</attr>
+  <attr path="/api/package[@name='re.notifica.geo.models']" name="managedName">NotificareSdk.Geo.Android.Binding.Models</attr>
+
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.geo.internal')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.geo.gms')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.geo.ktx')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.geo')]/class[contains(@name, 'JsonAdapter')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.geo')]/class[contains(@name, '.Creator')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.geo')]/class[contains(@name, '.Companion')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.geo')]/class/field[contains(@type, '.Companion')]" />
+
+  <remove-node path="/api/package[@name='re.notifica.geo']/class[@name='NotificareOptionsKt']" />
+</metadata>

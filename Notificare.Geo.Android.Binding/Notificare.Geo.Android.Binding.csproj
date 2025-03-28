@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>NotificareSdk.Geo.Android.Binding</RootNamespace>
+
+        <!--
+          Enable trim analyzers for Android class libraries.
+          To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
+        -->
+        <IsTrimmable>true</IsTrimmable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <AndroidMavenLibrary
+                Include="re.notifica:notificare-geo"
+                Version="4.1.0"
+                VerifyDependencies="false"
+                Bind="true"
+                Repository="https://maven.notifica.re/releases"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Xamarin.GooglePlayServices.Location" Version="121.3.0.4"/>
+    </ItemGroup>
+</Project>

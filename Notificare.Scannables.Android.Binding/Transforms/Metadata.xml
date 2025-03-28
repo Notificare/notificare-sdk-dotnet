@@ -1,0 +1,14 @@
+﻿<metadata>
+  <attr path="/api/package[@name='re.notifica.scannables']" name="managedName">NotificareSdk.Scannables.Android.Binding</attr>
+  <attr path="/api/package[@name='re.notifica.scannables.models']" name="managedName">NotificareSdk.Scannables.Android.Binding.Models</attr>
+
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.scannables.internal')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.scannables.ktx')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.scannables.databinding')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.scannables')]/class[contains(@name, 'JsonAdapter')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.scannables')]/class[contains(@name, '.Creator')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.scannables')]/class[contains(@name, '.Companion')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.scannables')]/class/field[contains(@type, '.Companion')]" />
+
+  <remove-node path="/api/package[@name='re.notifica.scannables.models']/class[@name='NotificareScannableKt']" />
+</metadata>

@@ -1,0 +1,13 @@
+﻿<metadata>
+  <attr path="/api/package[@name='re.notifica.loyalty']" name="managedName">NotificareSdk.Loyalty.Android.Binding</attr>
+  <attr path="/api/package[@name='re.notifica.loyalty.models']" name="managedName">NotificareSdk.Loyalty.Android.Binding.Models</attr>
+
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.loyalty.internal')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.loyalty.ktx')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.loyalty')]/class[contains(@name, 'JsonAdapter')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.loyalty')]/class[contains(@name, '.Creator')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.loyalty')]/class[contains(@name, '.Companion')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.loyalty')]/class/field[contains(@type, '.Companion')]" />
+
+  <remove-node path="/api/package[@name='re.notifica.loyalty']/class[@name='NotificareOptionsKt']" />
+</metadata>

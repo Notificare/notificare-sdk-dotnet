@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>NotificareSdk.Inbox.iOS</RootNamespace>
+
+        <!--
+          Enable trim analyzers for class libraries.
+          To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
+        -->
+        <IsTrimmable>true</IsTrimmable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Notificare.iOS\Notificare.iOS.csproj"/>
+
+        <ProjectReference Include="..\Notificare.Inbox.Core\Notificare.Inbox.Core.csproj"/>
+        <ProjectReference Include="..\Notificare.Inbox.iOS.Binding\Notificare.Inbox.iOS.Binding.csproj"/>
+    </ItemGroup>
+</Project>

@@ -1,0 +1,14 @@
+﻿<metadata>
+    <attr path="/api/package[@name='re.notifica']" name="managedName">NotificareSdk.Android.Binding</attr>
+    <attr path="/api/package[@name='re.notifica.ktx']" name="managedName">NotificareSdk.Android.Binding.Ktx</attr>
+    <attr path="/api/package[@name='re.notifica.models']" name="managedName">NotificareSdk.Android.Binding.Models</attr>
+
+    <remove-node path="/api/package[starts-with(@name, 're.notifica.internal')]" />
+    <remove-node path="/api/package[starts-with(@name, 're.notifica')]/class[contains(@name, 'JsonAdapter')]" />
+    <remove-node path="/api/package[starts-with(@name, 're.notifica')]/class[contains(@name, '.Creator')]" />
+    <remove-node path="/api/package[starts-with(@name, 're.notifica')]/class[contains(@name, '.Companion')]" />
+    <remove-node path="/api/package[starts-with(@name, 're.notifica')]/class/field[contains(@type, '.Companion')]" />
+
+    <remove-node path="/api/package[@name='re.notifica']/class[@name='Notificare']/method[@name='getOptions']" />
+    <remove-node path="/api/package[@name='re.notifica']/interface[@name='InternalNotificareApi']"/>
+</metadata>

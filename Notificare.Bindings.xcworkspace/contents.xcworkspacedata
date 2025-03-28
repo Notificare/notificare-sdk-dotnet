@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Notificare.iOS.Binding.Bridge/NotificareBinding.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Notificare.Assets.iOS.Binding.Bridge/NotificareAssetsBinding.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Notificare.Geo.iOS.Binding.Bridge/NotificareGeoBinding.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Notificare.InAppMessaging.iOS.Binding.Bridge/NotificareInAppMessagingBinding.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Notificare.Inbox.iOS.Binding.Bridge/NotificareInboxBinding.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Notificare.Loyalty.iOS.Binding.Bridge/NotificareLoyaltyBinding.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Notificare.NotificationServiceExtension.iOS.Binding.Bridge/NotificareNotificationServiceExtensionBinding.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Notificare.Push.iOS.Binding.Bridge/NotificarePushBinding.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Notificare.Push.UI.iOS.Binding.Bridge/NotificarePushUIBinding.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Notificare.Scannables.iOS.Binding.Bridge/NotificareScannablesBinding.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Notificare.UserInbox.iOS.Binding.Bridge/NotificareUserInboxBinding.xcodeproj">
+   </FileRef>
+</Workspace>

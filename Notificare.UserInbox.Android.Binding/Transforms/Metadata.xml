@@ -1,0 +1,11 @@
+﻿<metadata>
+  <attr path="/api/package[@name='re.notifica.inbox.user']" name="managedName">NotificareSdk.UserInbox.Android.Binding</attr>
+  <attr path="/api/package[@name='re.notifica.inbox.user.models']" name="managedName">NotificareSdk.UserInbox.Android.Binding.Models</attr>
+
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.inbox.user.internal')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.inbox.user.ktx')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.inbox.user')]/class[contains(@name, 'JsonAdapter')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.inbox.user')]/class[contains(@name, '.Creator')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.inbox.user')]/class[contains(@name, '.Companion')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.inbox.user')]/class/field[contains(@type, '.Companion')]" />
+</metadata>

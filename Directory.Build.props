@@ -1,0 +1,44 @@
+<Project>
+    <PropertyGroup>
+        <TargetFrameworks>net9.0-android;net9.0-ios</TargetFrameworks>
+
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+
+        <Version>4.1.0</Version>
+
+        <TargetPlatformIdentifier>$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)'))</TargetPlatformIdentifier>
+        <SupportedOSPlatformVersion Condition="'$(TargetPlatformIdentifier)' == 'android'">23</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="'$(TargetPlatformIdentifier)' == 'ios'">13.0</SupportedOSPlatformVersion>
+
+        <Authors>Notificare</Authors>
+        <Description>Official Notificare .NET SDK. Implements the power of the Notificare platform in .NET MAUI applications.</Description>
+        <PackageProjectUrl>https://github.com/Notificare/notificare-sdk-dotnet</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Notificare/notificare-sdk-dotnet.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageIcon>icon.png</PackageIcon>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageTags>.NET, MAUI, Xamarin, Notificare, remote notifications, push, geo, in-app messages, loyalty</PackageTags>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\icon.png" Pack="true" PackagePath=""/>
+        <None Include="..\LICENSE" Pack="true" PackagePath=""/>
+        <None Include="..\README.md" Pack="true" PackagePath=""/>
+    </ItemGroup>
+
+    <PropertyGroup Condition="$(MSBuildProjectName.Contains('Android'))">
+        <!--suppress MsbuildTargetFrameworkTagInspection -->
+        <TargetFrameworks>net9.0-android</TargetFrameworks>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="$(MSBuildProjectName.Contains('iOS'))">
+        <!--suppress MsbuildTargetFrameworkTagInspection -->
+        <TargetFrameworks>net9.0-ios</TargetFrameworks>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="$(MSBuildProjectName.Contains('iOS.Binding'))">
+        <IsBindingProject>true</IsBindingProject>
+    </PropertyGroup>
+</Project>

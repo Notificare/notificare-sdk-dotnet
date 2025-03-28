@@ -1,0 +1,11 @@
+﻿<metadata>
+  <attr path="/api/package[@name='re.notifica.push']" name="managedName">NotificareSdk.Push.Android.Binding</attr>
+  <attr path="/api/package[@name='re.notifica.push.ktx']" name="managedName">NotificareSdk.Push.Android.Binding.Ktx</attr>
+  <attr path="/api/package[@name='re.notifica.push.models']" name="managedName">NotificareSdk.Push.Android.Binding.Models</attr>
+
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.push.internal')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.push')]/class[contains(@name, 'JsonAdapter')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.push')]/class[contains(@name, '.Creator')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.push')]/class[contains(@name, '.Companion')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.push')]/class/field[contains(@type, '.Companion')]" />
+</metadata>

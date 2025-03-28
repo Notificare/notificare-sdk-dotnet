@@ -1,0 +1,15 @@
+﻿<metadata>
+  <attr path="/api/package[@name='re.notifica.iam']" name="managedName">NotificareSdk.InAppMessaging.Android.Binding</attr>
+  <attr path="/api/package[@name='re.notifica.iam.models']" name="managedName">NotificareSdk.InAppMessaging.Android.Binding.Models</attr>
+
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.iam.internal')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.iam.ktx')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.iam.ui')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.iam.databinding')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.iam')]/class[contains(@name, 'JsonAdapter')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.iam')]/class[contains(@name, '.Creator')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.iam')]/class[contains(@name, '.Companion')]" />
+  <remove-node path="/api/package[starts-with(@name, 're.notifica.iam')]/class/field[contains(@type, '.Companion')]" />
+
+  <remove-node path="/api/package[@name='re.notifica.iam']/class[@name='NotificareOptionsKt']" />
+</metadata>
