@@ -92,16 +92,30 @@ public partial class ScannablesPage : ContentPage
         NotificarePushUI.PresentNotification(notification, activity);
 
 #elif IOS
-        var viewController = UIApplication.SharedApplication.KeyWindow.RootViewController;
+		var rootViewController = UIApplication.SharedApplication.KeyWindow.RootViewController;
 
-        if (viewController == null)
-        {
-            Console.WriteLine("Could not present scannable notification. View controller is null.");
-            return;
-        }
+		if (rootViewController is null)
+		{
+			Console.WriteLine("Cannot present a notification with a null root view controller.");
+			return;
+		}
 
-        Console.WriteLine("Present Scannable notification here.");
-        NotificarePushUI.PresentNotification(notification, viewController);
+		if (notification.RequiresViewController())
+		{
+			var navigationController = new UINavigationController();
+			if (navigationController.View is not null)
+				navigationController.View.BackgroundColor = UIColor.SystemBackground;
+
+			rootViewController.PresentViewController(
+				navigationController,
+				true,
+				() => NotificarePushUI.PresentNotification(notification, navigationController)
+			);
+		}
+		else
+		{
+			NotificarePushUI.PresentNotification(notification, rootViewController);
+		}
 
 #endif
     }
