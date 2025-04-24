@@ -25,8 +25,30 @@ public partial class App : Application
             NotificarePushUI.PresentNotification(e.Notification, activity!);
 
 #elif IOS
-            var viewController = UIApplication.SharedApplication.KeyWindow.RootViewController;
-            NotificarePushUI.PresentNotification(e.Notification, viewController!);
+		var rootViewController = UIApplication.SharedApplication.KeyWindow.RootViewController;
+
+		if (rootViewController is null)
+		{
+			Console.WriteLine("Cannot present a notification with a null root view controller.");
+			return;
+		}
+
+		if (e.Notification.RequiresViewController())
+		{
+			var navigationController = new UINavigationController();
+			if (navigationController.View is not null)
+				navigationController.View.BackgroundColor = UIColor.SystemBackground;
+
+			rootViewController.PresentViewController(
+				navigationController,
+				true,
+				() => NotificarePushUI.PresentNotification(e.Notification, navigationController)
+			);
+		}
+		else
+		{
+			NotificarePushUI.PresentNotification(e.Notification, rootViewController);
+		}
 #endif
 	}
 
@@ -37,8 +59,15 @@ public partial class App : Application
             NotificarePushUI.PresentAction(e.Notification, e.Action, activity!);
 
 #elif IOS
-            var viewController = UIApplication.SharedApplication.KeyWindow.RootViewController;
-            NotificarePushUI.PresentAction(e.Notification, e.Action, viewController!);
+            var rootViewController = UIApplication.SharedApplication.KeyWindow.RootViewController;
+
+            if (rootViewController is null)
+            {
+	            Console.WriteLine("Cannot present a notification with a null root view controller.");
+	            return;
+            }
+
+            NotificarePushUI.PresentAction(e.Notification, e.Action, rootViewController);
 
 #endif
 	}
