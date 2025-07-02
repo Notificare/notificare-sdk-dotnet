@@ -421,7 +421,7 @@
 			repositoryURL = "https://github.com/Notificare/notificare-sdk-ios";
 			requirement = {
 				kind = exactVersion;
-				version = 4.2.1;
+				version = 4.2.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
