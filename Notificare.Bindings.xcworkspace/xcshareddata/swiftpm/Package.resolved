@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Notificare/notificare-sdk-ios",
       "state" : {
-        "revision" : "9e4d965ccd17fea19ff56f9553a44d0c15118cdd",
-        "version" : "4.2.1"
+        "revision" : "d567b11cf4661aae26f78b981fa7b371abb2709b",
+        "version" : "4.2.2"
       }
     }
   ],
