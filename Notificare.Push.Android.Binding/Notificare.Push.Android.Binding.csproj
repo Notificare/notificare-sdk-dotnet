@@ -23,6 +23,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Xamarin.Firebase.Messaging" Version="125.0.0"/>
+        <PackageReference Include="Xamarin.Firebase.Messaging" Version="125.0.0.1"/>
     </ItemGroup>
 </Project>
