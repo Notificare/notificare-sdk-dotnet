@@ -31,6 +31,7 @@
         <PackageReference Include="Xamarin.Kotlin.Parcelize.Runtime" Version="1.9.23.3" />
         <PackageReference Include="Xamarin.KotlinX.Coroutines.Android" Version="1.10.2.1" />
         <PackageReference Include="Xamarin.AndroidX.Activity.Ktx" Version="1.10.1.3" />
+        <PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Version="1.8.8.1" />
         <PackageReference Include="Xamarin.AndroidX.Work.Work.Runtime.Ktx" Version="2.10.2.1" />
         <PackageReference Include="Xamarin.Android.Binding.InstallReferrer" Version="2.2.0" />
         <PackageReference Include="Xamarin.AndroidX.Room.Room.Ktx" Version="2.7.2.1" />
