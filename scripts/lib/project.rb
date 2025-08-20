@@ -188,8 +188,9 @@ class CSProject
   end
 
   private def latest_sharpie_sdk
-    _, output = capture_system_command_output('sharpie xcode -sdks', stream_output: false)
-    output.match(/(iphoneos\d+\.\d+)/).captures[0]
+#     _, output = capture_system_command_output('sharpie xcode -sdks', stream_output: false)
+#     output.match(/(iphoneos\d+\.\d+)/).captures[0]
+    "iphoneos18.2"
   end
 
   private def depends_on_core
