@@ -12,14 +12,14 @@
     <ItemGroup>
         <AndroidMavenLibrary
                 Include="re.notifica:notificare"
-                Version="4.2.1"
+                Version="4.2.2"
                 VerifyDependencies="false"
                 Bind="true"
                 Repository="https://maven.notifica.re/releases"/>
 
         <AndroidMavenLibrary
                 Include="re.notifica:notificare-utilities"
-                Version="4.2.1"
+                Version="4.2.2"
                 VerifyDependencies="false"
                 Bind="false"
                 Repository="https://maven.notifica.re/releases"/>
