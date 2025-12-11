@@ -11,7 +11,7 @@
     <ItemGroup>
         <AndroidMavenLibrary
                 Include="re.notifica:notificare-push-ui"
-                Version="4.2.2"
+                Version="4.2.3"
                 VerifyDependencies="false"
                 Bind="true"
                 Repository="https://maven.notifica.re/releases"/>
