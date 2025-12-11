@@ -96,16 +96,19 @@ public class NotificarePushNativeBinding : NSObject {
     }
 
     @objc
+    @MainActor
     public func registeredForRemoteNotifications(_ application: UIApplication, _ token: Data) {
         Notificare.shared.push().application(application, didRegisterForRemoteNotificationsWithDeviceToken: token)
     }
 
     @objc
+    @MainActor
     public func failedToRegisterForRemoteNotifications(_ application: UIApplication, _ error: Error) {
         Notificare.shared.push().application(application, didFailToRegisterForRemoteNotificationsWithError: error)
     }
 
     @objc
+    @MainActor
     public func didReceiveRemoteNotification(_ application: UIApplication, _ userInfo: [AnyHashable: Any], _ completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         Notificare.shared.push().application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
     }
